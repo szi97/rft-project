@@ -1,0 +1,25 @@
+#login {
+    line-height: 80px;
+    display: block;
+    float: right;
+
+    button {
+       background-color: #CEDFF2;
+       color: black;
+       border: none;
+       height: 30px;
+   }
+
+   input {
+       height: 30px;
+   }
+}
+
+.login-form-group {
+    float: left;
+ }
+
+ .invalid-feedback {
+    color: red;
+    font-size: 12px;
+}

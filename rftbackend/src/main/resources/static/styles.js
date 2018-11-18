@@ -1,13 +1,13 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["styles"],{
 
-/***/ "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!./node_modules/postcss-loader/src/index.js?!./src/styles.css":
-/*!*****************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!./node_modules/postcss-loader/src??embedded!./src/styles.css ***!
-  \*****************************************************************************************************************************************************************/
+/***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js?!./node_modules/sass-loader/lib/loader.js?!./src/styles.scss":
+/*!***************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./node_modules/postcss-loader/lib??embedded!./node_modules/sass-loader/lib/loader.js??ref--15-3!./src/styles.scss ***!
+  \***************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = [[module.i, "/* You can add global styles to this file, and also import other style files */\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLCtFQUErRSIsImZpbGUiOiJzcmMvc3R5bGVzLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIFlvdSBjYW4gYWRkIGdsb2JhbCBzdHlsZXMgdG8gdGhpcyBmaWxlLCBhbmQgYWxzbyBpbXBvcnQgb3RoZXIgc3R5bGUgZmlsZXMgKi9cbiJdfQ== */", '', '']]
+module.exports = "/* You can add global styles to this file, and also import other style files */\n* {\n  box-sizing: border-box;\n  margin: 0px; }\nbody.dialog-open {\n  overflow: hidden; }\n.nsm-dialog-btn-close {\n  border: 0;\n  background: none;\n  color: #2d2d2d;\n  position: absolute;\n  top: 8px;\n  right: 8px;\n  font-size: 1.2em;\n  cursor: pointer; }\n.overlay {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  overflow-x: hidden;\n  overflow-y: auto;\n  transition: background-color 500ms;\n  background-color: transparent;\n  z-index: 999; }\n.overlay.nsm-overlay-open {\n    background-color: rgba(0, 0, 0, 0.5); }\n.overlay.transparent {\n    background-color: transparent; }\n.nsm-dialog {\n  position: relative;\n  opacity: 1;\n  visibility: visible;\n  min-height: 200px;\n  width: 100%;\n  max-width: 520px;\n  margin: 0 auto;\n  pointer-events: none; }\n.nsm-dialog.nsm-dialog-close {\n    opacity: 0; }\n.nsm-dialog.nsm-centered {\n    display: flex;\n    align-items: center;\n    min-height: calc(100% - (1.75rem * 2)); }\n.nsm-content {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  pointer-events: auto;\n  background-clip: padding-box;\n  background-color: #fff;\n  border-radius: 2px;\n  padding: 1rem;\n  margin: 1.75rem;\n  box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12);\n  outline: 0;\n  -webkit-transform: translate3d(0, 0, 0);\n          transform: translate3d(0, 0, 0); }\n.nsm-body {\n  position: relative;\n  flex: 1 1 auto; }\n/* *************************\n* Animations\n* *************************/\n.nsm-dialog[class*=nsm-dialog-animation-] {\n  transition: opacity 500ms, -webkit-transform 500ms ease-in-out;\n  transition: transform 500ms ease-in-out, opacity 500ms;\n  transition: transform 500ms ease-in-out, opacity 500ms, -webkit-transform 500ms ease-in-out; }\n.nsm-dialog-animation-ltr {\n  -webkit-transform: translate3d(-50%, 0, 0);\n          transform: translate3d(-50%, 0, 0); }\n.nsm-dialog-animation-ltr.nsm-dialog-open {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n.nsm-dialog-animation-ltr.nsm-dialog-close {\n    -webkit-transform: translate3d(-50%, 0, 0);\n            transform: translate3d(-50%, 0, 0); }\n.nsm-dialog-animation-rtl {\n  -webkit-transform: translate3d(50%, 0, 0);\n          transform: translate3d(50%, 0, 0); }\n.nsm-dialog-animation-rtl.nsm-dialog-open {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n.nsm-dialog-animation-rtl.nsm-dialog-close {\n    -webkit-transform: translate3d(50%, 0, 0);\n            transform: translate3d(50%, 0, 0); }\n.nsm-dialog-animation-ttb {\n  -webkit-transform: translate3d(0, -50%, 0);\n          transform: translate3d(0, -50%, 0); }\n.nsm-dialog-animation-ttb.nsm-dialog-open {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n.nsm-dialog-animation-ttb.nsm-dialog-close {\n    -webkit-transform: translate3d(0, -50%, 0);\n            transform: translate3d(0, -50%, 0); }\n.nsm-dialog-animation-btt {\n  -webkit-transform: translate3d(0, 50%, 0);\n          transform: translate3d(0, 50%, 0); }\n.nsm-dialog-animation-btt.nsm-dialog-open {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n.nsm-dialog-animation-btt.nsm-dialog-close {\n    -webkit-transform: translate3d(0, 50%, 0);\n            transform: translate3d(0, 50%, 0); }\n"
 
 /***/ }),
 
@@ -43,17 +43,14 @@ var isOldIE = memoize(function () {
 	return window && document && document.all && !window.atob;
 });
 
-var getTarget = function (target, parent) {
-  if (parent){
-    return parent.querySelector(target);
-  }
+var getTarget = function (target) {
   return document.querySelector(target);
 };
 
 var getElement = (function (fn) {
 	var memo = {};
 
-	return function(target, parent) {
+	return function(target) {
                 // If passing function in options, then use it for resolve "head" element.
                 // Useful for Shadow Root style i.e
                 // {
@@ -63,7 +60,7 @@ var getElement = (function (fn) {
                         return target();
                 }
                 if (typeof memo[target] === "undefined") {
-			var styleTarget = getTarget.call(this, target, parent);
+			var styleTarget = getTarget.call(this, target);
 			// Special case to return head of iframe instead of iframe itself
 			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
 				try {
@@ -204,7 +201,7 @@ function insertStyleElement (options, style) {
 	} else if (options.insertAt === "bottom") {
 		target.appendChild(style);
 	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
-		var nextSibling = getElement(options.insertAt.before, target);
+		var nextSibling = getElement(options.insertInto + " " + options.insertAt.before);
 		target.insertBefore(style, nextSibling);
 	} else {
 		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
@@ -226,13 +223,6 @@ function createStyleElement (options) {
 
 	if(options.attrs.type === undefined) {
 		options.attrs.type = "text/css";
-	}
-
-	if(options.attrs.nonce === undefined) {
-		var nonce = getNonce();
-		if (nonce) {
-			options.attrs.nonce = nonce;
-		}
 	}
 
 	addAttrs(style, options.attrs);
@@ -259,12 +249,6 @@ function addAttrs (el, attrs) {
 	Object.keys(attrs).forEach(function (key) {
 		el.setAttribute(key, attrs[key]);
 	});
-}
-
-function getNonce() {
-	if (false) {}
-
-	return __webpack_require__.nc;
 }
 
 function addStyle (obj, options) {
@@ -518,15 +502,15 @@ module.exports = function (css) {
 
 /***/ }),
 
-/***/ "./src/styles.css":
-/*!************************!*\
-  !*** ./src/styles.css ***!
-  \************************/
+/***/ "./src/styles.scss":
+/*!*************************!*\
+  !*** ./src/styles.scss ***!
+  \*************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!../node_modules/postcss-loader/src??embedded!./styles.css */ "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!./node_modules/postcss-loader/src/index.js?!./src/styles.css");
+var content = __webpack_require__(/*! !../node_modules/raw-loader!../node_modules/postcss-loader/lib??embedded!../node_modules/sass-loader/lib/loader.js??ref--15-3!./styles.scss */ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js?!./node_modules/sass-loader/lib/loader.js?!./src/styles.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -549,13 +533,13 @@ if(false) {}
 /***/ }),
 
 /***/ 2:
-/*!******************************!*\
-  !*** multi ./src/styles.css ***!
-  \******************************/
+/*!*******************************!*\
+  !*** multi ./src/styles.scss ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/kisfiu/git/RftBeadando/rftfrontend/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /home/szi/Documents/lathatatlan_iskola/rft-project/rftfrontend/src/styles.scss */"./src/styles.scss");
 
 
 /***/ })

@@ -1,6 +1,6 @@
-/home/kisfiu/git/RftBeadando/rftbackend/src/main/java/rftbackend/RftbackendApplication.java
-/home/kisfiu/git/RftBeadando/rftbackend/src/main/java/rftbackend/Controllers/ViewController.java
-/home/kisfiu/git/RftBeadando/rftbackend/src/main/java/rftbackend/Repositories/MentorRepository.java
-/home/kisfiu/git/RftBeadando/rftbackend/src/main/java/rftbackend/Config/DatabaseConfig.java
-/home/kisfiu/git/RftBeadando/rftbackend/src/main/java/rftbackend/Models/Mentor.java
-/home/kisfiu/git/RftBeadando/rftbackend/src/main/java/rftbackend/Controllers/MentorController.java
+/home/szi/Documents/lathatatlan_iskola/rft-project/rftbackend/src/main/java/rftbackend/Repositories/MentorRepository.java
+/home/szi/Documents/lathatatlan_iskola/rft-project/rftbackend/src/main/java/rftbackend/Config/DatabaseConfig.java
+/home/szi/Documents/lathatatlan_iskola/rft-project/rftbackend/src/main/java/rftbackend/Controllers/MentorController.java
+/home/szi/Documents/lathatatlan_iskola/rft-project/rftbackend/src/main/java/rftbackend/Controllers/ViewController.java
+/home/szi/Documents/lathatatlan_iskola/rft-project/rftbackend/src/main/java/rftbackend/RftbackendApplication.java
+/home/szi/Documents/lathatatlan_iskola/rft-project/rftbackend/src/main/java/rftbackend/Models/Mentor.java
