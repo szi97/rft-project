@@ -7,18 +7,22 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './components/app/app.component';
 import {HomeComponent} from './components/home/home.component';
 import {AppRoutingModule} from './app-routing.module';
-import { MAndMComponent } from './components/schedule/mentorandmentored.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
 import {MentorsPopupComponent} from './components/schedule/mentors/mentorspopup.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { TimetableComponent } from './components/timetable/timetable.component';
 import {LoginComponent} from './components/login/login.component';
+import { MenteesPopupComponent } from './components/schedule/mentees/menteespopup.component';
+import { InstitutionsPopupComponent } from './components/schedule/institutions/insitutionspopup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MAndMComponent,
+    ScheduleComponent,
     MentorsPopupComponent,
+    MenteesPopupComponent,
+    InstitutionsPopupComponent,
     RegistrationComponent,
     TimetableComponent,
     LoginComponent

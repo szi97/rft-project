@@ -7,4 +7,10 @@ import {logintemplate} from './login.component.tpl';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+
+  model: any = {};
+
+  onSubmit() {
+    console.log(this.model);
+  }
 }
