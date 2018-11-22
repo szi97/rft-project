@@ -1,9 +1,9 @@
-export const mentorsPopupTemplate = `
-    <ngx-smart-modal #mentorsPopup [identifier]="'mentorsPopup'">
+export const institutionsPopupTemplate = `
+    <ngx-smart-modal #institutionsPopup [identifier]="'institutionsPopup'">
     <table>
         <tr>
             <td>Név: </td>
-            <td>{{mentorsPopup.getData()}}</td>
+            <td>{{institutionsPopup.getData()}}</td>
         </tr>
         <tr>
             <td>E-mail cím: </td>
@@ -18,22 +18,18 @@ export const mentorsPopupTemplate = `
             <td></td>
         </tr>
         <tr>
-            <td>Korcsoport: </td>
+            <td>Cím: </td>
             <td></td>
         </tr>
         <tr>
-            <td>Tantárgy: </td>
+            <td>Vezető: </td>
             <td></td>
         </tr>
         <tr>
             <td>Intézmény felelős: </td>
             <td></td>
         </tr>
-        <tr>
-            <td>Megjegyzés: </td>
-            <td></td>
-        </tr>
     </table>
-    <button (click)="mentorsPopup.close()">Close</button>
+    <button (click)="institutionsPopup.close()">Close</button>
     </ngx-smart-modal>
     `;

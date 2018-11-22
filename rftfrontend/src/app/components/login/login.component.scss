@@ -1,5 +1,5 @@
-#login {
-    line-height: 80px;
+form[name="login-form"] {
+    line-height: 40px;
     display: block;
     float: right;
 
@@ -13,13 +13,19 @@
    input {
        height: 30px;
    }
+
+   .invalid-feedback {
+    color: red;
+    font-size: 12px;
+    line-height: 10px;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
 }
 
 .login-form-group {
     float: left;
  }
 
- .invalid-feedback {
-    color: red;
-    font-size: 12px;
-}

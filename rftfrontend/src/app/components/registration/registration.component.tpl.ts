@@ -3,7 +3,7 @@ export const registrationTemplate = `
     <div class="form-group">
         <label for="userName">Felhasználónév: </label>
         <input type="text" class="form-control" name="userName" [(ngModel)]="model.userName"
-            #userName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && userName.invalid }" required />
+            #userName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && userName.invalid }" required pattern="[a-zA-Z1-9]*"/>
         <div *ngIf="f.submitted && userName.invalid" class="invalid-feedback">
             <div *ngIf="userName.errors.required">Add meg a felhasználóneved!</div>
         </div>
@@ -13,7 +13,7 @@ export const registrationTemplate = `
         <input type="text" class="form-control" name="jelszo" [(ngModel)]="model.jelszo"
             #jelszo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && jelszo.invalid }" required minlength="8"/>
         <div *ngIf="f.submitted && jelszo.invalid" class="invalid-feedback">
-            <div *ngIf="jelszo.errors.required">Add meg a jelszavad"!</div>
+            <div *ngIf="jelszo.errors.required">Add meg a jelszavad!</div>
             <div *ngIf="jelszo.errors.minlength">A jelszónak legalább 8 karakter hosszúnak kell lennie</div>
         </div>
     </div>

@@ -8,9 +8,9 @@ export const apptemplate = `
           <ul class="navbarlist">
               <li><a routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Kezdőoldal</a></li>
               <li><a routerLink="menetrend" routerLinkActive="active-link">Menetrend</a></li>
-              <li><a routerLink="registration" routerLinkActive="active-link">Regisztráció</a></li>
+              <li><a routerLink="regisztracio" routerLinkActive="active-link">Regisztráció</a></li>
               <li><a>Események</a></li>
-              <li><a routerLink="órarend" routerLinkActive="active-link">Órarend</a></li>
+              <li><a routerLink="orarend" routerLinkActive="active-link">Órarend</a></li>
           </ul>
       </div>
   </nav>
