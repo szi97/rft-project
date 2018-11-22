@@ -1,4 +1,7 @@
 rftbackend/Models/Mentor.class
+rftbackend/Controllers/MenteeController.class
+rftbackend/Service/RegistrationService.class
+rftbackend/Models/Mentee.class
 rftbackend/Repositories/MentorRepository.class
 rftbackend/Controllers/MentorController.class
 rftbackend/Controllers/ViewController.class

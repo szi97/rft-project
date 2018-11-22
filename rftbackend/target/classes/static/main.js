@@ -36,7 +36,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
-/* harmony import */ var _components_schedule_mentorandmentored_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/schedule/mentorandmentored.component */ "./src/app/components/schedule/mentorandmentored.component.ts");
+/* harmony import */ var _components_schedule_schedule_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/schedule/schedule.component */ "./src/app/components/schedule/schedule.component.ts");
 /* harmony import */ var _components_registration_registration_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/registration/registration.component */ "./src/app/components/registration/registration.component.ts");
 /* harmony import */ var _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/timetable/timetable.component */ "./src/app/components/timetable/timetable.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -53,9 +53,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var appRoutes = [
     { path: '', component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"] },
-    { path: 'menetrend', component: _components_schedule_mentorandmentored_component__WEBPACK_IMPORTED_MODULE_3__["MAndMComponent"] },
-    { path: 'registration', component: _components_registration_registration_component__WEBPACK_IMPORTED_MODULE_4__["RegistrationComponent"] },
-    { path: 'órarend', component: _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_5__["TimetableComponent"] }
+    { path: 'menetrend', component: _components_schedule_schedule_component__WEBPACK_IMPORTED_MODULE_3__["ScheduleComponent"] },
+    { path: 'regisztracio', component: _components_registration_registration_component__WEBPACK_IMPORTED_MODULE_4__["RegistrationComponent"] },
+    { path: 'orarend', component: _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_5__["TimetableComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -95,11 +95,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_app_app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/app/app.component */ "./src/app/components/app/app.component.ts");
 /* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _components_schedule_mentorandmentored_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/schedule/mentorandmentored.component */ "./src/app/components/schedule/mentorandmentored.component.ts");
+/* harmony import */ var _components_schedule_schedule_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/schedule/schedule.component */ "./src/app/components/schedule/schedule.component.ts");
 /* harmony import */ var _components_schedule_mentors_mentorspopup_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/schedule/mentors/mentorspopup.component */ "./src/app/components/schedule/mentors/mentorspopup.component.ts");
 /* harmony import */ var _components_registration_registration_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/registration/registration.component */ "./src/app/components/registration/registration.component.ts");
 /* harmony import */ var _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/timetable/timetable.component */ "./src/app/components/timetable/timetable.component.ts");
 /* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
+/* harmony import */ var _components_schedule_mentees_menteespopup_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/schedule/mentees/menteespopup.component */ "./src/app/components/schedule/mentees/menteespopup.component.ts");
+/* harmony import */ var _components_schedule_institutions_insitutionspopup_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/schedule/institutions/insitutionspopup.component */ "./src/app/components/schedule/institutions/insitutionspopup.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -122,6 +124,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var AppModule = /** @class */ (function () {
     function AppModule(router) {
     }
@@ -130,8 +134,10 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _components_app_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
                 _components_home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"],
-                _components_schedule_mentorandmentored_component__WEBPACK_IMPORTED_MODULE_8__["MAndMComponent"],
+                _components_schedule_schedule_component__WEBPACK_IMPORTED_MODULE_8__["ScheduleComponent"],
                 _components_schedule_mentors_mentorspopup_component__WEBPACK_IMPORTED_MODULE_9__["MentorsPopupComponent"],
+                _components_schedule_mentees_menteespopup_component__WEBPACK_IMPORTED_MODULE_13__["MenteesPopupComponent"],
+                _components_schedule_institutions_insitutionspopup_component__WEBPACK_IMPORTED_MODULE_14__["InstitutionsPopupComponent"],
                 _components_registration_registration_component__WEBPACK_IMPORTED_MODULE_10__["RegistrationComponent"],
                 _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_11__["TimetableComponent"],
                 _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"]
@@ -175,7 +181,7 @@ module.exports = ".header {\n  height: 100px;\n  padding: 10px;\n  background-co
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "apptemplate", function() { return apptemplate; });
-var apptemplate = "\n<div class=\"header\">\n    <h1 class=\"header-contet\">L\u00E1thatatlan iskola</h1>\n    <app-login></app-login>\n</div>\n<nav class=\"topnavigation\" id=\"mynav\">\n      <div>\n          <ul class=\"navbarlist\">\n              <li><a routerLink=\"\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{ exact: true }\">Kezd\u0151oldal</a></li>\n              <li><a routerLink=\"menetrend\" routerLinkActive=\"active-link\">Menetrend</a></li>\n              <li><a routerLink=\"registration\" routerLinkActive=\"active-link\">Regisztr\u00E1ci\u00F3</a></li>\n              <li><a>Esem\u00E9nyek</a></li>\n              <li><a routerLink=\"\u00F3rarend\" routerLinkActive=\"active-link\">\u00D3rarend</a></li>\n          </ul>\n      </div>\n  </nav>\n  <div id=\"container\">\n    <router-outlet></router-outlet>\n  </div>\n  <footer>\n    <div class=\"footerdiv\">\n        <p>El\u00E9rhet\u0151s\u00E9gek:\n        </p>\n    </div>\n  </footer>\n  ";
+var apptemplate = "\n<div class=\"header\">\n    <h1 class=\"header-contet\">L\u00E1thatatlan iskola</h1>\n    <app-login></app-login>\n</div>\n<nav class=\"topnavigation\" id=\"mynav\">\n      <div>\n          <ul class=\"navbarlist\">\n              <li><a routerLink=\"\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{ exact: true }\">Kezd\u0151oldal</a></li>\n              <li><a routerLink=\"menetrend\" routerLinkActive=\"active-link\">Menetrend</a></li>\n              <li><a routerLink=\"regisztracio\" routerLinkActive=\"active-link\">Regisztr\u00E1ci\u00F3</a></li>\n              <li><a>Esem\u00E9nyek</a></li>\n              <li><a routerLink=\"orarend\" routerLinkActive=\"active-link\">\u00D3rarend</a></li>\n          </ul>\n      </div>\n  </nav>\n  <div id=\"container\">\n    <router-outlet></router-outlet>\n  </div>\n  <footer>\n    <div class=\"footerdiv\">\n        <p>El\u00E9rhet\u0151s\u00E9gek:\n        </p>\n    </div>\n  </footer>\n  ";
 
 
 /***/ }),
@@ -287,7 +293,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#login {\n  line-height: 80px;\n  display: block;\n  float: right; }\n  #login button {\n    background-color: #CEDFF2;\n    color: black;\n    border: none;\n    height: 30px; }\n  #login input {\n    height: 30px; }\n  .login-form-group {\n  float: left; }\n  .invalid-feedback {\n  color: red;\n  font-size: 12px; }\n"
+module.exports = "form[name=\"login-form\"] {\n  line-height: 40px;\n  display: block;\n  float: right; }\n  form[name=\"login-form\"] button {\n    background-color: #CEDFF2;\n    color: black;\n    border: none;\n    height: 30px; }\n  form[name=\"login-form\"] input {\n    height: 30px; }\n  form[name=\"login-form\"] .invalid-feedback {\n    color: red;\n    font-size: 12px;\n    line-height: 10px; }\n  form[name=\"login-form\"] button:hover {\n    cursor: pointer; }\n  .login-form-group {\n  float: left; }\n"
 
 /***/ }),
 
@@ -301,7 +307,7 @@ module.exports = "#login {\n  line-height: 80px;\n  display: block;\n  float: ri
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logintemplate", function() { return logintemplate; });
-var logintemplate = "\n<form class=\"header-content\" id=\"login\">\n        <div class=\"login-form-group\"><input type=\"text\" name=\"loginUsername\" [(ngModel)]=\"model.loginUsername\"\n        #loginUsername=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && loginUsername.invalid }\" required />\n            <div *ngIf=\"f.submitted && loginUsername.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"loginUsername.errors.required\">Add meg a felhaszn\u00E1l\u00F3neved!</div>\n            </div>\n        </div>\n        <div class=\"login-form-group\"><input type=\"password\" name=\"loginPassword\" [(ngModel)]=\"model.loginPassword\"\n        #loginPassword=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && loginPassword.invalid }\" required minlength=\"8\" />\n            <div *ngIf=\"f.submitted && loginPassword.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"loginPassword.errors.required\">Add meg a jelszavad!</div>\n            </div>\n        </div>\n        <div class=\"login-form-group\"><button [disabled]=\"loading\">Bejelentkez\u00E9s</button></div>\n    </form>\n";
+var logintemplate = "\n<form name=\"login-form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n        <div class=\"login-form-group\">\n            <input type=\"text\" name=\"loginUsername\" [(ngModel)]=\"model.loginUsername\"\n            #loginUsername=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && loginUsername.invalid }\" required />\n            <div *ngIf=\"f.submitted && loginUsername.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"loginUsername.errors.required\">Add meg a felhaszn\u00E1l\u00F3neved!</div>\n            </div>\n        </div>\n        <div class=\"login-form-group\">\n            <input type=\"password\" name=\"loginPassword\" [(ngModel)]=\"model.loginPassword\"\n            #loginPassword=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && loginPassword.invalid }\" required/>\n            <div *ngIf=\"f.submitted && loginPassword.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"loginPassword.errors.required\">Add meg a jelszavad!</div>\n            </div>\n        </div>\n        <div class=\"login-form-group\">\n            <button [disabled]=\"loading\">Bejelentkez\u00E9s</button>\n        </div>\n    </form>\n";
 
 
 /***/ }),
@@ -328,7 +334,11 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var LoginComponent = /** @class */ (function () {
     function LoginComponent() {
+        this.model = {};
     }
+    LoginComponent.prototype.onSubmit = function () {
+        console.log(this.model);
+    };
     LoginComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-login',
@@ -350,7 +360,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".form-group {\n  padding: 20px;\n  color: #444444;\n  width: 100%; }\n  .form-group input {\n    border: none;\n    border-bottom: 2px solid #CEDFF2;\n    height: 30px;\n    display: flex;\n    width: 20em; }\n  .form-group input:focus {\n    outline: none;\n    border-bottom: 2px solid #214F81; }\n  .form-group .invalid-feedback {\n    color: red;\n    font-size: 12px; }\n  .form-group button {\n    background-color: #214F81;\n    color: white;\n    font-size: 18px;\n    border: none;\n    height: 30px; }\n"
+module.exports = ".form-group {\n  padding: 20px;\n  color: #444444;\n  width: 100%; }\n  .form-group input {\n    border: none;\n    border-bottom: 2px solid #CEDFF2;\n    height: 30px;\n    display: flex;\n    width: 20em; }\n  .form-group input:focus {\n    outline: none;\n    border-bottom: 2px solid #214F81; }\n  .form-group .invalid-feedback {\n    color: red;\n    font-size: 12px; }\n  .form-group button {\n    background-color: #214F81;\n    color: white;\n    font-size: 18px;\n    border: none;\n    height: 30px; }\n  .form-group button:hover {\n    cursor: pointer; }\n"
 
 /***/ }),
 
@@ -364,7 +374,7 @@ module.exports = ".form-group {\n  padding: 20px;\n  color: #444444;\n  width: 1
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registrationTemplate", function() { return registrationTemplate; });
-var registrationTemplate = "\n<form name=\"form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n    <div class=\"form-group\">\n        <label for=\"userName\">Felhaszn\u00E1l\u00F3n\u00E9v: </label>\n        <input type=\"text\" class=\"form-control\" name=\"userName\" [(ngModel)]=\"model.userName\"\n            #userName=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && userName.invalid }\" required />\n        <div *ngIf=\"f.submitted && userName.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"userName.errors.required\">Add meg a felhaszn\u00E1l\u00F3neved!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"jelszo\">Jelsz\u00F3: </label>\n        <input type=\"text\" class=\"form-control\" name=\"jelszo\" [(ngModel)]=\"model.jelszo\"\n            #jelszo=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && jelszo.invalid }\" required minlength=\"8\"/>\n        <div *ngIf=\"f.submitted && jelszo.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"jelszo.errors.required\">Add meg a jelszavad\"!</div>\n            <div *ngIf=\"jelszo.errors.minlength\">A jelsz\u00F3nak legal\u00E1bb 8 karakter hossz\u00FAnak kell lennie</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"fullName\">N\u00E9v: </label>\n        <input type=\"text\" class=\"form-control\" name=\"fullName\" [(ngModel)]=\"model.fullName\"\n            #fullName=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && fullName.invalid }\" required />\n        <div *ngIf=\"f.submitted && fullName.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"fullName.errors.required\">Add meg a neved!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"email\">E-mail c\u00EDm: </label>\n        <input type=\"text\" class=\"form-control\" name=\"email\" [(ngModel)]=\"model.email\"\n        #email=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && email.invalid }\" required email/>\n        <div *ngIf=\"f.submitted && email.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"email.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            <div *ngIf=\"email.errors.email\">\u00C9rv\u00E9nytelen e-mail c\u00EDm.</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"telefonszam\">Telefonsz\u00E1m:\n        <input type=\"text\" class=\"form-control\" name=\"telefonszam\" [(ngModel)]=\"model.telefonszam\"\n        #telefonszam=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && telefonszam.invalid }\" required /> </label>\n        <div *ngIf=\"f.submitted && telefonszam.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"telefonszam.errors.required\">Add meg a telefonsz\u00E1mod!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"facebook\">Facebook adatlap: </label>\n        <input type=\"text\" class=\"form-control\" name=\"facebook\" [(ngModel)]=\"model.facebook\"\n        #facebook=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && facebook.invalid }\" required />\n        <div *ngIf=\"f.submitted && facebook.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"facebook.errors.required\">Add meg a facebook adatlapod linkj\u00E9t!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"tantargy\">Tant\u00E1rgy: </label>\n        <input type=\"text\" class=\"form-control\" name=\"tantargy\" [(ngModel)]=\"model.tantargy\"\n        #tantargy=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && tantargy.invalid }\" required />\n        <div *ngIf=\"f.submitted && tantargy.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"tantargy.errors.required\">Add meg a tant\u00E1rgyat!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <button [disabled]=\"loading\">Regisztr\u00E1ci\u00F3</button>\n    </div>\n</form>\n";
+var registrationTemplate = "\n<form name=\"form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n    <div class=\"form-group\">\n        <label for=\"userName\">Felhaszn\u00E1l\u00F3n\u00E9v: </label>\n        <input type=\"text\" class=\"form-control\" name=\"userName\" [(ngModel)]=\"model.userName\"\n            #userName=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && userName.invalid }\" required pattern=\"[a-zA-Z1-9]*\"/>\n        <div *ngIf=\"f.submitted && userName.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"userName.errors.required\">Add meg a felhaszn\u00E1l\u00F3neved!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"jelszo\">Jelsz\u00F3: </label>\n        <input type=\"text\" class=\"form-control\" name=\"jelszo\" [(ngModel)]=\"model.jelszo\"\n            #jelszo=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && jelszo.invalid }\" required minlength=\"8\"/>\n        <div *ngIf=\"f.submitted && jelszo.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"jelszo.errors.required\">Add meg a jelszavad!</div>\n            <div *ngIf=\"jelszo.errors.minlength\">A jelsz\u00F3nak legal\u00E1bb 8 karakter hossz\u00FAnak kell lennie</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"fullName\">N\u00E9v: </label>\n        <input type=\"text\" class=\"form-control\" name=\"fullName\" [(ngModel)]=\"model.fullName\"\n            #fullName=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && fullName.invalid }\" required />\n        <div *ngIf=\"f.submitted && fullName.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"fullName.errors.required\">Add meg a neved!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"email\">E-mail c\u00EDm: </label>\n        <input type=\"text\" class=\"form-control\" name=\"email\" [(ngModel)]=\"model.email\"\n        #email=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && email.invalid }\" required email/>\n        <div *ngIf=\"f.submitted && email.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"email.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            <div *ngIf=\"email.errors.email\">\u00C9rv\u00E9nytelen e-mail c\u00EDm.</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"telefonszam\">Telefonsz\u00E1m:\n        <input type=\"text\" class=\"form-control\" name=\"telefonszam\" [(ngModel)]=\"model.telefonszam\"\n        #telefonszam=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && telefonszam.invalid }\" required /> </label>\n        <div *ngIf=\"f.submitted && telefonszam.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"telefonszam.errors.required\">Add meg a telefonsz\u00E1mod!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"facebook\">Facebook adatlap: </label>\n        <input type=\"text\" class=\"form-control\" name=\"facebook\" [(ngModel)]=\"model.facebook\"\n        #facebook=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && facebook.invalid }\" required />\n        <div *ngIf=\"f.submitted && facebook.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"facebook.errors.required\">Add meg a facebook adatlapod linkj\u00E9t!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"tantargy\">Tant\u00E1rgy: </label>\n        <input type=\"text\" class=\"form-control\" name=\"tantargy\" [(ngModel)]=\"model.tantargy\"\n        #tantargy=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && tantargy.invalid }\" required />\n        <div *ngIf=\"f.submitted && tantargy.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"tantargy.errors.required\">Add meg a tant\u00E1rgyat!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <button [disabled]=\"loading\">Regisztr\u00E1ci\u00F3</button>\n    </div>\n</form>\n";
 
 
 /***/ }),
@@ -393,24 +403,8 @@ var RegistrationComponent = /** @class */ (function () {
     function RegistrationComponent() {
         this.model = {};
     }
-    /*    registerForm: FormGroup;
-    
-        constructor(
-            private formBuilder: FormBuilder
-        ) { }
-    
-        ngOnInit() {
-            this.registerForm = this.formBuilder.group({
-                name: ['', Validators.required],
-                email: ['', [Validators.required, Validators.email]],
-                telefonszam: ['', [Validators.required, ]],
-                facebook: ['', [Validators.required, ]],
-                tantargy: ['', [Validators.required, ]],
-                password: ['', [Validators.required, Validators.minLength(6)]]
-            });
-        }
-    */
     RegistrationComponent.prototype.onSubmit = function () {
+        console.log(this.model);
     };
     RegistrationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -426,89 +420,136 @@ var RegistrationComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/components/schedule/mentorandmentored.component.scss":
-/*!**********************************************************************!*\
-  !*** ./src/app/components/schedule/mentorandmentored.component.scss ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "table {\n  border-spacing: 0px; }\n  table th, table td {\n    text-align: center;\n    padding: 5px 10px; }\n  table th {\n    background-color: #214F81;\n    color: white; }\n  table tr:nth-child(even) {\n    background-color: #CEDFF2; }\n  table .popuptr:hover {\n    color: #214F81;\n    cursor: pointer; }\n"
-
-/***/ }),
-
-/***/ "./src/app/components/schedule/mentorandmentored.component.tpl.ts":
-/*!************************************************************************!*\
-  !*** ./src/app/components/schedule/mentorandmentored.component.tpl.ts ***!
-  \************************************************************************/
-/*! exports provided: mentorandmentoredtemplate */
+/***/ "./src/app/components/schedule/institutions/insitutionspopup.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/components/schedule/institutions/insitutionspopup.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: InstitutionsPopupComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mentorandmentoredtemplate", function() { return mentorandmentoredtemplate; });
-var mentorandmentoredtemplate = "\n<app-mentors-popup></app-mentors-popup>\n<div>\n<table>\n    <thead>\n        <th>Mentor</th>\n        <th>Mentor\u00E1lt</th>\n        <th>Int\u00E9zm\u00E9ny</th>\n        <th>Mappa link</th>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let contact of contacts; let i=index\">\n            <td class=popuptr (click)=\"onClick(i)\">{{contact.mentor}}</td>\n            <td class=popuptr>{{contact.mentoralt}}</td>\n            <td class=popuptr>{{contact.intezmeny}}</td>\n            <td>{{contact.mappa}}</td>\n        </tr>\n    </tbody>\n</table>\n</div>\n";
-
-
-/***/ }),
-
-/***/ "./src/app/components/schedule/mentorandmentored.component.ts":
-/*!********************************************************************!*\
-  !*** ./src/app/components/schedule/mentorandmentored.component.ts ***!
-  \********************************************************************/
-/*! exports provided: MAndMComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MAndMComponent", function() { return MAndMComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InstitutionsPopupComponent", function() { return InstitutionsPopupComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _mentorandmentored_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mentorandmentored.component.tpl */ "./src/app/components/schedule/mentorandmentored.component.tpl.ts");
-/* harmony import */ var ngx_smart_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-smart-modal */ "./node_modules/ngx-smart-modal/esm5/ngx-smart-modal.js");
+/* harmony import */ var _institutionspopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./institutionspopup.component.tpl */ "./src/app/components/schedule/institutions/institutionspopup.component.tpl.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 
 
-
-var MAndMComponent = /** @class */ (function () {
-    function MAndMComponent(ngxSmartModalService) {
-        this.ngxSmartModalService = ngxSmartModalService;
-        this.contacts = [
-            { mentor: 'Béla', mentoralt: 'Pisti', intezmeny: 'int1', mappa: 'link1' },
-            { mentor: 'Kati', mentoralt: 'Dori', intezmeny: 'int2', mappa: 'link2' },
-            { mentor: 'Kati', mentoralt: 'Dori', intezmeny: 'int3', mappa: 'link3' }
-        ];
+var InstitutionsPopupComponent = /** @class */ (function () {
+    function InstitutionsPopupComponent() {
     }
-    MAndMComponent.prototype.onClick = function (index) {
-        this.ngxSmartModalService.getModal('mentorsPopup').open();
-        this.ngxSmartModalService.setModalData(this.contacts[index].mentor, 'mentorsPopup');
-    };
-    MAndMComponent = __decorate([
+    InstitutionsPopupComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-mentorandmentored',
-            template: _mentorandmentored_component_tpl__WEBPACK_IMPORTED_MODULE_1__["mentorandmentoredtemplate"],
-            styles: [__webpack_require__(/*! ./mentorandmentored.component.scss */ "./src/app/components/schedule/mentorandmentored.component.scss")]
-        }),
-        __metadata("design:paramtypes", [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_2__["NgxSmartModalService"]])
-    ], MAndMComponent);
-    return MAndMComponent;
+            selector: 'app-institutions-popup',
+            template: _institutionspopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__["institutionsPopupTemplate"],
+            styles: [__webpack_require__(/*! ./institutionspopup.component.scss */ "./src/app/components/schedule/institutions/institutionspopup.component.scss")]
+        })
+    ], InstitutionsPopupComponent);
+    return InstitutionsPopupComponent;
 }());
 
 
 
 /***/ }),
 
-/***/ "./src/app/components/schedule/mentors/mentorspopup.component.css":
-/*!************************************************************************!*\
-  !*** ./src/app/components/schedule/mentors/mentorspopup.component.css ***!
-  \************************************************************************/
+/***/ "./src/app/components/schedule/institutions/institutionspopup.component.scss":
+/*!***********************************************************************************!*\
+  !*** ./src/app/components/schedule/institutions/institutionspopup.component.scss ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/schedule/institutions/institutionspopup.component.tpl.ts":
+/*!*************************************************************************************!*\
+  !*** ./src/app/components/schedule/institutions/institutionspopup.component.tpl.ts ***!
+  \*************************************************************************************/
+/*! exports provided: institutionsPopupTemplate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "institutionsPopupTemplate", function() { return institutionsPopupTemplate; });
+var institutionsPopupTemplate = "\n    <ngx-smart-modal #institutionsPopup [identifier]=\"'institutionsPopup'\">\n    <table>\n        <tr>\n            <td>N\u00E9v: </td>\n            <td>{{institutionsPopup.getData()}}</td>\n        </tr>\n        <tr>\n            <td>E-mail c\u00EDm: </td>\n            <td></td>\n        </tr>\n        <tr>\n            <td>Telefonsz\u00E1m: </td>\n            <td></td>\n        </tr>\n        <tr>\n            <td>Facebook adatlap:  </td>\n            <td></td>\n        </tr>\n        <tr>\n            <td>C\u00EDm: </td>\n            <td></td>\n        </tr>\n        <tr>\n            <td>Vezet\u0151: </td>\n            <td></td>\n        </tr>\n        <tr>\n            <td>Int\u00E9zm\u00E9ny felel\u0151s: </td>\n            <td></td>\n        </tr>\n    </table>\n    <button (click)=\"institutionsPopup.close()\">Close</button>\n    </ngx-smart-modal>\n    ";
+
+
+/***/ }),
+
+/***/ "./src/app/components/schedule/mentees/menteespopup.component.scss":
+/*!*************************************************************************!*\
+  !*** ./src/app/components/schedule/mentees/menteespopup.component.scss ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/schedule/mentees/menteespopup.component.tpl.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/components/schedule/mentees/menteespopup.component.tpl.ts ***!
+  \***************************************************************************/
+/*! exports provided: menteesPopupTemplate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "menteesPopupTemplate", function() { return menteesPopupTemplate; });
+var menteesPopupTemplate = "\n    <ngx-smart-modal #menteesPopup [identifier]=\"'menteesPopup'\">\n    <table>\n        <tr>\n            <td>N\u00E9v: </td>\n            <td>{{menteesPopup.getData()}}</td>\n        </tr>\n        <tr>\n            <td>Sz\u00FClet\u00E9si d\u00E1tum: </td>\n            <td></td>\n        </tr>\n        <tr>\n            <td>Oszt\u00E1ly: </td>\n            <td></td>\n        </tr>\n        <tr>\n            <td>Tant\u00E1rgy:  </td>\n            <td></td>\n        </tr>\n        <tr>\n            <td>Int\u00E9zm\u00E9ny: </td>\n            <td></td>\n        </tr>\n        <tr>\n            <td>Megjegyz\u00E9s: </td>\n            <td></td>\n        </tr>\n    </table>\n    <button (click)=\"menteesPopup.close()\">Close</button>\n    </ngx-smart-modal>\n    ";
+
+
+/***/ }),
+
+/***/ "./src/app/components/schedule/mentees/menteespopup.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/schedule/mentees/menteespopup.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: MenteesPopupComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenteesPopupComponent", function() { return MenteesPopupComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _menteespopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menteespopup.component.tpl */ "./src/app/components/schedule/mentees/menteespopup.component.tpl.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var MenteesPopupComponent = /** @class */ (function () {
+    function MenteesPopupComponent() {
+    }
+    MenteesPopupComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-mentees-popup',
+            template: _menteespopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__["menteesPopupTemplate"],
+            styles: [__webpack_require__(/*! ./menteespopup.component.scss */ "./src/app/components/schedule/mentees/menteespopup.component.scss")]
+        })
+    ], MenteesPopupComponent);
+    return MenteesPopupComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/schedule/mentors/mentorspopup.component.scss":
+/*!*************************************************************************!*\
+  !*** ./src/app/components/schedule/mentors/mentorspopup.component.scss ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -526,7 +567,7 @@ module.exports = ""
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mentorsPopupTemplate", function() { return mentorsPopupTemplate; });
-var mentorsPopupTemplate = "\n    <ngx-smart-modal #mentorsPopup [identifier]=\"'mentorsPopup'\">\n    <p>Te {{mentorsPopup.getData()}}-t nyitottad meg :D</p>\n    <button (click)=\"mentorsPopup.close()\">Close</button>\n    </ngx-smart-modal>\n    ";
+var mentorsPopupTemplate = "\n    <ngx-smart-modal #mentorsPopup [identifier]=\"'mentorsPopup'\">\n    <table>\n        <tr>\n            <td>N\u00E9v: </td>\n            <td>{{mentorsPopup.getData()}}</td>\n        </tr>\n        <tr>\n            <td>E-mail c\u00EDm: </td>\n            <td></td>\n        </tr>\n        <tr>\n            <td>Telefonsz\u00E1m: </td>\n            <td></td>\n        </tr>\n        <tr>\n            <td>Facebook adatlap:  </td>\n            <td></td>\n        </tr>\n        <tr>\n            <td>Korcsoport: </td>\n            <td></td>\n        </tr>\n        <tr>\n            <td>Tant\u00E1rgy: </td>\n            <td></td>\n        </tr>\n        <tr>\n            <td>Int\u00E9zm\u00E9ny felel\u0151s: </td>\n            <td></td>\n        </tr>\n        <tr>\n            <td>Megjegyz\u00E9s: </td>\n            <td></td>\n        </tr>\n    </table>\n    <button (click)=\"mentorsPopup.close()\">Close</button>\n    </ngx-smart-modal>\n    ";
 
 
 /***/ }),
@@ -558,10 +599,97 @@ var MentorsPopupComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-mentors-popup',
             template: _mentorspopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__["mentorsPopupTemplate"],
-            styles: [__webpack_require__(/*! ./mentorspopup.component.css */ "./src/app/components/schedule/mentors/mentorspopup.component.css")]
+            styles: [__webpack_require__(/*! ./mentorspopup.component.scss */ "./src/app/components/schedule/mentors/mentorspopup.component.scss")]
         })
     ], MentorsPopupComponent);
     return MentorsPopupComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/schedule/schedule.component.scss":
+/*!*************************************************************!*\
+  !*** ./src/app/components/schedule/schedule.component.scss ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "table {\n  border-spacing: 0px; }\n  table th, table td {\n    text-align: center;\n    padding: 5px 10px; }\n  table th {\n    background-color: #214F81;\n    color: white; }\n  table tr:nth-child(even) {\n    background-color: #CEDFF2; }\n  table .popuptr:hover {\n    color: #214F81;\n    cursor: pointer; }\n"
+
+/***/ }),
+
+/***/ "./src/app/components/schedule/schedule.component.tpl.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/components/schedule/schedule.component.tpl.ts ***!
+  \***************************************************************/
+/*! exports provided: scheduletemplate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scheduletemplate", function() { return scheduletemplate; });
+var scheduletemplate = "\n<app-mentors-popup></app-mentors-popup>\n<app-mentees-popup></app-mentees-popup>\n<app-institutions-popup></app-institutions-popup>\n<div>\n<table>\n    <thead>\n        <th>Mentor</th>\n        <th>Mentor\u00E1lt</th>\n        <th>Int\u00E9zm\u00E9ny</th>\n        <th>Mappa link</th>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let contact of contacts; let i=index\">\n            <td class=popuptr (click)=\"showMentor(i)\">{{contact.mentor}}</td>\n            <td class=popuptr (click)=\"showMentored(i)\">{{contact.mentoralt}}</td>\n            <td class=popuptr (click)=\"showInstitution(i)\">{{contact.intezmeny}}</td>\n            <td>{{contact.mappa}}</td>\n        </tr>\n    </tbody>\n</table>\n</div>\n";
+
+
+/***/ }),
+
+/***/ "./src/app/components/schedule/schedule.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/components/schedule/schedule.component.ts ***!
+  \***********************************************************/
+/*! exports provided: ScheduleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScheduleComponent", function() { return ScheduleComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _schedule_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./schedule.component.tpl */ "./src/app/components/schedule/schedule.component.tpl.ts");
+/* harmony import */ var ngx_smart_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-smart-modal */ "./node_modules/ngx-smart-modal/esm5/ngx-smart-modal.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ScheduleComponent = /** @class */ (function () {
+    function ScheduleComponent(ngxSmartModalService) {
+        this.ngxSmartModalService = ngxSmartModalService;
+        this.contacts = [
+            { mentor: 'Béla', mentoralt: 'Pisti', intezmeny: 'int1', mappa: 'link1' },
+            { mentor: 'Kati', mentoralt: 'Dori', intezmeny: 'int2', mappa: 'link2' },
+            { mentor: 'Kati', mentoralt: 'Dori', intezmeny: 'int3', mappa: 'link3' }
+        ];
+    }
+    ScheduleComponent.prototype.showMentor = function (index) {
+        this.ngxSmartModalService.getModal('mentorsPopup').open();
+        this.ngxSmartModalService.setModalData(this.contacts[index].mentor, 'mentorsPopup', true);
+    };
+    ScheduleComponent.prototype.showMentored = function (index) {
+        this.ngxSmartModalService.getModal('menteesPopup').open();
+        this.ngxSmartModalService.setModalData(this.contacts[index].mentoralt, 'menteesPopup', true);
+    };
+    ScheduleComponent.prototype.showInstitution = function (index) {
+        this.ngxSmartModalService.getModal('institutionsPopup').open();
+        this.ngxSmartModalService.setModalData(this.contacts[index].intezmeny, 'institutionsPopup', true);
+    };
+    ScheduleComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-schedule',
+            template: _schedule_component_tpl__WEBPACK_IMPORTED_MODULE_1__["scheduletemplate"],
+            styles: [__webpack_require__(/*! ./schedule.component.scss */ "./src/app/components/schedule/schedule.component.scss")]
+        }),
+        __metadata("design:paramtypes", [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_2__["NgxSmartModalService"]])
+    ], ScheduleComponent);
+    return ScheduleComponent;
 }());
 
 
