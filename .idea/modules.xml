@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/rftbackend/rftbackend.iml" filepath="$PROJECT_DIR$/rftbackend/rftbackend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rftfrontend/rftfrontend.iml" filepath="$PROJECT_DIR$/rftfrontend/rftfrontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rftproject.iml" filepath="$PROJECT_DIR$/rftproject.iml" />
+    </modules>
+  </component>
+</project>
