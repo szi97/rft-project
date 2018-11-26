@@ -1,6 +1,6 @@
 export const apptemplate = `
 <div class="header">
-    <h1 class="header-contet">Láthatatlan iskola</h1>
+    <img src="../assets/lathatatlan_logokek.png">
     <app-login></app-login>
 </div>
 <nav class="topnavigation" id="mynav">

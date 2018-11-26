@@ -1,7 +1,12 @@
 .header{
-    height: 100px;
-    padding: 10px;
+    height:200px;
+    padding: 0px;
     background-color: #214F81;
+    position: relative;
+
+    img {
+        height: 200px;
+    }
 
     h1 {
         line-height: 80px; 

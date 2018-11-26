@@ -1,5 +1,6 @@
 export const logintemplate = `
-<form name="login-form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+<div id="container">
+    <form name="login-form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
         <div class="login-form-group">
             <input type="text" name="loginUsername" [(ngModel)]="model.loginUsername"
             #loginUsername="ngModel" [ngClass]="{ 'is-invalid': f.submitted && loginUsername.invalid }" required />
@@ -18,4 +19,5 @@ export const logintemplate = `
             <button [disabled]="loading">Bejelentkezés</button>
         </div>
     </form>
+</div>
 `;
