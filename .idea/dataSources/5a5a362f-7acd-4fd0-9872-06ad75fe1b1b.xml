@@ -1075,101 +1075,106 @@
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="232" name="Telefonszam">
+    <column id="265" parent="232" name="Facebook_adatlap">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="232" name="Facebook_adatlap">
+    <column id="266" parent="232" name="Telefonszam">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="232" name="Korcsoport">
+    <column id="267" parent="232" name="Jelszo">
       <Position>6</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>varchar(511)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="268" parent="232" name="Tantargy">
+    <column id="268" parent="232" name="Korcsoport">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="269" parent="232" name="Intezmenyfelelos">
+    <column id="269" parent="232" name="Tantargy">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="270" parent="232" name="Megjegyzes">
+    <column id="270" parent="232" name="Intezmenyfelelos">
       <Position>9</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="271" parent="232" name="Megjegyzes">
+      <Position>10</Position>
       <DataType>varchar(511)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="271" parent="232" name="PRIMARY">
+    <key id="272" parent="232" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="272" parent="233" name="Oraszam">
+    <column id="273" parent="233" name="Oraszam">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="273" parent="233" name="Datum">
+    <column id="274" parent="233" name="Datum">
       <Position>2</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="274" parent="233" name="Idopont">
+    <column id="275" parent="233" name="Idopont">
       <Position>3</Position>
       <DataType>time|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="233" name="Helyszin">
+    <column id="276" parent="233" name="Helyszin">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="276" parent="233" name="Tantargy">
+    <column id="277" parent="233" name="Tantargy">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="277" parent="233" name="Ora_temaja">
+    <column id="278" parent="233" name="Ora_temaja">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="233" name="Megjegyzes">
+    <column id="279" parent="233" name="Megjegyzes">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="279" parent="233" name="Mentor_ID">
+    <column id="280" parent="233" name="Mentor_ID">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="280" parent="233" name="Mentoralt_ID">
+    <column id="281" parent="233" name="Mentoralt_ID">
       <Position>9</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="281" parent="233" name="orarend_mentorok__fk">
+    <index id="282" parent="233" name="orarend_mentorok__fk">
       <ColNames>Mentor_ID</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="282" parent="233" name="orarend_mentoralt__fk">
+    <index id="283" parent="233" name="orarend_mentoralt__fk">
       <ColNames>Mentoralt_ID</ColNames>
       <Type>btree</Type>
     </index>
-    <foreign-key id="283" parent="233" name="orarend_mentorok__fk">
+    <foreign-key id="284" parent="233" name="orarend_mentorok__fk">
       <ColNames>Mentor_ID</ColNames>
       <RefSchemaName>sulimuri</RefSchemaName>
       <RefTableName>mentorok</RefTableName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
-    <foreign-key id="284" parent="233" name="orarend_mentoralt__fk">
+    <foreign-key id="285" parent="233" name="orarend_mentoralt__fk">
       <ColNames>Mentoralt_ID</ColNames>
       <RefSchemaName>sulimuri</RefSchemaName>
       <RefTableName>mentoraltak</RefTableName>

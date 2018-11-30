@@ -1,41 +1,33 @@
 package rftbackend.Controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import rftbackend.Models.Mentor;
+import rftbackend.Services.RegistrationService;
 
-/*public class RegistrationController{
+import java.io.IOException;
 
-private RegistrationService registrationService = new RegistrationService();
+@RestController
+public class RegistrationController {
 
-//metodus @RequestMapping("Post")-el vagy valami ilyesmi ott van a mentorcontrollerben a pelda, neten meg meg lehet nezni a pontos parameteratadast pl. int eletkor vagy fasztudja ami kell
-{
- if(registrationService.registerMentor(eletkor stb parameterek)){
-return valami oldal url vagy fasz tudja milyen return type ide jon ahova redirectelni akarsz miutab letrejott a mentor
-}
+    @Autowired
+    RegistrationService registrationService;
 
-return Json vagy fasz tudja milyen return type van itt az is ott van a mebtorban ide majd az megy h milyen oldalra redirectel de itt ugye nem sikerul ugyh mondjuk kuld egy error message-t h valami nem fasza mar regisztralva van vagy stb erre majd konretan meg kell irni a validaciot meg lekezelni milyen hiba menjen ha ez a baj vagy ha az a baj vagy harmadik fajta baj van
-}
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String registerMentor(@RequestBody Mentor mentor) throws IOException {
+        String result = new String("asd");
 
-}
+        if (registrationService.registerMentor(mentor.getEmail(), mentor.getPassword(), mentor.getName(), mentor.getPhone(), mentor.getFacebook(), mentor.getSubject())){
+            result = "Successful registration!";
+        }
+        else{
+            result = "Unsuccessful registration!";
+        }
 
-_______
+        return result; //lehet majd más a visszatérési értéke, ha mondjuk ezután el akarunk navigálni máshova
 
-public class RegistrationService{
-
-public RegistrationService{} //konstruktor
-
-public bool registerMentor(int eletkor stb parameterek){
-
-Mentor mentorToBeRegistered = new Mentor(eletkor stb parameter, kell neki egy olyan konstruktor ami az itt megadott parameterekkel dolgozik);
-
-DatabaseSzutyokServiceValami dbservice = new DatabaseSzutyokServiceValami();
-
-try{
-dbservice.save(mentorToBeRegistered); //fogalmam sincs fejbol mi a neve amivel ezt a spring/jpa/hibernate megcsinalja van egy ugyanolyan beepitett metodus erre mint a kiolvasasra
-}
-catch(SqlException e //vagy akarmilyen valami ecception amit dob a spring/jpa/hibernate ha nem sikerul letrehozni a sort a tablaban){
-return false; //nem sikerult letrehozni szal false
-}
-return true; //sikerult letrehozni
-}
+    }
 
 }
-*/
+
+

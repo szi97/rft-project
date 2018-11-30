@@ -29,7 +29,7 @@ public class Mentee {
     @Column(name = "Megjegyzes")
     private String comment;
 
-    @Column(name = "IntezmenyID")
+    @Column(name = "Intezmeny_ID")
     private String institutionid;
 
 

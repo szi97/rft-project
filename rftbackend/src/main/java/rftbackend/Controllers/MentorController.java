@@ -14,7 +14,7 @@ public class MentorController {
     @Autowired
     MentorRepository mentorRepo;
 
-    @GetMapping("/test")
+    @GetMapping("/testmentor")
     public List<Mentor> listMentors() {
         List<Mentor> example = mentorRepo.findAll();
         return example;

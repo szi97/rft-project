@@ -19,6 +19,9 @@ public class Mentor {
     @Column(name = "Email_cim")
     private String email;
 
+    @Column(name = "Jelszo")
+    private String password;
+
     @Column(name = "Telefonszam")
     private String phone;
 
@@ -53,6 +56,17 @@ public class Mentor {
 
     }
 
+    public Mentor(long id, String email, String password, String name, String phoneNumber, String facebook, String subjects){
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.phone = phoneNumber;
+        this.facebook = facebook;
+        this.subject = subjects; //ezt találjátok ki, hogy milyen módon és ki adja meg, több lesz egyszerre? akkor lista kell, vagy valahogy szétszedni .split() vagy valami
+        //pro tip: listbox-ból lehessen kiválasztani: nincs hibalehetőség
+    }
+
 
     public long getId() {
         return id;
@@ -76,6 +90,14 @@ public class Mentor {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getPhone() {
