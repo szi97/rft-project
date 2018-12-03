@@ -21,6 +21,8 @@ public class DatabaseLogic {
 
     public boolean saveMentor(Mentor mentor) {
         try{
+            mentor.convertAgegroupListToDb();
+            mentor.convertSubjectListToDb();
             mentorRepo.save(mentor);
         }
         catch (Exception e){

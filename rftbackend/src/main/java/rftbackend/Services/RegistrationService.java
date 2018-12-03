@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import rftbackend.Logic.DatabaseLogic;
 import rftbackend.Models.Mentor;
 
+import java.util.ArrayList;
+
 @Service
 public class RegistrationService {
     @Autowired
@@ -16,10 +18,10 @@ public class RegistrationService {
 
     }
 
-    public boolean registerMentor(String email, String password, String name, String phoneNumber, String facebook, String subjects){
+    public boolean registerMentor(String email, String password, String name, String phoneNumber, String facebook, ArrayList<String> agegroups,  ArrayList<String> subjects) {
         long id = generatorService.generateId();
         String encryptedMentorPw = generatorService.encryptPassword(password);
-        Mentor mentorToBeRegistered = new Mentor(id, email,encryptedMentorPw, name, phoneNumber, facebook, subjects);
+        Mentor mentorToBeRegistered = new Mentor(id, email,encryptedMentorPw, name, phoneNumber, facebook, agegroups, subjects);
 
         //front-enden a password mezőt becsillagozni
 

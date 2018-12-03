@@ -14,6 +14,7 @@ import { TimetableComponent } from './components/timetable/timetable.component';
 import {LoginComponent} from './components/login/login.component';
 import { MenteesPopupComponent } from './components/schedule/mentees/menteespopup.component';
 import { InstitutionsPopupComponent } from './components/schedule/institutions/insitutionspopup.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { InstitutionsPopupComponent } from './components/schedule/institutions/i
     BrowserModule,
     AppRoutingModule,
     NgxSmartModalModule.forRoot(),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [NgxSmartModalService],
   bootstrap: [AppComponent]
