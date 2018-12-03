@@ -11,6 +11,9 @@ public class Schedule {
 
     //
     @Id
+    @Column(name="Menetrend_ID")
+    Long scheduleid;
+
     @Column(name="Mentor_ID")
     Long mentorid;
 
@@ -20,11 +23,11 @@ public class Schedule {
     @Column(name = "Intezmeny_ID")
     Long institutionid;
 
-    @Column(name = "Mappa_link")
+    @Column(name = "Mappalink")
     private String folder;
 
-
-    public Schedule(long mentorid, long mentoraltid, long institutionid, String folder)   {
+    public Schedule(long scheduleid, long mentorid, long mentoraltid, long institutionid, String folder)   {
+        this.scheduleid = scheduleid;
         this.mentorid = mentorid;
         this.mentoraltid = mentoraltid;
         this.institutionid = institutionid;
@@ -33,6 +36,14 @@ public class Schedule {
 
     public Schedule (){
 
+    }
+
+    public Long getScheduleid() {
+        return scheduleid;
+    }
+
+    public void setScheduleid(Long scheduleid) {
+        this.scheduleid = scheduleid;
     }
 
     public Long getMentorid() {

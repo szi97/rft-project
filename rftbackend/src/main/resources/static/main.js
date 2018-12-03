@@ -102,6 +102,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
 /* harmony import */ var _components_schedule_mentees_menteespopup_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/schedule/mentees/menteespopup.component */ "./src/app/components/schedule/mentees/menteespopup.component.ts");
 /* harmony import */ var _components_schedule_institutions_insitutionspopup_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/schedule/institutions/insitutionspopup.component */ "./src/app/components/schedule/institutions/insitutionspopup.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -111,6 +112,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -146,7 +148,8 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
                 ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalModule"].forRoot(),
-                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"]
             ],
             providers: [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalService"]],
             bootstrap: [_components_app_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
@@ -374,7 +377,7 @@ module.exports = ".form-group {\n  padding: 20px;\n  color: #444444;\n  width: 1
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registrationTemplate", function() { return registrationTemplate; });
-var registrationTemplate = "\n<form name=\"form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n    <div class=\"form-group\">\n        <label for=\"userName\">Felhaszn\u00E1l\u00F3n\u00E9v: </label>\n        <input type=\"text\" class=\"form-control\" name=\"userName\" [(ngModel)]=\"model.userName\"\n            #userName=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && userName.invalid }\" required pattern=\"[a-zA-Z1-9]*\"/>\n        <div *ngIf=\"f.submitted && userName.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"userName.errors.required\">Add meg a felhaszn\u00E1l\u00F3neved!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"jelszo\">Jelsz\u00F3: </label>\n        <input type=\"text\" class=\"form-control\" name=\"jelszo\" [(ngModel)]=\"model.jelszo\"\n            #jelszo=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && jelszo.invalid }\" required minlength=\"8\"/>\n        <div *ngIf=\"f.submitted && jelszo.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"jelszo.errors.required\">Add meg a jelszavad!</div>\n            <div *ngIf=\"jelszo.errors.minlength\">A jelsz\u00F3nak legal\u00E1bb 8 karakter hossz\u00FAnak kell lennie</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"fullName\">N\u00E9v: </label>\n        <input type=\"text\" class=\"form-control\" name=\"fullName\" [(ngModel)]=\"model.fullName\"\n            #fullName=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && fullName.invalid }\" required />\n        <div *ngIf=\"f.submitted && fullName.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"fullName.errors.required\">Add meg a neved!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"email\">E-mail c\u00EDm: </label>\n        <input type=\"text\" class=\"form-control\" name=\"email\" [(ngModel)]=\"model.email\"\n        #email=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && email.invalid }\" required email/>\n        <div *ngIf=\"f.submitted && email.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"email.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            <div *ngIf=\"email.errors.email\">\u00C9rv\u00E9nytelen e-mail c\u00EDm.</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"telefonszam\">Telefonsz\u00E1m:\n        <input type=\"text\" class=\"form-control\" name=\"telefonszam\" [(ngModel)]=\"model.telefonszam\"\n        #telefonszam=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && telefonszam.invalid }\" required /> </label>\n        <div *ngIf=\"f.submitted && telefonszam.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"telefonszam.errors.required\">Add meg a telefonsz\u00E1mod!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"facebook\">Facebook adatlap: </label>\n        <input type=\"text\" class=\"form-control\" name=\"facebook\" [(ngModel)]=\"model.facebook\"\n        #facebook=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && facebook.invalid }\" required />\n        <div *ngIf=\"f.submitted && facebook.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"facebook.errors.required\">Add meg a facebook adatlapod linkj\u00E9t!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"tantargy\">Tant\u00E1rgy: </label>\n        <input type=\"text\" class=\"form-control\" name=\"tantargy\" [(ngModel)]=\"model.tantargy\"\n        #tantargy=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && tantargy.invalid }\" required />\n        <div *ngIf=\"f.submitted && tantargy.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"tantargy.errors.required\">Add meg a tant\u00E1rgyat!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <button [disabled]=\"loading\">Regisztr\u00E1ci\u00F3</button>\n    </div>\n</form>\n";
+var registrationTemplate = "\n<form name=\"form\" (ngSubmit)=\"f.form.valid && onSubmit(f.form.value)\" #f=\"ngForm\">\n    <div class=\"form-group\">\n        <label for=\"email\">E-mail c\u00EDm: </label>\n        <input type=\"text\" class=\"form-control\" name=\"email\" [(ngModel)]=\"model.email\"\n        #email=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && email.invalid }\" required email/>\n        <div *ngIf=\"f.submitted && email.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"email.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            <div *ngIf=\"email.errors.email\">\u00C9rv\u00E9nytelen e-mail c\u00EDm.</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"password\">Jelsz\u00F3: </label>\n        <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"model.password\"\n            #password=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && password.invalid }\" required minlength=\"8\"/>\n        <div *ngIf=\"f.submitted && password.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"password.errors.required\">Add meg a jelszavad!</div>\n            <div *ngIf=\"password.errors.minlength\">A jelsz\u00F3nak legal\u00E1bb 8 karakter hossz\u00FAnak kell lennie</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"name\">N\u00E9v: </label>\n        <input type=\"text\" class=\"form-control\" name=\"name\" [(ngModel)]=\"model.name\"\n            #name=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && name.invalid }\" required />\n        <div *ngIf=\"f.submitted && name.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"name.errors.required\">Add meg a neved!</div>\n        </div>\n    </div>\n    \n    <div class=\"form-group\">\n        <label for=\"phone\">Telefonsz\u00E1m:\n        <input type=\"text\" class=\"form-control\" name=\"phone\" [(ngModel)]=\"model.phone\"\n        #phoneNumber=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && phone.invalid }\" required /> </label>\n        <div *ngIf=\"f.submitted && phone.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"phone.errors.required\">Add meg a telefonsz\u00E1mod!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"facebook\">Facebook adatlap: </label>\n        <input type=\"text\" class=\"form-control\" name=\"facebook\" [(ngModel)]=\"model.facebook\"\n        #facebook=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && facebook.invalid }\" required />\n        <div *ngIf=\"f.submitted && facebook.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"facebook.errors.required\">Add meg a facebook adatlapod linkj\u00E9t!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"agegroup\">Korcsoportok: </label>\n        <input type=\"text\" class=\"form-control\" name=\"agegroup\" [(ngModel)]=\"model.agegroup\"\n        #subjects=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && subject.invalid }\" required />\n        <div *ngIf=\"f.submitted && agegroup.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"agegroup.errors.required\">Add meg a korcsoportot!</div>\n        </div> //ListBox!!!\n    </div>\n    <div class=\"form-group\">\n        <label for=\"subject\">Tant\u00E1rgyak: </label>\n        <input type=\"text\" class=\"form-control\" name=\"subject\" [(ngModel)]=\"model.subject\"\n        #subjects=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && subject.invalid }\" required />\n        <div *ngIf=\"f.submitted && subject.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"subject.errors.required\">Add meg a tant\u00E1rgyat!</div>\n        </div> //ListBox!!!\n    </div>\n    <div class=\"form-group\">\n        <button [disabled]=\"loading\">Regisztr\u00E1ci\u00F3</button>\n    </div>\n</form>\n";
 
 
 /***/ }),
@@ -383,37 +386,61 @@ var registrationTemplate = "\n<form name=\"form\" (ngSubmit)=\"f.form.valid && o
 /*!*******************************************************************!*\
   !*** ./src/app/components/registration/registration.component.ts ***!
   \*******************************************************************/
-/*! exports provided: RegistrationComponent */
+/*! exports provided: RegistrationComponent, Model */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegistrationComponent", function() { return RegistrationComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Model", function() { return Model; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _registration_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./registration.component.tpl */ "./src/app/components/registration/registration.component.tpl.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 
 var RegistrationComponent = /** @class */ (function () {
-    function RegistrationComponent() {
+    function RegistrationComponent(http) {
+        this.http = http;
         this.model = {};
     }
-    RegistrationComponent.prototype.onSubmit = function () {
-        console.log(this.model);
+    /*onSubmit() {
+        /!*console.log(this.model);*!/
+      return this.http.post<Mentor>("/register", mentor);
+    }*/
+    RegistrationComponent.prototype.onSubmit = function (model) {
+        this.http.post('/register', model).subscribe(function (status) { return console.log(JSON.stringify(status)); });
     };
     RegistrationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-registration',
             template: _registration_component_tpl__WEBPACK_IMPORTED_MODULE_1__["registrationTemplate"],
             styles: [__webpack_require__(/*! ./registration.component.scss */ "./src/app/components/registration/registration.component.scss")]
-        })
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], RegistrationComponent);
     return RegistrationComponent;
+}());
+
+var Model = /** @class */ (function () {
+    function Model(email1, password1, name1, phone1, facebook1, subject1) {
+        this.email = email1;
+        this.password = password1;
+        this.name = name1;
+        this.phone = phone1;
+        this.facebook = facebook1;
+        this.subject = subject1;
+    }
+    return Model;
 }());
 
 

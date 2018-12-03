@@ -17,7 +17,7 @@ public class RegistrationController {
     public String registerMentor(@RequestBody Mentor mentor) throws IOException {
         String result = new String("asd");
 
-        if (registrationService.registerMentor(mentor.getEmail(), mentor.getPassword(), mentor.getName(), mentor.getPhone(), mentor.getFacebook(), mentor.getSubject())){
+        if (registrationService.registerMentor(mentor.getEmail(), mentor.getPassword(), mentor.getName(), mentor.getPhone(), mentor.getFacebook(), mentor.getAgegroupList(), mentor.getSubjectList())){
             result = "Successful registration!";
         }
         else{

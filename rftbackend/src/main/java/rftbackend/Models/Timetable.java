@@ -1,9 +1,6 @@
 package rftbackend.Models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -32,16 +29,17 @@ public class Timetable {
     @Column(name = "Megjegyzes")
     private String comment;
 
-    @Id
     @Column(name = "Mentor_ID")
     private Long mentorid;
 
-    @Id
     @Column(name = "Mentoralt_ID")
     private Long menteeid;
 
+    @Id
+    @Column(name = "Orarend_ID")
+    Long timetableid;
 
-    public Timetable(long lessonnumber, Date date, Date time, String location, String topic, String comment, long mentorid, long menteeid)   {
+    public Timetable(long lessonnumber, Date date, Date time, String location, String topic, String comment, long mentorid, long menteeid, long timetableid)   {
         this.lessonnumber = lessonnumber;
         this.date = date;
         this.time = time;
@@ -50,6 +48,7 @@ public class Timetable {
         this.comment = comment;
         this.mentorid = mentorid;
         this.menteeid = menteeid;
+        this.timetableid = timetableid;
     }
 
     public Timetable(){
@@ -129,7 +128,13 @@ public class Timetable {
         this.menteeid = menteeid;
     }
 
+    public Long getTimetableid() {
+        return timetableid;
+    }
 
+    public void setTimetableid(Long timetableid) {
+        this.timetableid = timetableid;
+    }
 
 
 

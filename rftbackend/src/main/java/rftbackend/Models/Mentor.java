@@ -1,14 +1,13 @@
 package rftbackend.Models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 @Entity
 @Table(name = "mentorok", schema = "sulimuri")
-public class Mentor {
+@Embeddable
+public class Mentor implements Serializable {
 
     @Id
     @Column(name="ID")
@@ -41,8 +40,10 @@ public class Mentor {
     @Column(name = "Megjegyzes")
     private String comment;
 
+    @Transient
     private ArrayList<String> agegroupList;
 
+    @Transient
     private ArrayList<String> subjectList;
 
 
@@ -72,7 +73,8 @@ public class Mentor {
         this.phone = phoneNumber;
         this.facebook = facebook;
         this.agegroupList = agegroups;
-        this.subjectList = subjects; //ezt találjátok ki, hogy milyen módon és ki adja meg, több lesz egyszerre? akkor lista kell, vagy valahogy szétszedni .split() vagy valami
+        this.subjectList = subjects;
+        //ezt találjátok ki, hogy milyen módon és ki adja meg, több lesz egyszerre? akkor lista kell, vagy valahogy szétszedni .split() vagy valami
         //pro tip: listbox-ból lehessen kiválasztani: nincs hibalehetőség
     }
 
