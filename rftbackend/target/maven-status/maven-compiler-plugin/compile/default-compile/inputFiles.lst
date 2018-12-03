@@ -16,4 +16,5 @@
 /home/kisfiu/git/rft-project/rftbackend/src/main/java/rftbackend/Repositories/ScheduleRepository.java
 /home/kisfiu/git/rft-project/rftbackend/src/main/java/rftbackend/Controllers/ScheduleController.java
 /home/kisfiu/git/rft-project/rftbackend/src/main/java/rftbackend/Models/Schedule.java
+/home/kisfiu/git/rft-project/rftbackend/src/main/java/rftbackend/Models/Timetable.java
 /home/kisfiu/git/rft-project/rftbackend/src/main/java/rftbackend/Models/Mentor.java

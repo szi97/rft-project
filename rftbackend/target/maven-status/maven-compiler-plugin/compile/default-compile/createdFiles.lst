@@ -3,6 +3,7 @@ rftbackend/Services/RegistrationService.class
 rftbackend/Controllers/MenteeController.class
 rftbackend/Models/Institution.class
 rftbackend/Models/Mentee.class
+rftbackend/Models/Timetable.class
 rftbackend/Repositories/MentorRepository.class
 rftbackend/Repositories/MenteeRepository.class
 rftbackend/Controllers/ScheduleController.class
