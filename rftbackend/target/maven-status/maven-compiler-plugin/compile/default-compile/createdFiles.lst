@@ -6,6 +6,7 @@ rftbackend/Models/Mentee.class
 rftbackend/Models/Timetable.class
 rftbackend/Repositories/MentorRepository.class
 rftbackend/Repositories/MenteeRepository.class
+rftbackend/Models/ScheduleTableRow.class
 rftbackend/Controllers/ScheduleController.class
 rftbackend/Services/GeneratorService.class
 rftbackend/Config/DatabaseConfig.class

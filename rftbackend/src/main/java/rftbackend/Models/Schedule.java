@@ -18,7 +18,7 @@ public class Schedule {
     Long mentorid;
 
     @Column(name = "Mentoralt_ID")
-    Long mentoraltid;
+    Long menteeid;
 
     @Column(name = "Intezmeny_ID")
     Long institutionid;
@@ -26,10 +26,10 @@ public class Schedule {
     @Column(name = "Mappalink")
     private String folder;
 
-    public Schedule(long scheduleid, long mentorid, long mentoraltid, long institutionid, String folder)   {
+    public Schedule(long scheduleid, long mentorid, long menteeid, long institutionid, String folder)   {
         this.scheduleid = scheduleid;
         this.mentorid = mentorid;
-        this.mentoraltid = mentoraltid;
+        this.menteeid = menteeid;
         this.institutionid = institutionid;
         this.folder = folder;
     }
@@ -54,12 +54,12 @@ public class Schedule {
         this.mentorid = mentorid;
     }
 
-    public Long getMentoraltid() {
-        return mentoraltid;
+    public Long getMenteeid() {
+        return menteeid;
     }
 
-    public void setMentoraltid(Long mentoraltid) {
-        this.mentoraltid = mentoraltid;
+    public void setMenteeid(Long menteeid) {
+        this.menteeid = menteeid;
     }
 
     public Long getInstitutionid() {

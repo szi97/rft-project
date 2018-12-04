@@ -7,6 +7,7 @@ import rftbackend.Repositories.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DatabaseLogic {
@@ -72,6 +73,18 @@ public class DatabaseLogic {
 
     public List<Mentor> getMentors() {
         return mentors;
+    }
+
+    public Optional<Mentor> getMentorById(long id){
+        return mentorRepo.findById(id);
+    }
+
+    public Optional<Mentee> getMenteeById(long id){
+        return menteeRepo.findById(id);
+    }
+
+    public Optional<Institution> getInstitutionById(long id){
+        return institutionRepo.findById(id);
     }
 
     public void setMentors(List<Mentor> mentors) {
