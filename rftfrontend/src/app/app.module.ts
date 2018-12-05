@@ -33,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     NgxSmartModalModule.forRoot(),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [NgxSmartModalService],
   bootstrap: [AppComponent]

@@ -149,7 +149,8 @@ var AppModule = /** @class */ (function () {
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
                 ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalModule"].forRoot(),
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"]
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]
             ],
             providers: [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalService"]],
             bootstrap: [_components_app_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
@@ -363,7 +364,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".form-group {\n  padding: 20px;\n  color: #444444;\n  width: 100%; }\n  .form-group input {\n    border: none;\n    border-bottom: 2px solid #CEDFF2;\n    height: 30px;\n    display: flex;\n    width: 20em; }\n  .form-group input:focus {\n    outline: none;\n    border-bottom: 2px solid #214F81; }\n  .form-group .invalid-feedback {\n    color: red;\n    font-size: 12px; }\n  .form-group button {\n    background-color: #214F81;\n    color: white;\n    font-size: 18px;\n    border: none;\n    height: 30px; }\n  .form-group button:hover {\n    cursor: pointer; }\n"
+module.exports = ".form-group {\n  padding: 20px;\n  color: #444444;\n  width: 100%; }\n  .form-group input[type=\"text\"], .form-group input[type=\"password\"] {\n    border: none;\n    border-bottom: 2px solid #CEDFF2;\n    height: 30px;\n    display: flex;\n    width: 20em; }\n  .form-group input:focus {\n    outline: none;\n    border-bottom: 2px solid #214F81; }\n  .form-group .invalid-feedback {\n    color: red;\n    font-size: 12px; }\n  .form-group .input[type=\"checkbox\"] + label span {\n    height: 15px;\n    width: 15px; }\n  .form-group button {\n    background-color: #214F81;\n    color: white;\n    font-size: 18px;\n    border: none;\n    height: 30px; }\n  .form-group button:hover {\n    cursor: pointer; }\n"
 
 /***/ }),
 
@@ -377,7 +378,7 @@ module.exports = ".form-group {\n  padding: 20px;\n  color: #444444;\n  width: 1
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registrationTemplate", function() { return registrationTemplate; });
-var registrationTemplate = "\n<form name=\"form\" (ngSubmit)=\"f.form.valid && onSubmit(f.form.value)\" #f=\"ngForm\">\n    <div class=\"form-group\">\n        <label for=\"email\">E-mail c\u00EDm: </label>\n        <input type=\"text\" class=\"form-control\" name=\"email\" [(ngModel)]=\"model.email\"\n        #email=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && email.invalid }\" required email/>\n        <div *ngIf=\"f.submitted && email.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"email.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            <div *ngIf=\"email.errors.email\">\u00C9rv\u00E9nytelen e-mail c\u00EDm.</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"password\">Jelsz\u00F3: </label>\n        <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"model.password\"\n            #password=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && password.invalid }\" required minlength=\"8\"/>\n        <div *ngIf=\"f.submitted && password.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"password.errors.required\">Add meg a jelszavad!</div>\n            <div *ngIf=\"password.errors.minlength\">A jelsz\u00F3nak legal\u00E1bb 8 karakter hossz\u00FAnak kell lennie</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"name\">N\u00E9v: </label>\n        <input type=\"text\" class=\"form-control\" name=\"name\" [(ngModel)]=\"model.name\"\n            #name=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && name.invalid }\" required />\n        <div *ngIf=\"f.submitted && name.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"name.errors.required\">Add meg a neved!</div>\n        </div>\n    </div>\n    \n    <div class=\"form-group\">\n        <label for=\"phone\">Telefonsz\u00E1m:\n        <input type=\"text\" class=\"form-control\" name=\"phone\" [(ngModel)]=\"model.phone\"\n        #phoneNumber=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && phone.invalid }\" required /> </label>\n        <div *ngIf=\"f.submitted && phone.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"phone.errors.required\">Add meg a telefonsz\u00E1mod!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"facebook\">Facebook adatlap: </label>\n        <input type=\"text\" class=\"form-control\" name=\"facebook\" [(ngModel)]=\"model.facebook\"\n        #facebook=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && facebook.invalid }\" required />\n        <div *ngIf=\"f.submitted && facebook.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"facebook.errors.required\">Add meg a facebook adatlapod linkj\u00E9t!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"agegroup\">Korcsoportok: </label>\n        <input type=\"text\" class=\"form-control\" name=\"agegroup\" [(ngModel)]=\"model.agegroup\"\n        #subjects=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && subject.invalid }\" required />\n        <div *ngIf=\"f.submitted && agegroup.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"agegroup.errors.required\">Add meg a korcsoportot!</div>\n        </div> //ListBox!!!\n    </div>\n    <div class=\"form-group\">\n        <label for=\"subject\">Tant\u00E1rgyak: </label>\n        <input type=\"text\" class=\"form-control\" name=\"subject\" [(ngModel)]=\"model.subject\"\n        #subjects=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && subject.invalid }\" required />\n        <div *ngIf=\"f.submitted && subject.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"subject.errors.required\">Add meg a tant\u00E1rgyat!</div>\n        </div> //ListBox!!!\n    </div>\n    <div class=\"form-group\">\n        <button [disabled]=\"loading\">Regisztr\u00E1ci\u00F3</button>\n    </div>\n</form>\n";
+var registrationTemplate = "\n<form name=\"form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n    <div class=\"form-group\">\n        <label for=\"email\">E-mail c\u00EDm: </label>\n        <input type=\"text\" class=\"form-control\" name=\"email\" [(ngModel)]=\"model.email\"\n        #email=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && email.invalid }\" required email/>\n        <div *ngIf=\"f.submitted && email.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"email.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            <div *ngIf=\"email.errors.email\">\u00C9rv\u00E9nytelen e-mail c\u00EDm.</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"password\">Jelsz\u00F3: </label>\n        <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"model.password\"\n            #password=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && password.invalid }\" required minlength=\"8\"/>\n        <div *ngIf=\"f.submitted && password.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"password.errors.required\">Add meg a jelszavad\"!</div>\n            <div *ngIf=\"password.errors.minlength\">A jelsz\u00F3nak legal\u00E1bb 8 karakter hossz\u00FAnak kell lennie</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"name\">N\u00E9v: </label>\n        <input type=\"text\" class=\"form-control\" name=\"name\" [(ngModel)]=\"model.name\"\n            #name=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && name.invalid }\" required />\n        <div *ngIf=\"f.submitted && name.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"name.errors.required\">Add meg a neved!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"phoneNumber\">Telefonsz\u00E1m:</label>\n        <input type=\"text\" class=\"form-control\" name=\"phoneNumber\" [(ngModel)]=\"model.phoneNumber\"\n        #phoneNumber=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && phoneNumber.invalid }\" required />\n        <div *ngIf=\"f.submitted && phoneNumber.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"phoneNumber.errors.required\">Add meg a telefonsz\u00E1mod!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"facebook\">Facebook adatlap: </label>\n        <input type=\"text\" class=\"form-control\" name=\"facebook\" [(ngModel)]=\"model.facebook\"\n        #facebook=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && facebook.invalid }\" required />\n        <div *ngIf=\"f.submitted && facebook.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"facebook.errors.required\">Add meg a facebook adatlapod linkj\u00E9t!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"agegroups\">Korcsoport: </label>\n        <div *ngFor=\"let agegroup of agegroups\">\n        <input type=\"checkbox\" name=\"agegroups\" value=\"{{agegroup}}\" (change)=\"updateCheckedAgegroups(agegroup, $event)\" />\n            <label><span></span>{{agegroup}}</label>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"subjects\">Tant\u00E1rgy: </label>\n        <div *ngFor=\"let subject of subjects\">\n        <input type=\"checkbox\" name=\"subjects\" value=\"{{subject}}\" (change)=\"updateCheckedSubjects(subject, $event)\" />\n            <label><span></span>{{subject}}</label>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <button [disabled]=\"loading\">Regisztr\u00E1ci\u00F3</button>\n    </div>\n</form>\n";
 
 
 /***/ }),
@@ -411,14 +412,34 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var RegistrationComponent = /** @class */ (function () {
     function RegistrationComponent(http) {
         this.http = http;
-        this.model = {};
+        this.model = new Model('', '', '', '', '', [], []);
+        this.subjects = [
+            'Magyar irodalom és nyelvtan', 'Angol', 'Német', 'Földrajz', 'Kémia', 'Fizika', 'Történelem', 'Infomatika', 'Biológia', 'Matematika'
+        ];
+        this.agegroups = [
+            'Általános iskola 1-4', 'Általános iskola 5-8', 'Középiskola 1. év', 'Középiskola 2. év',
+            'Középiskola 3. év', 'Középiskola 4. év', 'Érettségi felkészítés'
+        ];
     }
-    /*onSubmit() {
-        /!*console.log(this.model);*!/
-      return this.http.post<Mentor>("/register", mentor);
-    }*/
-    RegistrationComponent.prototype.onSubmit = function (model) {
-        this.http.post('/register', model).subscribe(function (status) { return console.log(JSON.stringify(status)); });
+    RegistrationComponent.prototype.onSubmit = function () {
+        console.log(this.model);
+        this.http.post('/register', this.model, { responseType: 'text' }).subscribe(function (status) { return console.log(status); });
+    };
+    RegistrationComponent.prototype.updateCheckedSubjects = function (subject, event) {
+        if (event.target.checked) {
+            this.model.subjects.push(subject);
+        }
+        else {
+            this.model.subjects.splice(this.model.subjects.indexOf(subject), 1);
+        }
+    };
+    RegistrationComponent.prototype.updateCheckedAgegroups = function (agegroup, event) {
+        if (event.target.checked) {
+            this.model.agegroups.push(agegroup);
+        }
+        else {
+            this.model.agegroups.splice(this.model.agegroups.indexOf(agegroup), 1);
+        }
     };
     RegistrationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -432,13 +453,14 @@ var RegistrationComponent = /** @class */ (function () {
 }());
 
 var Model = /** @class */ (function () {
-    function Model(email1, password1, name1, phone1, facebook1, subject1) {
+    function Model(email1, password1, name1, phone1, facebook1, subject1, agegroup1) {
         this.email = email1;
         this.password = password1;
         this.name = name1;
         this.phone = phone1;
         this.facebook = facebook1;
-        this.subject = subject1;
+        this.subjects = subject1;
+        this.agegroups = agegroup1;
     }
     return Model;
 }());
@@ -859,7 +881,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/kisfiu/git/rft-project/rftfrontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/szi/Documents/lathatatlan_iskola/rft-project/rftfrontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

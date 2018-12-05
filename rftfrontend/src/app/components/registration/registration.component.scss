@@ -3,7 +3,7 @@
     color: #444444;
     width: 100%;
 
-    input {
+    input[type="text"], input[type="password"] {
         border: none;
         border-bottom: 2px solid #CEDFF2;
         height: 30px; 
@@ -19,6 +19,11 @@
     .invalid-feedback {
         color: red;
         font-size: 12px;
+    }
+
+    .input[type= "checkbox"] + label span{
+        height: 15px;
+        width: 15px;
     }
 
     button {

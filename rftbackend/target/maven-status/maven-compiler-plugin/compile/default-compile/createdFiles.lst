@@ -12,8 +12,8 @@ rftbackend/Services/GeneratorService.class
 rftbackend/Config/DatabaseConfig.class
 rftbackend/Logic/DatabaseLogic.class
 rftbackend/Controllers/InstitutionController.class
-rftbackend/Controllers/TimetableController.class
 rftbackend/Controllers/RegistrationController.class
+rftbackend/Controllers/TimetableController.class
 rftbackend/Repositories/ScheduleRepository.class
 rftbackend/Models/Schedule.class
 rftbackend/Controllers/MentorController.class
