@@ -39,6 +39,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_schedule_schedule_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/schedule/schedule.component */ "./src/app/components/schedule/schedule.component.ts");
 /* harmony import */ var _components_registration_registration_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/registration/registration.component */ "./src/app/components/registration/registration.component.ts");
 /* harmony import */ var _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/timetable/timetable.component */ "./src/app/components/timetable/timetable.component.ts");
+/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -51,11 +52,13 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var appRoutes = [
     { path: '', component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"] },
     { path: 'menetrend', component: _components_schedule_schedule_component__WEBPACK_IMPORTED_MODULE_3__["ScheduleComponent"] },
     { path: 'regisztracio', component: _components_registration_registration_component__WEBPACK_IMPORTED_MODULE_4__["RegistrationComponent"] },
-    { path: 'orarend', component: _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_5__["TimetableComponent"] }
+    { path: 'orarend', component: _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_5__["TimetableComponent"] },
+    { path: 'bejelentkezes', component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -185,7 +188,7 @@ module.exports = ".header {\n  height: 200px;\n  padding: 0px;\n  background-col
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "apptemplate", function() { return apptemplate; });
-var apptemplate = "\n<div class=\"header\">\n    <img src=\"../assets/lathatatlan_logokek.png\">\n    <app-login></app-login>\n</div>\n<nav class=\"topnavigation\" id=\"mynav\">\n      <div>\n          <ul class=\"navbarlist\">\n              <li><a routerLink=\"\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{ exact: true }\">Kezd\u0151oldal</a></li>\n              <li><a routerLink=\"menetrend\" routerLinkActive=\"active-link\">Menetrend</a></li>\n              <li><a routerLink=\"regisztracio\" routerLinkActive=\"active-link\">Regisztr\u00E1ci\u00F3</a></li>\n              <li><a>Esem\u00E9nyek</a></li>\n              <li><a routerLink=\"orarend\" routerLinkActive=\"active-link\">\u00D3rarend</a></li>\n          </ul>\n      </div>\n  </nav>\n  <div id=\"container\">\n    <router-outlet></router-outlet>\n  </div>\n  <footer>\n    <div class=\"footerdiv\">\n        <p>El\u00E9rhet\u0151s\u00E9gek:\n        </p>\n    </div>\n  </footer>\n  ";
+var apptemplate = "\n<div class=\"header\">\n    <img src=\"../assets/lathatatlan_logokek.png\">\n</div>\n<nav class=\"topnavigation\" id=\"mynav\">\n      <div>\n          <ul class=\"navbarlist\">\n              <li><a routerLink=\"\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{ exact: true }\">Kezd\u0151oldal</a></li>\n              <li><a routerLink=\"menetrend\" routerLinkActive=\"active-link\">Menetrend</a></li>\n              <li><a routerLink=\"regisztracio\" routerLinkActive=\"active-link\">Regisztr\u00E1ci\u00F3</a></li>\n              <li><a>Esem\u00E9nyek</a></li>\n              <li><a routerLink=\"orarend\" routerLinkActive=\"active-link\">\u00D3rarend</a></li>\n              <li><a routerLink=\"bejelentkezes\" routerLinkActive=\"active-link\">Bejelentkez\u00E9s</a></li>\n          </ul>\n      </div>\n  </nav>\n  <div id=\"container\">\n    <router-outlet></router-outlet>\n  </div>\n  <footer>\n    <div class=\"footerdiv\">\n        <p>El\u00E9rhet\u0151s\u00E9gek:\n        </p>\n    </div>\n  </footer>\n  ";
 
 
 /***/ }),
@@ -297,7 +300,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#container {\n  position: absolute;\n  top: 25%;\n  right: 0;\n  left: 0; }\n  #container form[name=\"login-form\"] {\n    float: right;\n    padding-right: 20px;\n    height: 200px; }\n  #container form[name=\"login-form\"] button {\n      background-color: #CEDFF2;\n      color: black;\n      border: none;\n      height: 30px; }\n  #container form[name=\"login-form\"] input {\n      height: 30px; }\n  #container form[name=\"login-form\"] .invalid-feedback {\n      color: white;\n      font-size: 12px;\n      line-height: 13px; }\n  #container form[name=\"login-form\"] button:hover {\n      cursor: pointer; }\n"
+module.exports = "#container {\n  padding: 20px;\n  color: #444444;\n  width: 100%; }\n  #container .login-form-group {\n    padding: 10px; }\n  #container input {\n    border: none;\n    border-bottom: 2px solid #CEDFF2;\n    height: 30px;\n    display: flex;\n    width: 20em; }\n  #container input:focus {\n    outline: none;\n    border-bottom: 2px solid #214F81; }\n  #container .invalid-feedback {\n    color: red;\n    font-size: 12px; }\n  #container button {\n    background-color: #214F81;\n    color: white;\n    font-size: 18px;\n    border: none;\n    height: 30px; }\n  #container button:hover {\n    cursor: pointer; }\n"
 
 /***/ }),
 
@@ -311,7 +314,7 @@ module.exports = "#container {\n  position: absolute;\n  top: 25%;\n  right: 0;\
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logintemplate", function() { return logintemplate; });
-var logintemplate = "\n<div id=\"container\">\n    <form name=\"login-form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n        <div class=\"login-form-group\">\n            <input type=\"text\" name=\"loginUsername\" [(ngModel)]=\"model.loginUsername\"\n            #loginUsername=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && loginUsername.invalid }\" required />\n            <div *ngIf=\"f.submitted && loginUsername.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"loginUsername.errors.required\">Add meg a felhaszn\u00E1l\u00F3neved!</div>\n            </div>\n        </div>\n        <div class=\"login-form-group\">\n            <input type=\"password\" name=\"loginPassword\" [(ngModel)]=\"model.loginPassword\"\n            #loginPassword=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && loginPassword.invalid }\" required/>\n            <div *ngIf=\"f.submitted && loginPassword.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"loginPassword.errors.required\">Add meg a jelszavad!</div>\n            </div>\n        </div>\n        <div class=\"login-form-group\">\n            <button [disabled]=\"loading\">Bejelentkez\u00E9s</button>\n        </div>\n    </form>\n</div>\n";
+var logintemplate = "\n<div id=\"container\">\n    <form name=\"login-form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n        <div class=\"login-form-group\">\n            <label for=\"loginUsername\">Felhaszn\u00E1l\u00F3n\u00E9v:</label>\n            <input type=\"text\" name=\"loginUsername\" [(ngModel)]=\"model.loginUsername\"\n            #loginUsername=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && loginUsername.invalid }\" required />\n            <div *ngIf=\"f.submitted && loginUsername.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"loginUsername.errors.required\">Add meg a felhaszn\u00E1l\u00F3neved!</div>\n            </div>\n        </div>\n        <div class=\"login-form-group\">\n            <label for=\"loginPassword\">Jelsz\u00F3:</label>\n            <input  type=\"password\" name=\"loginPassword\" [(ngModel)]=\"model.loginPassword\"\n            #loginPassword=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && loginPassword.invalid }\" required/>\n            <div *ngIf=\"f.submitted && loginPassword.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"loginPassword.errors.required\">Add meg a jelszavad!</div>\n            </div>\n        </div>\n        <div class=\"login-form-group\">\n            <button [disabled]=\"loading\">Bejelentkez\u00E9s</button>\n        </div>\n    </form>\n</div>\n";
 
 
 /***/ }),
@@ -453,11 +456,11 @@ var RegistrationComponent = /** @class */ (function () {
 }());
 
 var Model = /** @class */ (function () {
-    function Model(email1, password1, name1, phone1, facebook1, subject1, agegroup1) {
+    function Model(email1, password1, name1, phone1, facebook1, agegroup1, subject1) {
         this.email = email1;
         this.password = password1;
         this.name = name1;
-        this.phone = phone1;
+        this.phoneNumber = phone1;
         this.facebook = facebook1;
         this.subjects = subject1;
         this.agegroups = agegroup1;
@@ -679,7 +682,7 @@ module.exports = "table {\n  border-spacing: 0px; }\n  table th, table td {\n   
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scheduletemplate", function() { return scheduletemplate; });
-var scheduletemplate = "\n<app-mentors-popup></app-mentors-popup>\n<app-mentees-popup></app-mentees-popup>\n<app-institutions-popup></app-institutions-popup>\n<div>\n<table>\n    <thead>\n        <th>Mentor</th>\n        <th>Mentor\u00E1lt</th>\n        <th>Int\u00E9zm\u00E9ny</th>\n        <th>Mappa link</th>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let contact of contacts; let i=index\">\n            <td class=popuptr (click)=\"showMentor(i)\">{{contact.mentor}}</td>\n            <td class=popuptr (click)=\"showMentored(i)\">{{contact.mentoralt}}</td>\n            <td class=popuptr (click)=\"showInstitution(i)\">{{contact.intezmeny}}</td>\n            <td>{{contact.mappa}}</td>\n        </tr>\n    </tbody>\n</table>\n</div>\n";
+var scheduletemplate = "\n<app-mentors-popup></app-mentors-popup>\n<app-mentees-popup></app-mentees-popup>\n<app-institutions-popup></app-institutions-popup>\n<div>\n<table>\n    <thead>\n        <th>Mentor</th>\n        <th>Mentor\u00E1lt</th>\n        <th>Int\u00E9zm\u00E9ny</th>\n        <th>Mappa link</th>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let contact of contacts; let i=index\">\n            <td class=popuptr (click)=\"showMentor(i)\">{{contact.mentorName}}</td>\n            <td class=popuptr (click)=\"showMentored(i)\">{{contact.menteeName}}</td>\n            <td class=popuptr (click)=\"showInstitution(i)\">{{contact.institutionName}}</td>\n            <td>{{contact.mappa}}</td>\n        </tr>\n    </tbody>\n</table>\n</div>\n";
 
 
 /***/ }),
@@ -697,6 +700,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _schedule_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./schedule.component.tpl */ "./src/app/components/schedule/schedule.component.tpl.ts");
 /* harmony import */ var ngx_smart_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-smart-modal */ "./node_modules/ngx-smart-modal/esm5/ngx-smart-modal.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -709,14 +713,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var ScheduleComponent = /** @class */ (function () {
-    function ScheduleComponent(ngxSmartModalService) {
+    function ScheduleComponent(ngxSmartModalService, http) {
+        /* this.contacts = [
+             {mentor: 'Béla', mentoralt: 'Pisti', intezmeny: 'int1', mappa: 'link1'},
+             {mentor: 'Kati', mentoralt: 'Dori', intezmeny: 'int2', mappa: 'link2'},
+             {mentor: 'Kati', mentoralt: 'Dori', intezmeny: 'int3', mappa: 'link3'}
+         ];*/
+        var _this = this;
         this.ngxSmartModalService = ngxSmartModalService;
-        this.contacts = [
-            { mentor: 'Béla', mentoralt: 'Pisti', intezmeny: 'int1', mappa: 'link1' },
-            { mentor: 'Kati', mentoralt: 'Dori', intezmeny: 'int2', mappa: 'link2' },
-            { mentor: 'Kati', mentoralt: 'Dori', intezmeny: 'int3', mappa: 'link3' }
-        ];
+        this.http = http;
+        this.http.get('/testschedule').subscribe(function (result) { _this.contacts = result; console.log(_this.contacts); });
     }
     ScheduleComponent.prototype.showMentor = function (index) {
         this.ngxSmartModalService.getModal('mentorsPopup').open();
@@ -736,7 +744,7 @@ var ScheduleComponent = /** @class */ (function () {
             template: _schedule_component_tpl__WEBPACK_IMPORTED_MODULE_1__["scheduletemplate"],
             styles: [__webpack_require__(/*! ./schedule.component.scss */ "./src/app/components/schedule/schedule.component.scss")]
         }),
-        __metadata("design:paramtypes", [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_2__["NgxSmartModalService"]])
+        __metadata("design:paramtypes", [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_2__["NgxSmartModalService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]])
     ], ScheduleComponent);
     return ScheduleComponent;
 }());

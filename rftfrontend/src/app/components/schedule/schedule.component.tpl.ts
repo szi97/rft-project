@@ -12,10 +12,10 @@ export const scheduletemplate = `
     </thead>
     <tbody>
         <tr *ngFor="let contact of contacts; let i=index">
-            <td class=popuptr (click)="showMentor(i)">{{contact.mentor}}</td>
-            <td class=popuptr (click)="showMentored(i)">{{contact.mentoralt}}</td>
-            <td class=popuptr (click)="showInstitution(i)">{{contact.intezmeny}}</td>
-            <td>{{contact.mappa}}</td>
+            <td class=popuptr (click)="showMentor(i)">{{contact.mentorName}}</td>
+            <td class=popuptr (click)="showMentored(i)">{{contact.menteeName}}</td>
+            <td class=popuptr (click)="showInstitution(i)">{{contact.institutionName}}</td>
+            <td>{{contact.folderLink}}</td>
         </tr>
     </tbody>
 </table>

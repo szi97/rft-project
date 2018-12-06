@@ -1,7 +1,6 @@
 export const apptemplate = `
 <div class="header">
     <img src="../assets/lathatatlan_logokek.png">
-    <app-login></app-login>
 </div>
 <nav class="topnavigation" id="mynav">
       <div>
@@ -11,6 +10,7 @@ export const apptemplate = `
               <li><a routerLink="regisztracio" routerLinkActive="active-link">Regisztráció</a></li>
               <li><a>Események</a></li>
               <li><a routerLink="orarend" routerLinkActive="active-link">Órarend</a></li>
+              <li><a routerLink="bejelentkezes" routerLinkActive="active-link">Bejelentkezés</a></li>
           </ul>
       </div>
   </nav>

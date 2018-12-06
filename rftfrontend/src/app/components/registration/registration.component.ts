@@ -51,18 +51,17 @@ export class Model {
   email: string;
   password: string;
   name: string;
-  phone: string;
+  phoneNumber: string;
   facebook: string;
   subjects: Array<String>;
   agegroups: Array<String>;
 
-  constructor(
-    email1: string, password1: string, name1: string, phone1: string, facebook1: string,
-    subject1: Array<String>, agegroup1: Array<String>) {
+  constructor(email1: string, password1: string, name1: string, phone1: string, facebook1: string,
+              agegroup1: Array<String>, subject1: Array<String>) {
     this.email = email1;
     this.password = password1;
     this.name = name1;
-    this.phone = phone1;
+    this.phoneNumber = phone1;
     this.facebook = facebook1;
     this.subjects = subject1;
     this.agegroups = agegroup1;

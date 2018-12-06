@@ -6,12 +6,14 @@ import {HomeComponent} from './components/home/home.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { TimetableComponent } from './components/timetable/timetable.component';
+import { LoginComponent } from './components/login/login.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'menetrend', component: ScheduleComponent},
     {path: 'regisztracio', component: RegistrationComponent},
-    {path: 'orarend', component: TimetableComponent}
+    {path: 'orarend', component: TimetableComponent},
+    {path: 'bejelentkezes', component: LoginComponent}
 ];
 
 @NgModule({

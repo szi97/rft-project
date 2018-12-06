@@ -1,35 +1,39 @@
-#container{
-    position:absolute;
-    top: 25%;
-    right:0;
-    left:0;
+#container {
+    padding: 20px;
+    color: #444444;
+    width: 100%;
 
-    form[name="login-form"] {
-        float: right;
-        padding-right: 20px;
-        height: 200px;
-        
-    
-        button {
-           background-color: #CEDFF2;
-           color: black;
-           border: none;
-           height: 30px;
-       }
-    
-       input {
-           height: 30px;
-       }
-    
-       .invalid-feedback {
-        color: white;
+    .login-form-group{
+        padding: 10px;
+    }
+
+    input {
+        border: none;
+        border-bottom: 2px solid #CEDFF2;
+        height: 30px; 
+        display: flex;
+        width: 20em;
+    }
+
+    input:focus {
+        outline: none;
+        border-bottom: 2px solid #214F81;
+    }
+
+    .invalid-feedback {
+        color: red;
         font-size: 12px;
-        line-height: 13px;
-        }
-    
-        button:hover {
-            cursor: pointer;
-        }
+    }
+
+    button {
+        background-color: #214F81;
+        color: white;
+        font-size: 18px;
+        border: none;
+        height: 30px;
+    }
+
+    button:hover {
+        cursor: pointer;
     }
 }
-
