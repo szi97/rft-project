@@ -13,13 +13,7 @@ export class ScheduleComponent {
     contacts: any;
 
     constructor(public ngxSmartModalService: NgxSmartModalService, private http: HttpClient) {
-       /* this.contacts = [
-            {mentor: 'Béla', mentoralt: 'Pisti', intezmeny: 'int1', mappa: 'link1'},
-            {mentor: 'Kati', mentoralt: 'Dori', intezmeny: 'int2', mappa: 'link2'},
-            {mentor: 'Kati', mentoralt: 'Dori', intezmeny: 'int3', mappa: 'link3'}
-        ];*/
-
-        this.http.get('/testschedule').subscribe(result => {this.contacts = result; console.log(this.contacts); });
+       this.http.get('/testschedule').subscribe(result => {this.contacts = result; console.log(this.contacts); });
     }
 
 

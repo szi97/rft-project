@@ -23,8 +23,6 @@ public class RegistrationService {
         String encryptedMentorPw = generatorService.encryptPassword(password);
         Mentor mentorToBeRegistered = new Mentor(id, email,encryptedMentorPw, name, phoneNumber, facebook, agegroups, subjects);
 
-        //front-enden a password mezőt becsillagozni
-
         //jöhet majd még ide egy check, hogy ilyen mentor van-e már, e-mail, név vagy akármi alapján, ha van, akkor nem rakjuk újra bele
 
         if(dbLogic.saveMentor(mentorToBeRegistered)){

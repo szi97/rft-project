@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { timetableTemplate } from './timetable.component.tpl';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-timetable',
@@ -7,9 +8,9 @@ import { timetableTemplate } from './timetable.component.tpl';
     styleUrls: ['./timetable.component.scss']
 })
 export class TimetableComponent {
-    lessons: Array<any>;
+    lessons: any;
 
-    constructor() {
+    constructor(private http: HttpClient) {
         this.lessons = [
             {oraszam: 1, datum: '2018.01.02.', idopont: '12:00', helyszin: 'Egyetem',
                 tantargy: 'matek', tema: 'egész számok', megjegyzes: 'hasznos'},
@@ -18,5 +19,7 @@ export class TimetableComponent {
             {oraszam: 3, datum: '2018.01.016.', idopont: '12:00', helyszin: 'Egyetem',
                 tantargy: 'matek', tema: 'egész számok', megjegyzes: 'betegeskedett'}
         ];
+
+        this.http.get('/testschedule').subscribe(result => {console.log(this.lessons); });
     }
 }
