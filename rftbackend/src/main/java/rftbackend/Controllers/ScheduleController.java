@@ -25,7 +25,7 @@ public class ScheduleController{
 
     @GetMapping("/testschedule")
     public List<ScheduleTableRow> listSchedule() {
-        System.console().writer().println("---fasz---");
+        System.console().writer().println("---huphupphuppp---");
         dbLogic.readSchedulesFromDb();
         dbLogic.readTimetablesFromDb();
         dbLogic.readMenteesFromDb();
@@ -33,33 +33,30 @@ public class ScheduleController{
         dbLogic.readMentorsFromDb();
         List<Schedule> schedule = dbLogic.getSchedules();
         for (Schedule actual: schedule) {
-            System.console().writer().println("---DATA---");
-            System.console().writer().println(actual.getMentorid());
-            System.console().writer().println(actual.getMenteeid());
-            System.console().writer().println(actual.getInstitutionid());
+            //System.console().writer().println("---DATA---");
+            //System.console().writer().println(actual.getMentorid());
+            //System.console().writer().println(actual.getMenteeid());
+            //System.console().writer().println(actual.getInstitutionid());
             String mentorName = "";
             String menteeName = "";
             String institutionName = "";
             if(dbLogic.getMentorById(actual.getMentorid()).isPresent()){
-                System.console().writer().println("---INSIDE-GETMENTORBYID---");
+                //System.console().writer().println("---INSIDE-GETMENTORBYID---");
                 mentorName= dbLogic.getMentorById(actual.getMentorid()).get().getName();
-                System.console().writer().println(mentorName);
+                //System.console().writer().println(mentorName);
             }
             if(dbLogic.getMenteeById(actual.getMenteeid()).isPresent()){
-                System.console().writer().println("---INSIDE-GETMENTEEBYID---");
+                //System.console().writer().println("---INSIDE-GETMENTEEBYID---");
                 menteeName= dbLogic.getMenteeById(actual.getMenteeid()).get().getName();
-                System.console().writer().println(menteeName);
+                //System.console().writer().println(menteeName);
             }
             if(dbLogic.getInstitutionById(actual.getInstitutionid()).isPresent()){
-                System.console().writer().println("---INSIDE-amimaradt---");
+                //System.console().writer().println("---INSIDE-amimaradt---");
                 institutionName= dbLogic.getInstitutionById(actual.getInstitutionid()).get().getName();
-                System.console().writer().println(institutionName);
+                //System.console().writer().println(institutionName);
             }
             tableContent.add(new ScheduleTableRow(mentorName, actual.getMentorid(), menteeName, actual.getMenteeid(), institutionName, actual.getInstitutionid(), actual.getFolder()));
         }
         return tableContent;
     }
-
-
-
 }

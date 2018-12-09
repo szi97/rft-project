@@ -331,27 +331,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _login_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./login.component.tpl */ "./src/app/components/login/login.component.tpl.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent() {
+    function LoginComponent(http) {
+        this.http = http;
         this.model = {};
     }
     LoginComponent.prototype.onSubmit = function () {
         console.log(this.model);
+        //  this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => console.log(status));
     };
     LoginComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-login',
             template: _login_component_tpl__WEBPACK_IMPORTED_MODULE_1__["logintemplate"],
             styles: [__webpack_require__(/*! ./login.component.scss */ "./src/app/components/login/login.component.scss")]
-        })
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -484,23 +492,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InstitutionsPopupComponent", function() { return InstitutionsPopupComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _institutionspopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./institutionspopup.component.tpl */ "./src/app/components/schedule/institutions/institutionspopup.component.tpl.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 
 var InstitutionsPopupComponent = /** @class */ (function () {
-    function InstitutionsPopupComponent() {
+    function InstitutionsPopupComponent(http) {
+        var _this = this;
+        this.http = http;
+        this.http.get('/testschedule').subscribe(function (result) { console.log(_this.institution); });
     }
     InstitutionsPopupComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-institutions-popup',
             template: _institutionspopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__["institutionsPopupTemplate"],
             styles: [__webpack_require__(/*! ./institutionspopup.component.scss */ "./src/app/components/schedule/institutions/institutionspopup.component.scss")]
-        })
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], InstitutionsPopupComponent);
     return InstitutionsPopupComponent;
 }());
@@ -573,23 +590,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenteesPopupComponent", function() { return MenteesPopupComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _menteespopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menteespopup.component.tpl */ "./src/app/components/schedule/mentees/menteespopup.component.tpl.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 
 var MenteesPopupComponent = /** @class */ (function () {
-    function MenteesPopupComponent() {
+    function MenteesPopupComponent(http) {
+        var _this = this;
+        this.http = http;
+        this.http.get('/testschedule').subscribe(function (result) { console.log(_this.mentee); });
     }
     MenteesPopupComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-mentees-popup',
             template: _menteespopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__["menteesPopupTemplate"],
             styles: [__webpack_require__(/*! ./menteespopup.component.scss */ "./src/app/components/schedule/mentees/menteespopup.component.scss")]
-        })
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], MenteesPopupComponent);
     return MenteesPopupComponent;
 }());
@@ -636,23 +662,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MentorsPopupComponent", function() { return MentorsPopupComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _mentorspopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mentorspopup.component.tpl */ "./src/app/components/schedule/mentors/mentorspopup.component.tpl.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 
 var MentorsPopupComponent = /** @class */ (function () {
-    function MentorsPopupComponent() {
+    function MentorsPopupComponent(http) {
+        var _this = this;
+        this.http = http;
+        this.http.get('/testschedule').subscribe(function (result) { console.log(_this.mentor); });
     }
     MentorsPopupComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-mentors-popup',
             template: _mentorspopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__["mentorsPopupTemplate"],
             styles: [__webpack_require__(/*! ./mentorspopup.component.scss */ "./src/app/components/schedule/mentors/mentorspopup.component.scss")]
-        })
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], MentorsPopupComponent);
     return MentorsPopupComponent;
 }());
@@ -716,11 +751,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var ScheduleComponent = /** @class */ (function () {
     function ScheduleComponent(ngxSmartModalService, http) {
-        /* this.contacts = [
-             {mentor: 'Béla', mentoralt: 'Pisti', intezmeny: 'int1', mappa: 'link1'},
-             {mentor: 'Kati', mentoralt: 'Dori', intezmeny: 'int2', mappa: 'link2'},
-             {mentor: 'Kati', mentoralt: 'Dori', intezmeny: 'int3', mappa: 'link3'}
-         ];*/
         var _this = this;
         this.ngxSmartModalService = ngxSmartModalService;
         this.http = http;
@@ -791,6 +821,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimetableComponent", function() { return TimetableComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _timetable_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./timetable.component.tpl */ "./src/app/components/timetable/timetable.component.tpl.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -802,8 +833,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var TimetableComponent = /** @class */ (function () {
-    function TimetableComponent() {
+    function TimetableComponent(http) {
+        var _this = this;
+        this.http = http;
         this.lessons = [
             { oraszam: 1, datum: '2018.01.02.', idopont: '12:00', helyszin: 'Egyetem',
                 tantargy: 'matek', tema: 'egész számok', megjegyzes: 'hasznos' },
@@ -812,6 +846,7 @@ var TimetableComponent = /** @class */ (function () {
             { oraszam: 3, datum: '2018.01.016.', idopont: '12:00', helyszin: 'Egyetem',
                 tantargy: 'matek', tema: 'egész számok', megjegyzes: 'betegeskedett' }
         ];
+        this.http.get('/testschedule').subscribe(function (result) { console.log(_this.lessons); });
     }
     TimetableComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -819,7 +854,7 @@ var TimetableComponent = /** @class */ (function () {
             template: _timetable_component_tpl__WEBPACK_IMPORTED_MODULE_1__["timetableTemplate"],
             styles: [__webpack_require__(/*! ./timetable.component.scss */ "./src/app/components/timetable/timetable.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], TimetableComponent);
     return TimetableComponent;
 }());
@@ -889,7 +924,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/szi/Documents/lathatatlan_iskola/rft-project/rftfrontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/kisfiu/git/rft-project/rftfrontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })
