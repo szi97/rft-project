@@ -804,7 +804,7 @@ module.exports = "table {\n  border-spacing: 0px; }\n  table th, table td {\n   
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "timetableTemplate", function() { return timetableTemplate; });
-var timetableTemplate = "\n<div>\n    <table>\n        <thead>\n            <th>\u00D3rasz\u00E1m</th>\n            <th>D\u00E1tum</th>\n            <th>Id\u0151pont</th>\n            <th>Helysz\u00EDn</th>\n            <th>Tant\u00E1rgy</th>\n            <th>T\u00E9ma</th>\n            <th>Megjegyz\u00E9s</th>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let lesson of lessons\">\n            <td>{{lesson.oraszam}}</td>\n            <td>{{lesson.datum}}</td>\n            <td>{{lesson.idopont}}</td>\n            <td>{{lesson.helyszin}}</td>\n            <td>{{lesson.tantargy}}</td>\n            <td>{{lesson.tema}}</td>\n            <td>{{lesson.megjegyzes}}</td>\n        <tr>\n        </tbody>\n    </table>\n</div>\n";
+var timetableTemplate = "\n<div>\n    <table>\n        <thead>\n            <th>\u00D3rasz\u00E1m</th>\n            <th>D\u00E1tum</th>\n            <th>Id\u0151pont</th>\n            <th>Helysz\u00EDn</th>\n            <th>Tant\u00E1rgy</th>\n            <th>T\u00E9ma</th>\n            <th>Megjegyz\u00E9s</th>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let lesson of lessons\">\n            <td>{{lesson.lessonnumber}}</td>\n            <td>{{lesson.date | date: 'y, MM, d'}}</td>\n            <td>{{lesson.time | date: 'HH:mm'}}</td>\n            <td>{{lesson.location}}</td>\n            <td>{{lesson.subject}}</td>\n            <td>{{lesson.topic}}</td>\n            <td>{{lesson.comment}}</td>\n        <tr>\n        </tbody>\n    </table>\n</div>\n";
 
 
 /***/ }),
@@ -838,15 +838,7 @@ var TimetableComponent = /** @class */ (function () {
     function TimetableComponent(http) {
         var _this = this;
         this.http = http;
-        this.lessons = [
-            { oraszam: 1, datum: '2018.01.02.', idopont: '12:00', helyszin: 'Egyetem',
-                tantargy: 'matek', tema: 'egész számok', megjegyzes: 'hasznos' },
-            { oraszam: 2, datum: '2018.01.09.', idopont: '12:00', helyszin: 'Egyetem',
-                tantargy: 'matek', tema: 'egész számok', megjegyzes: 'nem tudott figyelni' },
-            { oraszam: 3, datum: '2018.01.016.', idopont: '12:00', helyszin: 'Egyetem',
-                tantargy: 'matek', tema: 'egész számok', megjegyzes: 'betegeskedett' }
-        ];
-        this.http.get('/testschedule').subscribe(function (result) { console.log(_this.lessons); });
+        this.http.get('/testtimetable').subscribe(function (result) { _this.lessons = result; });
     }
     TimetableComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -924,7 +916,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/kisfiu/git/rft-project/rftfrontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/szi/Documents/lathatatlan_iskola/rft-project/rftfrontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

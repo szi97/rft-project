@@ -12,13 +12,13 @@ export const timetableTemplate = `
         </thead>
         <tbody>
         <tr *ngFor="let lesson of lessons">
-            <td>{{lesson.oraszam}}</td>
-            <td>{{lesson.datum}}</td>
-            <td>{{lesson.idopont}}</td>
-            <td>{{lesson.helyszin}}</td>
-            <td>{{lesson.tantargy}}</td>
-            <td>{{lesson.tema}}</td>
-            <td>{{lesson.megjegyzes}}</td>
+            <td>{{lesson.lessonnumber}}</td>
+            <td>{{lesson.date | date: 'y, MM, d'}}</td>
+            <td>{{lesson.time | date: 'HH:mm'}}</td>
+            <td>{{lesson.location}}</td>
+            <td>{{lesson.subject}}</td>
+            <td>{{lesson.topic}}</td>
+            <td>{{lesson.comment}}</td>
         <tr>
         </tbody>
     </table>
