@@ -509,7 +509,7 @@ var InstitutionsPopupComponent = /** @class */ (function () {
     function InstitutionsPopupComponent(http) {
         var _this = this;
         this.http = http;
-        this.http.get('/testschedule').subscribe(function (result) { console.log(_this.institution); });
+        this.http.get('/menetrend').subscribe(function (result) { console.log(_this.institution); });
     }
     InstitutionsPopupComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -607,7 +607,7 @@ var MenteesPopupComponent = /** @class */ (function () {
     function MenteesPopupComponent(http) {
         var _this = this;
         this.http = http;
-        this.http.get('/testschedule').subscribe(function (result) { console.log(_this.mentee); });
+        this.http.get('/menetrend').subscribe(function (result) { console.log(_this.mentee); });
     }
     MenteesPopupComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -679,7 +679,7 @@ var MentorsPopupComponent = /** @class */ (function () {
     function MentorsPopupComponent(http) {
         var _this = this;
         this.http = http;
-        this.http.get('/testschedule').subscribe(function (result) { console.log(_this.mentor); });
+        this.http.get('/menetrend').subscribe(function (result) { console.log(_this.mentor); });
     }
     MentorsPopupComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -754,7 +754,7 @@ var ScheduleComponent = /** @class */ (function () {
         var _this = this;
         this.ngxSmartModalService = ngxSmartModalService;
         this.http = http;
-        this.http.get('/testschedule').subscribe(function (result) { _this.contacts = result; console.log(_this.contacts); });
+        this.http.get('/menetrend').subscribe(function (result) { _this.contacts = result; console.log(_this.contacts); });
     }
     ScheduleComponent.prototype.showMentor = function (index) {
         this.ngxSmartModalService.getModal('mentorsPopup').open();

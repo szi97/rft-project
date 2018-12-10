@@ -23,7 +23,7 @@ public class ScheduleController{
 
     private List<ScheduleTableRow> tableContent = new ArrayList<>();
 
-    @GetMapping("/testschedule")
+    @GetMapping("/menetrend")
     public List<ScheduleTableRow> listSchedule() {
         System.console().writer().println("---huphupphuppp---");
         dbLogic.readSchedulesFromDb();

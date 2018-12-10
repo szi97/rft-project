@@ -11,6 +11,6 @@ export class MenteesPopupComponent {
   mentee: any;
 
   constructor(private http: HttpClient) {
-    this.http.get('/testschedule').subscribe(result => { console.log(this.mentee); });
+    this.http.get('/menetrend').subscribe(result => { console.log(this.mentee); });
   }
 }

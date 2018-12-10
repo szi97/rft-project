@@ -11,6 +11,6 @@ export class MentorsPopupComponent {
   mentor: any;
 
   constructor(private http: HttpClient) {
-    this.http.get('/testschedule').subscribe(result => { console.log(this.mentor); });
+    this.http.get('/menetrend').subscribe(result => { console.log(this.mentor); });
  }
 }
