@@ -26,8 +26,8 @@ public class TimetableController{
 
     @GetMapping("/testtimetable")
     public List<TimetableTableRow> listTimetable() {
-        dbLogic.readTimetablesFromDb();
         System.console().writer().println("---TIMETABLE-IS-HERE---");
+        tableContent.clear();
         dbLogic.readSchedulesFromDb();
         dbLogic.readTimetablesFromDb();
         dbLogic.readMenteesFromDb();
@@ -50,7 +50,7 @@ public class TimetableController{
                 menteeName= dbLogic.getMenteeById(actual.getMenteeid()).get().getName();
                 //System.console().writer().println(menteeName);
             }
-            tableContent.add(new TimetableTableRow(actual.getLessonnumber(), actual.getDate(), actual.getTime(), actual.getLocation(), actual.getTopic(), actual.getComment(), actual.getMentorid(), mentorName, actual.getMenteeid(), menteeName, actual.getTimetableid()));
+            tableContent.add(new TimetableTableRow(actual.getLessonnumber(), actual.getDate(), actual.getTime(), actual.getLocation(), actual.getSubject(), actual.getTopic(), actual.getComment(), actual.getMentorid(), mentorName, actual.getMenteeid(), menteeName, actual.getTimetableid()));
         }
         return tableContent;
     }

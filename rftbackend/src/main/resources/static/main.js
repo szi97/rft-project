@@ -67,7 +67,7 @@ var AppRoutingModule = /** @class */ (function () {
     AppRoutingModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [
-                _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(appRoutes /*, {useHash: true}*/)
+                _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(appRoutes, { useHash: true })
             ],
             exports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]
@@ -758,7 +758,7 @@ var ScheduleComponent = /** @class */ (function () {
         var _this = this;
         this.ngxSmartModalService = ngxSmartModalService;
         this.http = http;
-        this.http.get('/menetrend').subscribe(function (result) { _this.contacts = []; _this.contacts = result; console.log(result); });
+        this.http.get('/menetrend').subscribe(function (result) { _this.contacts = result; });
     }
     ScheduleComponent.prototype.showMentor = function (index) {
         this.ngxSmartModalService.getModal('mentorsPopup').open();
@@ -920,7 +920,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/szi/Documents/lathatatlan_iskola/rft-project/rftfrontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/kisfiu/git/rft-project/rftfrontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

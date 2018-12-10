@@ -18,11 +18,12 @@ public class TimetableTableRow {
 
 
 
-    public TimetableTableRow(long lessonnumber, Date date, Date time, String location, String topic, String comment, long mentorid, String mentorName, long menteeid, String menteeName, long timetableid)   {
+    public TimetableTableRow(long lessonnumber, Date date, Date time, String location, String subject, String topic, String comment, long mentorid, String mentorName, long menteeid, String menteeName, long timetableid)   {
         this.lessonnumber = lessonnumber;
         this.date = date;
         this.time = time;
         this.location = location;
+        this.subject = subject;
         this.topic = topic;
         this.comment = comment;
         this.mentorid = mentorid;

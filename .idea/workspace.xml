@@ -3,13 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="3044d54f-4002-4647-8dee-275750516372" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Controllers/ScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Controllers/ScheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Controllers/TimetableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Controllers/TimetableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Models/TimetableTableRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Models/TimetableTableRow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rftbackend/src/main/resources/static/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/rftbackend/src/main/resources/static/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rftbackend/src/main/resources/static/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/rftbackend/src/main/resources/static/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rftfrontend/src/app/components/schedule/institutions/insitutionspopup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/rftfrontend/src/app/components/schedule/institutions/insitutionspopup.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rftfrontend/src/app/components/schedule/mentees/menteespopup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/rftfrontend/src/app/components/schedule/mentees/menteespopup.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rftfrontend/src/app/components/schedule/mentors/mentorspopup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/rftfrontend/src/app/components/schedule/mentors/mentorspopup.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rftfrontend/src/app/components/schedule/schedule.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/rftfrontend/src/app/components/schedule/schedule.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rftbackend/src/main/resources/static/polyfills.js" beforeDir="false" afterPath="$PROJECT_DIR$/rftbackend/src/main/resources/static/polyfills.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rftbackend/src/main/resources/static/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/rftbackend/src/main/resources/static/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rftfrontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/rftfrontend/package-lock.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/rftfrontend/target/" />
@@ -86,13 +86,13 @@
           <entry key="iml" value="1" />
           <entry key="intezmeny" value="2" />
           <entry key="intezmenyek" value="3" />
-          <entry key="java" value="184" />
+          <entry key="java" value="188" />
           <entry key="js" value="1" />
           <entry key="menetrend" value="10" />
           <entry key="mentoralt" value="2" />
           <entry key="mentoraltak" value="5" />
           <entry key="mentorok" value="9" />
-          <entry key="orarend" value="9" />
+          <entry key="orarend" value="11" />
           <entry key="properties" value="2" />
           <entry key="scss" value="7" />
           <entry key="sql" value="6" />
@@ -103,9 +103,9 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="Database Element" value="40" />
+          <entry key="Database Element" value="42" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="179" />
+          <entry key="JAVA" value="183" />
           <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="Properties" value="2" />
@@ -125,7 +125,7 @@
         <counts>
           <entry key="cell" value="2163" />
           <entry key="dummy" value="29" />
-          <entry key="java" value="4482" />
+          <entry key="java" value="4518" />
           <entry key="sql" value="202" />
           <entry key="ts" value="9" />
           <entry key="txt" value="89" />
@@ -134,7 +134,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4454" />
+          <entry key="JAVA" value="4490" />
           <entry key="PLAIN_TEXT" value="146" />
           <entry key="SQL" value="202" />
           <entry key="Scratch" value="2163" />
@@ -147,69 +147,27 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rftfrontend/src/app/components/schedule/institutions/institutionspopup.component.tpl.ts">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rftfrontend/src/app/components/schedule/mentees/menteespopup.component.tpl.ts">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rftfrontend/src/app/components/schedule/mentees/menteespopup.component.scss">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rftfrontend/src/app/components/schedule/mentors/mentorspopup.component.tpl.ts">
+        <entry file="file://$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Controllers/ScheduleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-131" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rftfrontend/src/app/components/schedule/schedule.component.tpl.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rftfrontend/src/app/components/schedule/schedule.component.scss">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rftfrontend/src/app/components/timetable/timetable.component.scss">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rftfrontend/src/app/components/schedule/schedule.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rftfrontend/src/app/components/timetable/timetable.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="245">
+              <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
               <folding>
-                <element signature="e#0#42#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rftfrontend/src/app/components/schedule/mentors/mentorspopup.component.scss">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Controllers/TimetableController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -225,6 +183,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>/registration</find>
+      <find>clear</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -263,13 +222,13 @@
         <option value="$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Logic/DatabaseLogic.java" />
         <option value="$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Models/Schedule.java" />
         <option value="$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Repositories/ScheduleRepository.java" />
-        <option value="$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Models/TimetableTableRow.java" />
-        <option value="$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Controllers/TimetableController.java" />
         <option value="$PROJECT_DIR$/rftfrontend/src/app/components/schedule/institutions/insitutionspopup.component.ts" />
         <option value="$PROJECT_DIR$/rftfrontend/src/app/components/schedule/mentees/menteespopup.component.ts" />
         <option value="$PROJECT_DIR$/rftfrontend/src/app/components/schedule/mentors/mentorspopup.component.ts" />
         <option value="$PROJECT_DIR$/rftfrontend/src/app/components/schedule/schedule.component.ts" />
         <option value="$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Controllers/ScheduleController.java" />
+        <option value="$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Models/TimetableTableRow.java" />
+        <option value="$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Controllers/TimetableController.java" />
       </list>
     </option>
   </component>
@@ -817,6 +776,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
+              <item name="Config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
+              <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -902,26 +871,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="schedule" type="462c0819:PsiDirectoryNode" />
-              <item name="institutions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
-              <item name="rftfrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="schedule" type="462c0819:PsiDirectoryNode" />
-              <item name="mentees" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
-              <item name="rftfrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="schedule" type="462c0819:PsiDirectoryNode" />
               <item name="mentors" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -929,17 +878,7 @@
               <item name="rft-project" type="462c0819:PsiDirectoryNode" />
               <item name="rftfrontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="timetable" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
-              <item name="rftfrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -952,7 +891,7 @@
     <property name="DatabaseDriversLRU" value="mysql&#10;sqlserver&#10;azure" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544391265112" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544454779177" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="database.data.extractors.current.id" value="SQL Inserts" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/rft-project-master" />
@@ -1050,13 +989,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98227000" />
+    <option name="totallyTimeSpent" value="98542000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21393035" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21614152" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1103,9 +1042,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/rftfrontend/src/test.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/rftfrontend/src/app/app-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1195,7 +1131,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rftfrontend/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
+        <state relative-caret-position="575">
           <caret line="44" selection-start-line="44" selection-end-line="44" />
         </state>
       </provider>
@@ -1265,13 +1201,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://5a5a362f-7acd-4fd0-9872-06ad75fe1b1b/schema/sulimuri/table/orarend">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Models/Mentee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -1333,43 +1262,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Models/TimetableTableRow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-          <folding>
-            <element signature="e#2304#2305#0" expanded="true" />
-            <element signature="e#2337#2338#0" expanded="true" />
-            <element signature="e#2389#2390#0" expanded="true" />
-            <element signature="e#2433#2434#0" expanded="true" />
-            <element signature="e#2725#2726#0" expanded="true" />
-            <element signature="e#2758#2759#0" expanded="true" />
-            <element signature="e#2810#2811#0" expanded="true" />
-            <element signature="e#2854#2855#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Controllers/TimetableController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Controllers/ScheduleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Models/ScheduleTableRow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-237">
@@ -1401,9 +1293,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1411,9 +1300,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1456,7 +1342,7 @@
     <entry file="file://$PROJECT_DIR$/rftfrontend/src/app/components/schedule/schedule.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
-          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1465,6 +1351,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rftfrontend/src/app/components/timetable/timetable.component.scss">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rftfrontend/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://5a5a362f-7acd-4fd0-9872-06ad75fe1b1b/schema/sulimuri/table/orarend">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Models/TimetableTableRow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Controllers/ScheduleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Controllers/TimetableController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
