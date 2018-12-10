@@ -13,7 +13,7 @@ export class ScheduleComponent {
     contacts: any;
 
     constructor(public ngxSmartModalService: NgxSmartModalService, private http: HttpClient) {
-       this.http.get('/menetrend').subscribe(result => {this.contacts = result; console.log(this.contacts); });
+       this.http.get('/menetrend').subscribe(result => {this.contacts = result; });
     }
 
 

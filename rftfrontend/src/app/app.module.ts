@@ -16,6 +16,9 @@ import { MenteesPopupComponent } from './components/schedule/mentees/menteespopu
 import { InstitutionsPopupComponent } from './components/schedule/institutions/insitutionspopup.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import {appRoutes} from './app-routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,

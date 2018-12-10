@@ -2,11 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormsModule, FormArray } from '@angular/forms';
 import {registrationTemplate} from './registration.component.tpl';
 import {HttpClient} from '@angular/common/http';
+import {APP_BASE_HREF} from '@angular/common';
 
 @Component({
   selector: 'app-registration',
   template: registrationTemplate,
-  styleUrls: ['./registration.component.scss']
+  styleUrls: ['./registration.component.scss'],
+  providers: [{provide: APP_BASE_HREF, useValue: '/regisztracio'}]
 })
 export class RegistrationComponent {
 

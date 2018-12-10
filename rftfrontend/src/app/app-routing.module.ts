@@ -8,7 +8,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { TimetableComponent } from './components/timetable/timetable.component';
 import { LoginComponent } from './components/login/login.component';
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'menetrend', component: ScheduleComponent},
     {path: 'regisztracio', component: RegistrationComponent},
@@ -18,7 +18,7 @@ const appRoutes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forRoot(appRoutes, {useHash: true})
     ],
     exports: [
         RouterModule

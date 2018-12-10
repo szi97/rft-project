@@ -25,7 +25,8 @@ public class ScheduleController{
 
     @GetMapping("/menetrend")
     public List<ScheduleTableRow> listSchedule() {
-        System.console().writer().println("---huphupphuppp---");
+        System.console().writer().println("------------------schedule-----------------");
+        tableContent.clear();
         dbLogic.readSchedulesFromDb();
         dbLogic.readTimetablesFromDb();
         dbLogic.readMenteesFromDb();
