@@ -107,6 +107,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_schedule_mentees_menteespopup_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/schedule/mentees/menteespopup.component */ "./src/app/components/schedule/mentees/menteespopup.component.ts");
 /* harmony import */ var _components_schedule_institutions_insitutionspopup_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/schedule/institutions/insitutionspopup.component */ "./src/app/components/schedule/institutions/insitutionspopup.component.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _components_timetable_newlesson_newlessonpopup_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/timetable/newlesson/newlessonpopup.component */ "./src/app/components/timetable/newlesson/newlessonpopup.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -116,6 +117,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -146,6 +148,7 @@ var AppModule = /** @class */ (function () {
                 _components_schedule_institutions_insitutionspopup_component__WEBPACK_IMPORTED_MODULE_14__["InstitutionsPopupComponent"],
                 _components_registration_registration_component__WEBPACK_IMPORTED_MODULE_10__["RegistrationComponent"],
                 _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_11__["TimetableComponent"],
+                _components_timetable_newlesson_newlessonpopup_component__WEBPACK_IMPORTED_MODULE_16__["NewLessonPopupComponent"],
                 _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"]
             ],
             imports: [
@@ -315,7 +318,7 @@ module.exports = "#container {\n  padding: 20px;\n  color: #444444;\n  width: 10
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logintemplate", function() { return logintemplate; });
-var logintemplate = "\n<div id=\"container\">\n    <form name=\"login-form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n        <div class=\"login-form-group\">\n            <label for=\"loginUsername\">Felhaszn\u00E1l\u00F3n\u00E9v:</label>\n            <input type=\"text\" name=\"loginUsername\" [(ngModel)]=\"model.loginUsername\"\n            #loginUsername=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && loginUsername.invalid }\" required />\n            <div *ngIf=\"f.submitted && loginUsername.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"loginUsername.errors.required\">Add meg a felhaszn\u00E1l\u00F3neved!</div>\n            </div>\n        </div>\n        <div class=\"login-form-group\">\n            <label for=\"loginPassword\">Jelsz\u00F3:</label>\n            <input  type=\"password\" name=\"loginPassword\" [(ngModel)]=\"model.loginPassword\"\n            #loginPassword=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && loginPassword.invalid }\" required/>\n            <div *ngIf=\"f.submitted && loginPassword.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"loginPassword.errors.required\">Add meg a jelszavad!</div>\n            </div>\n        </div>\n        <div class=\"login-form-group\">\n            <button [disabled]=\"loading\">Bejelentkez\u00E9s</button>\n        </div>\n    </form>\n</div>\n";
+var logintemplate = "\n<div id=\"container\">\n    <form name=\"login-form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n        <div class=\"login-form-group\">\n            <label for=\"email\">E-mail c\u00EDm:</label>\n            <input type=\"text\" name=\"email\" [(ngModel)]=\"model.email\"\n            #email=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && email.invalid }\" required email/>\n            <div *ngIf=\"f.submitted && email.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"email.errors.required\">Add meg a felhaszn\u00E1l\u00F3neved!</div>\n                <div *ngIf=\"email.errors.email\">Nem megfelel\u0151 form\u00E1tum</div>\n            </div>\n        </div>\n        <div class=\"login-form-group\">\n            <label for=\"password\">Jelsz\u00F3:</label>\n            <input  type=\"password\" name=\"password\" [(ngModel)]=\"model.password\"\n            #password=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && password.invalid }\" required minlength=\"8\"/>\n            <div *ngIf=\"f.submitted && password.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"password.errors.required\">Add meg a jelszavad!</div>\n                <div *ngIf=\"password.errors.minlength\">A jelsz\u00F3nak legal\u00E1bb 8 karakter hossz\u00FAnak kell lennie</div>\n            </div>\n        </div>\n        <div class=\"login-form-group\">\n            <button [disabled]=\"loading\">Bejelentkez\u00E9s</button>\n        </div>\n    </form>\n</div>\n";
 
 
 /***/ }),
@@ -787,6 +790,81 @@ var ScheduleComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/timetable/newlesson/newlessonpopup.component.scss":
+/*!******************************************************************************!*\
+  !*** ./src/app/components/timetable/newlesson/newlessonpopup.component.scss ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "div {\n  padding: 10px; }\n  div input {\n    border: none;\n    border-bottom: 2px solid #CEDFF2;\n    height: 30px;\n    display: flex;\n    width: 100%; }\n  div textarea {\n    border: none;\n    border-bottom: 2px solid #CEDFF2;\n    min-height: 100px;\n    display: flex;\n    width: 90%; }\n  div input:focus, div textarea:focus {\n    outline: none;\n    border-bottom: 2px solid #214F81; }\n  div .invalid-feedback {\n    color: red;\n    font-size: 12px; }\n"
+
+/***/ }),
+
+/***/ "./src/app/components/timetable/newlesson/newlessonpopup.component.tpl.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/components/timetable/newlesson/newlessonpopup.component.tpl.ts ***!
+  \********************************************************************************/
+/*! exports provided: newLessonPopupTemplate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newLessonPopupTemplate", function() { return newLessonPopupTemplate; });
+var newLessonPopupTemplate = "\n<ngx-smart-modal #newLessonPopup [identifier]=\"'newLessonPopup'\">\n    <form name='lessonForm' (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n        <div class=\"lesson-form-group\">\n            <label for=\"lessonnumber\">\u00F3rasz\u00E1m: </label>\n            <input type=\"number\" class=\"form-control\" name=\"lessonnumber\" [(ngModel)]=\"model.lessonnumber\"\n            #lessonnumber=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && lessonnumber.invalid }\" required/>\n            <div *ngIf=\"f.submitted && lessonnumber.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"lessonnumber.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"date\">D\u00E1tum: </label>\n            <input type=\"date\" class=\"form-control\" name=\"date\" [(ngModel)]=\"model.date\"\n            #date=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && date.invalid }\" required />\n            <div *ngIf=\"f.submitted && date.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"date.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"time\">Id\u0151pont: </label>\n            <input type=\"time\" class=\"form-control\" name=\"time\" [(ngModel)]=\"model.time\"\n            #time=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && time.invalid }\" required/>\n            <div *ngIf=\"f.submitted && time.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"time.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"location\">Helysz\u00EDn: </label>\n            <input type=\"text\" class=\"form-control\" name=\"location\" [(ngModel)]=\"model.location\"\n            #location=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && location.invalid }\" required/>\n            <div *ngIf=\"f.submitted && location.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"location.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"subject\">Tant\u00E1rgy: </label>\n            <input type=\"text\" class=\"form-control\" name=\"subject\" [(ngModel)]=\"model.subject\"\n            #subject=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && subject.invalid }\" required/>\n            <div *ngIf=\"f.submitted && subject.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"subject.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"topic\">T\u00E9ma: </label>\n            <input type=\"text\" class=\"form-control\" name=\"topic\" [(ngModel)]=\"model.topic\"\n            #topic=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && topic.invalid }\" required/>\n            <div *ngIf=\"f.submitted && topic.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"topic.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"comment\">Megjegyz\u00E9s: </label>\n            <textarea maxlength=\"255\" class=\"form-control\" name=\"comment\" [(ngModel)]=\"model.comment\"\n            #comment=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && comment.invalid }\" required></textarea>\n            <div *ngIf=\"f.submitted && comment.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"comment.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <button [disabled]=\"loading\">Ment\u00E9s</button>\n        </div>\n    </form>\n    <button type=\"button\" (click)=\"newLessonPopup.close()\">M\u00E9gsem</button>\n</ngx-smart-modal>\n";
+
+
+/***/ }),
+
+/***/ "./src/app/components/timetable/newlesson/newlessonpopup.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/components/timetable/newlesson/newlessonpopup.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: NewLessonPopupComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewLessonPopupComponent", function() { return NewLessonPopupComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _newlessonpopup_component_tpl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./newlessonpopup.component.tpl */ "./src/app/components/timetable/newlesson/newlessonpopup.component.tpl.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var NewLessonPopupComponent = /** @class */ (function () {
+    function NewLessonPopupComponent(http) {
+        this.http = http;
+        this.model = [];
+    }
+    NewLessonPopupComponent.prototype.onSubmit = function () {
+        console.log(this.model);
+        // this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => console.log(status));
+    };
+    NewLessonPopupComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-newlesson-popup',
+            template: _newlessonpopup_component_tpl__WEBPACK_IMPORTED_MODULE_2__["newLessonPopupTemplate"],
+            styles: [__webpack_require__(/*! ./newlessonpopup.component.scss */ "./src/app/components/timetable/newlesson/newlessonpopup.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], NewLessonPopupComponent);
+    return NewLessonPopupComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/timetable/timetable.component.scss":
 /*!***************************************************************!*\
   !*** ./src/app/components/timetable/timetable.component.scss ***!
@@ -808,7 +886,7 @@ module.exports = "table {\n  border-spacing: 0px; }\n  table th, table td {\n   
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "timetableTemplate", function() { return timetableTemplate; });
-var timetableTemplate = "\n<div>\n    <table>\n        <thead>\n            <th>\u00D3rasz\u00E1m</th>\n            <th>D\u00E1tum</th>\n            <th>Id\u0151pont</th>\n            <th>Helysz\u00EDn</th>\n            <th>Tant\u00E1rgy</th>\n            <th>T\u00E9ma</th>\n            <th>Megjegyz\u00E9s</th>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let lesson of lessons\">\n            <td>{{lesson.lessonnumber}}</td>\n            <td>{{lesson.date | date: 'y, MM, d'}}</td>\n            <td>{{lesson.time | date: 'HH:mm'}}</td>\n            <td>{{lesson.location}}</td>\n            <td>{{lesson.subject}}</td>\n            <td>{{lesson.topic}}</td>\n            <td>{{lesson.comment}}</td>\n        <tr>\n        </tbody>\n    </table>\n</div>\n";
+var timetableTemplate = "\n<app-newlesson-popup></app-newlesson-popup>\n<div>\n    <table>\n        <thead>\n            <th>\u00D3rasz\u00E1m</th>\n            <th>D\u00E1tum</th>\n            <th>Id\u0151pont</th>\n            <th>Helysz\u00EDn</th>\n            <th>Tant\u00E1rgy</th>\n            <th>T\u00E9ma</th>\n            <th>Megjegyz\u00E9s</th>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let lesson of lessons\">\n            <td>{{lesson.lessonnumber}}</td>\n            <td>{{lesson.date | date: 'y. MM. d'}}</td>\n            <td>{{lesson.time | date: 'HH:mm'}}</td>\n            <td>{{lesson.location}}</td>\n            <td>{{lesson.subject}}</td>\n            <td>{{lesson.topic}}</td>\n            <td>{{lesson.comment}}</td>\n        <tr>\n        </tbody>\n    </table>\n    <button type=\"button\" (click)=\"newAppointment()\">\u00DAj \u00F3ra</button>\n</div>\n";
 
 
 /***/ }),
@@ -826,6 +904,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _timetable_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./timetable.component.tpl */ "./src/app/components/timetable/timetable.component.tpl.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-smart-modal */ "./node_modules/ngx-smart-modal/esm5/ngx-smart-modal.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -838,19 +917,24 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var TimetableComponent = /** @class */ (function () {
-    function TimetableComponent(http) {
+    function TimetableComponent(ngxSmartModalService, http) {
         var _this = this;
+        this.ngxSmartModalService = ngxSmartModalService;
         this.http = http;
         this.http.get('/testtimetable').subscribe(function (result) { _this.lessons = result; });
     }
+    TimetableComponent.prototype.newAppointment = function () {
+        this.ngxSmartModalService.getModal('newLessonPopup').open();
+    };
     TimetableComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-timetable',
             template: _timetable_component_tpl__WEBPACK_IMPORTED_MODULE_1__["timetableTemplate"],
             styles: [__webpack_require__(/*! ./timetable.component.scss */ "./src/app/components/timetable/timetable.component.scss")]
         }),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+        __metadata("design:paramtypes", [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], TimetableComponent);
     return TimetableComponent;
 }());
@@ -920,7 +1004,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/kisfiu/git/rft-project/rftfrontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/szi/Documents/lathatatlan_iskola/rft-project/rftfrontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

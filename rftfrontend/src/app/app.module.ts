@@ -15,9 +15,7 @@ import {LoginComponent} from './components/login/login.component';
 import { MenteesPopupComponent } from './components/schedule/mentees/menteespopup.component';
 import { InstitutionsPopupComponent } from './components/schedule/institutions/insitutionspopup.component';
 import { HttpClientModule } from '@angular/common/http';
-
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import {appRoutes} from './app-routing.module';
+import { NewLessonPopupComponent } from './components/timetable/newlesson/newlessonpopup.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +27,7 @@ import {appRoutes} from './app-routing.module';
     InstitutionsPopupComponent,
     RegistrationComponent,
     TimetableComponent,
+    NewLessonPopupComponent,
     LoginComponent
   ],
   imports: [

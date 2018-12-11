@@ -1,0 +1,29 @@
+div {
+    padding: 10px;
+
+    input {
+        border: none;
+        border-bottom: 2px solid #CEDFF2;
+        height: 30px; 
+        display: flex;
+        width: 100%;
+    }
+
+    textarea {
+        border: none;
+        border-bottom: 2px solid #CEDFF2;
+        min-height: 100px;
+        display: flex;
+        width: 90%;
+    }
+
+    input:focus, textarea:focus {
+        outline: none;
+        border-bottom: 2px solid #214F81;
+    }
+
+    .invalid-feedback {
+        color: red;
+        font-size: 12px;
+    }
+}

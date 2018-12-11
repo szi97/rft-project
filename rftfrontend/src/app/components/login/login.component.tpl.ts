@@ -2,19 +2,21 @@ export const logintemplate = `
 <div id="container">
     <form name="login-form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
         <div class="login-form-group">
-            <label for="loginUsername">Felhasználónév:</label>
-            <input type="text" name="loginUsername" [(ngModel)]="model.loginUsername"
-            #loginUsername="ngModel" [ngClass]="{ 'is-invalid': f.submitted && loginUsername.invalid }" required />
-            <div *ngIf="f.submitted && loginUsername.invalid" class="invalid-feedback">
-                <div *ngIf="loginUsername.errors.required">Add meg a felhasználóneved!</div>
+            <label for="email">E-mail cím:</label>
+            <input type="text" name="email" [(ngModel)]="model.email"
+            #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email/>
+            <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                <div *ngIf="email.errors.required">Add meg a felhasználóneved!</div>
+                <div *ngIf="email.errors.email">Nem megfelelő formátum</div>
             </div>
         </div>
         <div class="login-form-group">
-            <label for="loginPassword">Jelszó:</label>
-            <input  type="password" name="loginPassword" [(ngModel)]="model.loginPassword"
-            #loginPassword="ngModel" [ngClass]="{ 'is-invalid': f.submitted && loginPassword.invalid }" required/>
-            <div *ngIf="f.submitted && loginPassword.invalid" class="invalid-feedback">
-                <div *ngIf="loginPassword.errors.required">Add meg a jelszavad!</div>
+            <label for="password">Jelszó:</label>
+            <input  type="password" name="password" [(ngModel)]="model.password"
+            #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="8"/>
+            <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                <div *ngIf="password.errors.required">Add meg a jelszavad!</div>
+                <div *ngIf="password.errors.minlength">A jelszónak legalább 8 karakter hosszúnak kell lennie</div>
             </div>
         </div>
         <div class="login-form-group">

@@ -1,4 +1,5 @@
 export const timetableTemplate = `
+<app-newlesson-popup></app-newlesson-popup>
 <div>
     <table>
         <thead>
@@ -13,7 +14,7 @@ export const timetableTemplate = `
         <tbody>
         <tr *ngFor="let lesson of lessons">
             <td>{{lesson.lessonnumber}}</td>
-            <td>{{lesson.date | date: 'y, MM, d'}}</td>
+            <td>{{lesson.date | date: 'y. MM. d'}}</td>
             <td>{{lesson.time | date: 'HH:mm'}}</td>
             <td>{{lesson.location}}</td>
             <td>{{lesson.subject}}</td>
@@ -22,5 +23,6 @@ export const timetableTemplate = `
         <tr>
         </tbody>
     </table>
+    <button type="button" (click)="newAppointment()">Új óra</button>
 </div>
 `;
