@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import {Router} from '@angular/router';
 import { NgxSmartModalModule, NgxSmartModalService } from 'ngx-smart-modal';
 import { FormsModule } from '@angular/forms';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './components/app/app.component';
 import {HomeComponent} from './components/home/home.component';
@@ -36,7 +38,10 @@ import { NewLessonPopupComponent } from './components/timetable/newlesson/newles
     NgxSmartModalModule.forRoot(),
     FormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
+    BrowserAnimationsModule
   ],
   providers: [NgxSmartModalService],
   bootstrap: [AppComponent]

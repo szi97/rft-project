@@ -19,10 +19,10 @@ export const scheduletemplate = `
             <p> edit</p>
         </tr>
         <tr *ngIf="createNewContact == true">
-            <td><input class=popuptr value="Mentor neve" [(ngModel)]='newContact.mentorName'></td>
-            <td><input class=popuptr value="Mentorált neve" [(ngModel)]='newContact.menteeName'></td>
-            <td><input class=popuptr value="Intézmény" [(ngModel)]='newContact.institutionName'></td>
-            <td><input value="Facebook link" [(ngModel)]'=newContact.folder'></td>
+            <td><input class=popuptr [(ngModel)]="newContact.mentorName"></td>
+            <td><input class=popuptr [(ngModel)]="newContact.menteeName"></td>
+            <td><input class=popuptr [(ngModel)]="newContact.institutionName"></td>
+            <td><input [(ngModel)]="newContact.folder"></td>
             <p (click)="addContact()">Mentés</p>
         </tr>
     </tbody>

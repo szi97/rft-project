@@ -11,16 +11,18 @@ export const newLessonPopupTemplate = `
         </div>
         <div class="lesson-form-group">
             <label for="date">Dátum: </label>
-            <input type="date" class="form-control" name="date" [(ngModel)]="model.date"
-            #date="ngModel" [ngClass]="{ 'is-invalid': f.submitted && date.invalid }" required />
+            <input placeholder="Dátum" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" class="form-control" name="date"
+            [(ngModel)]="model.date" #date="ngModel" [ngClass]="{ 'is-invalid': f.submitted && date.invalid }" required />
+            <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
             <div *ngIf="f.submitted && date.invalid" class="invalid-feedback">
                 <div *ngIf="date.errors.required">Add meg az e-mail címed!</div>
             </div>
         </div>
         <div class="lesson-form-group">
             <label for="time">Időpont: </label>
-            <input type="time" class="form-control" name="time" [(ngModel)]="model.time"
-            #time="ngModel" [ngClass]="{ 'is-invalid': f.submitted && time.invalid }" required/>
+            <input placeholder="Idő" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" class="form-control" name="time"
+            [(ngModel)]="model.time" #time="ngModel" [ngClass]="{ 'is-invalid': f.submitted && time.invalid }" required/>
+            <owl-date-time [pickerType]="'timer'" #dt1></owl-date-time>
             <div *ngIf="f.submitted && time.invalid" class="invalid-feedback">
                 <div *ngIf="time.errors.required">Add meg az e-mail címed!</div>
             </div>
