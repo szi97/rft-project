@@ -16,7 +16,7 @@ export class NewLessonPopupComponent {
 
   onSubmit() {
     console.log(this.model);
-    // this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => console.log(status));
+    // this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => console.log(status); newLessonPopup.close());
 
   }
 }

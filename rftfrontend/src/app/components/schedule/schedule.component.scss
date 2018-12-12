@@ -11,8 +11,13 @@ table {
         color: white;
     }
 
-    tr:nth-child(even) {
+    tr:nth-child(even) >  td{
         background-color: #CEDFF2;
+    }
+
+    p {
+        background-color: white;
+        height: 100%;
     }
 
     .popuptr:hover {

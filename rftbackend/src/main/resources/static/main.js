@@ -710,7 +710,7 @@ var MentorsPopupComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "table {\n  border-spacing: 0px; }\n  table th, table td {\n    text-align: center;\n    padding: 5px 10px; }\n  table th {\n    background-color: #214F81;\n    color: white; }\n  table tr:nth-child(even) {\n    background-color: #CEDFF2; }\n  table .popuptr:hover {\n    color: #214F81;\n    cursor: pointer; }\n"
+module.exports = "table {\n  border-spacing: 0px; }\n  table th, table td {\n    text-align: center;\n    padding: 5px 10px; }\n  table th {\n    background-color: #214F81;\n    color: white; }\n  table tr:nth-child(even) > td {\n    background-color: #CEDFF2; }\n  table p {\n    background-color: white;\n    height: 100%; }\n  table .popuptr:hover {\n    color: #214F81;\n    cursor: pointer; }\n"
 
 /***/ }),
 
@@ -724,7 +724,7 @@ module.exports = "table {\n  border-spacing: 0px; }\n  table th, table td {\n   
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scheduletemplate", function() { return scheduletemplate; });
-var scheduletemplate = "\n<app-mentors-popup></app-mentors-popup>\n<app-mentees-popup></app-mentees-popup>\n<app-institutions-popup></app-institutions-popup>\n<div>\n<table>\n    <thead>\n        <th>Mentor</th>\n        <th>Mentor\u00E1lt</th>\n        <th>Int\u00E9zm\u00E9ny</th>\n        <th>Mappa link</th>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let contact of contacts; let i=index\">\n            <td class=popuptr (click)=\"showMentor(i)\">{{contact.mentorName}}</td>\n            <td class=popuptr (click)=\"showMentored(i)\">{{contact.menteeName}}</td>\n            <td class=popuptr (click)=\"showInstitution(i)\">{{contact.institutionName}}</td>\n            <td>{{contact.folderLink}}</td>\n        </tr>\n    </tbody>\n</table>\n</div>\n";
+var scheduletemplate = "\n<app-mentors-popup></app-mentors-popup>\n<app-mentees-popup></app-mentees-popup>\n<app-institutions-popup></app-institutions-popup>\n<div>\n<table>\n    <thead>\n        <th>Mentor</th>\n        <th>Mentor\u00E1lt</th>\n        <th>Int\u00E9zm\u00E9ny</th>\n        <th>Mappa link</th>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let contact of contacts; let i=index\">\n            <td class=popuptr (click)=\"showMentor(contact.mentorId)\">{{contact.mentorName}}</td>\n            <td class=popuptr (click)=\"showMentored(contact.menteeId)\">{{contact.menteeName}}</td>\n            <td class=popuptr (click)=\"showInstitution(contact.institutionId)\">{{contact.institutionName}}</td>\n            <td>{{contact.folderLink}}</td>\n            <p> edit</p>\n        </tr>\n        <tr *ngIf=\"createNewContact == true\">\n            <td><input class=popuptr value=\"Mentor neve\" [(ngModel)]='newContact.mentorName'></td>\n            <td><input class=popuptr value=\"Mentor\u00E1lt neve\" #newContact.menteeName></td>\n            <td><input class=popuptr value=\"Int\u00E9zm\u00E9ny\" #newContact.institutionName></td>\n            <td><input value=\"Facebook link\" #newContact.folder></td>\n            <p (click)=\"addContact()\">Ment\u00E9s</p>\n        </tr>\n    </tbody>\n</table>\n<button *ngIf=\"createNewContact == false\" (click)=\"createNewContact=!createNewContact\">+ \u00DAj whatever</button>\n</div>\n";
 
 
 /***/ }),
@@ -761,19 +761,25 @@ var ScheduleComponent = /** @class */ (function () {
         var _this = this;
         this.ngxSmartModalService = ngxSmartModalService;
         this.http = http;
+        this.createNewContact = false;
+        this.newContact = [{ mentorName: '', menteeName: '', institutionName: '', folder: '' }];
         this.http.get('/menetrend').subscribe(function (result) { _this.contacts = result; });
     }
-    ScheduleComponent.prototype.showMentor = function (index) {
+    ScheduleComponent.prototype.showMentor = function (id) {
         this.ngxSmartModalService.getModal('mentorsPopup').open();
-        this.ngxSmartModalService.setModalData(this.contacts[index].mentor, 'mentorsPopup', true);
+        this.ngxSmartModalService.setModalData(id, 'mentorsPopup', true);
     };
-    ScheduleComponent.prototype.showMentored = function (index) {
+    ScheduleComponent.prototype.showMentored = function (id) {
         this.ngxSmartModalService.getModal('menteesPopup').open();
-        this.ngxSmartModalService.setModalData(this.contacts[index].mentoralt, 'menteesPopup', true);
+        this.ngxSmartModalService.setModalData(id, 'menteesPopup', true);
     };
-    ScheduleComponent.prototype.showInstitution = function (index) {
+    ScheduleComponent.prototype.showInstitution = function (id) {
         this.ngxSmartModalService.getModal('institutionsPopup').open();
-        this.ngxSmartModalService.setModalData(this.contacts[index].intezmeny, 'institutionsPopup', true);
+        this.ngxSmartModalService.setModalData(id, 'institutionsPopup', true);
+    };
+    ScheduleComponent.prototype.addContact = function () {
+        console.log(this.newContact);
+        this.createNewContact = !this.createNewContact;
     };
     ScheduleComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -848,7 +854,7 @@ var NewLessonPopupComponent = /** @class */ (function () {
     }
     NewLessonPopupComponent.prototype.onSubmit = function () {
         console.log(this.model);
-        // this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => console.log(status));
+        // this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => console.log(status); newLessonPopup.close());
     };
     NewLessonPopupComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

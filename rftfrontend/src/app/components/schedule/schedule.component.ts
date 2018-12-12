@@ -11,24 +11,31 @@ import { HttpClient } from '@angular/common/http';
 
 export class ScheduleComponent {
     contacts: any;
+    createNewContact = false;
+    newContact = [{mentorName: '', menteeName : '', institutionName : '', folder: '' }];
 
     constructor(public ngxSmartModalService: NgxSmartModalService, private http: HttpClient) {
        this.http.get('/menetrend').subscribe(result => {this.contacts = result; });
     }
 
 
-    showMentor(index: number) {
+    showMentor(id: number) {
         this.ngxSmartModalService.getModal('mentorsPopup').open();
-        this.ngxSmartModalService.setModalData(this.contacts[index].mentor, 'mentorsPopup', true);
+        this.ngxSmartModalService.setModalData(id, 'mentorsPopup', true);
     }
 
-    showMentored(index: number) {
+    showMentored(id: number) {
         this.ngxSmartModalService.getModal('menteesPopup').open();
-        this.ngxSmartModalService.setModalData(this.contacts[index].mentoralt, 'menteesPopup', true);
+        this.ngxSmartModalService.setModalData(id, 'menteesPopup', true);
     }
 
-    showInstitution(index: number) {
+    showInstitution(id: number) {
         this.ngxSmartModalService.getModal('institutionsPopup').open();
-        this.ngxSmartModalService.setModalData(this.contacts[index].intezmeny, 'institutionsPopup', true);
+        this.ngxSmartModalService.setModalData(id, 'institutionsPopup', true);
+    }
+
+    addContact() {
+        console.log(this.newContact);
+        this.createNewContact = !this.createNewContact;
     }
 }
