@@ -731,7 +731,7 @@ module.exports = "table {\n  border-spacing: 0px; }\n  table th, table td {\n   
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scheduletemplate", function() { return scheduletemplate; });
-var scheduletemplate = "\n<app-mentors-popup></app-mentors-popup>\n<app-mentees-popup></app-mentees-popup>\n<app-institutions-popup></app-institutions-popup>\n<div>\n<table>\n    <thead>\n        <th>Mentor</th>\n        <th>Mentor\u00E1lt</th>\n        <th>Int\u00E9zm\u00E9ny</th>\n        <th>Mappa link</th>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let contact of contacts; let i=index\">\n            <td class=popuptr (click)=\"showMentor(contact.mentorId)\">{{contact.mentorName}}</td>\n            <td class=popuptr (click)=\"showMentored(contact.menteeId)\">{{contact.menteeName}}</td>\n            <td class=popuptr (click)=\"showInstitution(contact.institutionId)\">{{contact.institutionName}}</td>\n            <td>{{contact.folderLink}}</td>\n            <p> edit</p>\n        </tr>\n        <tr *ngIf=\"createNewContact == true\">\n            <td><input class=popuptr [(ngModel)]=\"newContact.mentorName\"></td>\n            <td><input class=popuptr [(ngModel)]=\"newContact.menteeName\"></td>\n            <td><input class=popuptr [(ngModel)]=\"newContact.institutionName\"></td>\n            <td><input [(ngModel)]=\"newContact.folder\"></td>\n            <p (click)=\"addContact()\">Ment\u00E9s</p>\n        </tr>\n    </tbody>\n</table>\n<button *ngIf=\"createNewContact == false\" (click)=\"createNewContact=!createNewContact\">+ \u00DAj whatever</button>\n</div>\n";
+var scheduletemplate = "\n<app-mentors-popup></app-mentors-popup>\n<app-mentees-popup></app-mentees-popup>\n<app-institutions-popup></app-institutions-popup>\n<div>\n    <div>\n        Sz\u0171r\u00E9s:\n        <select>\n            <option>Int\u00E9zm\u00E9ny</option>\n            <option *ngFor=\"let institution of institutions\">{{institution}}</option>\n        </select>\n    </div>\n<table>\n    <thead>\n        <th>Mentor</th>\n        <th>Mentor\u00E1lt</th>\n        <th>Int\u00E9zm\u00E9ny</th>\n        <th>Mappa link</th>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let contact of contacts; let i=index\">\n            <td class=popuptr (click)=\"showMentor(contact.mentorId)\">{{contact.mentorName}}</td>\n            <td class=popuptr (click)=\"showMentored(contact.menteeId)\">{{contact.menteeName}}</td>\n            <td class=popuptr (click)=\"showInstitution(contact.institutionId)\">{{contact.institutionName}}</td>\n            <td>{{contact.folderLink}}</td>\n            <p> edit</p>\n        </tr>\n        <tr *ngIf=\"createNewContact == true\">\n            <td><input class=popuptr [(ngModel)]=\"newContact.mentorName\"></td>\n            <td><input class=popuptr [(ngModel)]=\"newContact.menteeName\"></td>\n            <td><input class=popuptr [(ngModel)]=\"newContact.institutionName\"></td>\n            <td><input [(ngModel)]=\"newContact.folder\"></td>\n            <p (click)=\"addContact()\">Ment\u00E9s</p>\n        </tr>\n    </tbody>\n</table>\n<button *ngIf=\"createNewContact == false\" (click)=\"createNewContact=!createNewContact\">+ \u00DAj whatever</button>\n</div>\n";
 
 
 /***/ }),
@@ -770,7 +770,12 @@ var ScheduleComponent = /** @class */ (function () {
         this.http = http;
         this.createNewContact = false;
         this.newContact = [{ mentorName: '', menteeName: '', institutionName: '', folder: '' }];
-        this.http.get('/menetrend').subscribe(function (result) { _this.contacts = result; });
+        this.institutions = [];
+        this.http.get('/menetrend').subscribe(function (result) {
+            _this.contacts = result;
+            _this.institutions = Array.from(new Set(_this.contacts.map(function (contact) { return contact.institutionName; })));
+            console.log(_this.institutions);
+        });
     }
     ScheduleComponent.prototype.showMentor = function (id) {
         this.ngxSmartModalService.getModal('mentorsPopup').open();
@@ -1019,7 +1024,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/kisfiu/git/rft-project/rftfrontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/szi/Documents/lathatatlan_iskola/rft-project/rftfrontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

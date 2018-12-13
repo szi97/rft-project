@@ -13,9 +13,14 @@ export class ScheduleComponent {
     contacts: any;
     createNewContact = false;
     newContact = [{mentorName: '', menteeName : '', institutionName : '', folder: '' }];
+    institutions = [];
 
     constructor(public ngxSmartModalService: NgxSmartModalService, private http: HttpClient) {
-       this.http.get('/menetrend').subscribe(result => {this.contacts = result; });
+       this.http.get('/menetrend').subscribe(result => {
+            this.contacts = result;
+            this.institutions = Array.from(new Set(this.contacts.map((contact) => contact.institutionName)));
+            console.log(this.institutions);
+    });
     }
 
 

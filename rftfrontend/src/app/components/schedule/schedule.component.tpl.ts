@@ -3,6 +3,13 @@ export const scheduletemplate = `
 <app-mentees-popup></app-mentees-popup>
 <app-institutions-popup></app-institutions-popup>
 <div>
+    <div>
+        Szűrés:
+        <select>
+            <option>Intézmény</option>
+            <option *ngFor="let institution of institutions">{{institution}}</option>
+        </select>
+    </div>
 <table>
     <thead>
         <th>Mentor</th>
