@@ -96,18 +96,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-smart-modal */ "./node_modules/ngx-smart-modal/esm5/ngx-smart-modal.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _components_app_app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/app/app.component */ "./src/app/components/app/app.component.ts");
-/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _components_schedule_schedule_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/schedule/schedule.component */ "./src/app/components/schedule/schedule.component.ts");
-/* harmony import */ var _components_schedule_mentors_mentorspopup_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/schedule/mentors/mentorspopup.component */ "./src/app/components/schedule/mentors/mentorspopup.component.ts");
-/* harmony import */ var _components_registration_registration_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/registration/registration.component */ "./src/app/components/registration/registration.component.ts");
-/* harmony import */ var _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/timetable/timetable.component */ "./src/app/components/timetable/timetable.component.ts");
-/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
-/* harmony import */ var _components_schedule_mentees_menteespopup_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/schedule/mentees/menteespopup.component */ "./src/app/components/schedule/mentees/menteespopup.component.ts");
-/* harmony import */ var _components_schedule_institutions_insitutionspopup_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/schedule/institutions/insitutionspopup.component */ "./src/app/components/schedule/institutions/insitutionspopup.component.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _components_timetable_newlesson_newlessonpopup_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/timetable/newlesson/newlessonpopup.component */ "./src/app/components/timetable/newlesson/newlessonpopup.component.ts");
+/* harmony import */ var ng_pick_datetime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ng-pick-datetime */ "./node_modules/ng-pick-datetime/picker.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _components_app_app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/app/app.component */ "./src/app/components/app/app.component.ts");
+/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _components_schedule_schedule_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/schedule/schedule.component */ "./src/app/components/schedule/schedule.component.ts");
+/* harmony import */ var _components_schedule_mentors_mentorspopup_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/schedule/mentors/mentorspopup.component */ "./src/app/components/schedule/mentors/mentorspopup.component.ts");
+/* harmony import */ var _components_registration_registration_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/registration/registration.component */ "./src/app/components/registration/registration.component.ts");
+/* harmony import */ var _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/timetable/timetable.component */ "./src/app/components/timetable/timetable.component.ts");
+/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
+/* harmony import */ var _components_schedule_mentees_menteespopup_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/schedule/mentees/menteespopup.component */ "./src/app/components/schedule/mentees/menteespopup.component.ts");
+/* harmony import */ var _components_schedule_institutions_insitutionspopup_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/schedule/institutions/insitutionspopup.component */ "./src/app/components/schedule/institutions/insitutionspopup.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _components_timetable_newlesson_newlessonpopup_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/timetable/newlesson/newlessonpopup.component */ "./src/app/components/timetable/newlesson/newlessonpopup.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -134,33 +136,38 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var AppModule = /** @class */ (function () {
     function AppModule(router) {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _components_app_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
-                _components_home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"],
-                _components_schedule_schedule_component__WEBPACK_IMPORTED_MODULE_8__["ScheduleComponent"],
-                _components_schedule_mentors_mentorspopup_component__WEBPACK_IMPORTED_MODULE_9__["MentorsPopupComponent"],
-                _components_schedule_mentees_menteespopup_component__WEBPACK_IMPORTED_MODULE_13__["MenteesPopupComponent"],
-                _components_schedule_institutions_insitutionspopup_component__WEBPACK_IMPORTED_MODULE_14__["InstitutionsPopupComponent"],
-                _components_registration_registration_component__WEBPACK_IMPORTED_MODULE_10__["RegistrationComponent"],
-                _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_11__["TimetableComponent"],
-                _components_timetable_newlesson_newlessonpopup_component__WEBPACK_IMPORTED_MODULE_16__["NewLessonPopupComponent"],
-                _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"]
+                _components_app_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
+                _components_home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"],
+                _components_schedule_schedule_component__WEBPACK_IMPORTED_MODULE_10__["ScheduleComponent"],
+                _components_schedule_mentors_mentorspopup_component__WEBPACK_IMPORTED_MODULE_11__["MentorsPopupComponent"],
+                _components_schedule_mentees_menteespopup_component__WEBPACK_IMPORTED_MODULE_15__["MenteesPopupComponent"],
+                _components_schedule_institutions_insitutionspopup_component__WEBPACK_IMPORTED_MODULE_16__["InstitutionsPopupComponent"],
+                _components_registration_registration_component__WEBPACK_IMPORTED_MODULE_12__["RegistrationComponent"],
+                _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_13__["TimetableComponent"],
+                _components_timetable_newlesson_newlessonpopup_component__WEBPACK_IMPORTED_MODULE_18__["NewLessonPopupComponent"],
+                _components_login_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"],
                 ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalModule"].forRoot(),
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_17__["HttpClientModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+                ng_pick_datetime__WEBPACK_IMPORTED_MODULE_5__["OwlDateTimeModule"],
+                ng_pick_datetime__WEBPACK_IMPORTED_MODULE_5__["OwlNativeDateTimeModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"]
             ],
             providers: [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalService"]],
-            bootstrap: [_components_app_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
+            bootstrap: [_components_app_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], AppModule);
@@ -817,7 +824,7 @@ module.exports = "div {\n  padding: 10px; }\n  div input {\n    border: none;\n 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newLessonPopupTemplate", function() { return newLessonPopupTemplate; });
-var newLessonPopupTemplate = "\n<ngx-smart-modal #newLessonPopup [identifier]=\"'newLessonPopup'\">\n    <form name='lessonForm' (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n        <div class=\"lesson-form-group\">\n            <label for=\"lessonnumber\">\u00F3rasz\u00E1m: </label>\n            <input type=\"number\" class=\"form-control\" name=\"lessonnumber\" [(ngModel)]=\"model.lessonnumber\"\n            #lessonnumber=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && lessonnumber.invalid }\" required/>\n            <div *ngIf=\"f.submitted && lessonnumber.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"lessonnumber.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"date\">D\u00E1tum: </label>\n            <input type=\"date\" class=\"form-control\" name=\"date\" [(ngModel)]=\"model.date\"\n            #date=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && date.invalid }\" required />\n            <div *ngIf=\"f.submitted && date.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"date.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"time\">Id\u0151pont: </label>\n            <input type=\"time\" class=\"form-control\" name=\"time\" [(ngModel)]=\"model.time\"\n            #time=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && time.invalid }\" required/>\n            <div *ngIf=\"f.submitted && time.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"time.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"location\">Helysz\u00EDn: </label>\n            <input type=\"text\" class=\"form-control\" name=\"location\" [(ngModel)]=\"model.location\"\n            #location=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && location.invalid }\" required/>\n            <div *ngIf=\"f.submitted && location.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"location.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"subject\">Tant\u00E1rgy: </label>\n            <input type=\"text\" class=\"form-control\" name=\"subject\" [(ngModel)]=\"model.subject\"\n            #subject=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && subject.invalid }\" required/>\n            <div *ngIf=\"f.submitted && subject.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"subject.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"topic\">T\u00E9ma: </label>\n            <input type=\"text\" class=\"form-control\" name=\"topic\" [(ngModel)]=\"model.topic\"\n            #topic=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && topic.invalid }\" required/>\n            <div *ngIf=\"f.submitted && topic.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"topic.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"comment\">Megjegyz\u00E9s: </label>\n            <textarea maxlength=\"255\" class=\"form-control\" name=\"comment\" [(ngModel)]=\"model.comment\"\n            #comment=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && comment.invalid }\" required></textarea>\n            <div *ngIf=\"f.submitted && comment.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"comment.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <button [disabled]=\"loading\">Ment\u00E9s</button>\n        </div>\n    </form>\n    <button type=\"button\" (click)=\"newLessonPopup.close()\">M\u00E9gsem</button>\n</ngx-smart-modal>\n";
+var newLessonPopupTemplate = "\n<ngx-smart-modal #newLessonPopup [identifier]=\"'newLessonPopup'\">\n    <form name='lessonForm' (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n        <div class=\"lesson-form-group\">\n            <label for=\"lessonnumber\">\u00F3rasz\u00E1m: </label>\n            <input type=\"number\" class=\"form-control\" name=\"lessonnumber\" [(ngModel)]=\"model.lessonnumber\"\n            #lessonnumber=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && lessonnumber.invalid }\" required/>\n            <div *ngIf=\"f.submitted && lessonnumber.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"lessonnumber.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"date\">D\u00E1tum: </label>\n            <input placeholder=\"D\u00E1tum\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\" class=\"form-control\" name=\"date\"\n            [(ngModel)]=\"model.date\" #date=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && date.invalid }\" required />\n            <owl-date-time [pickerType]=\"'calendar'\" #dt2></owl-date-time>\n            <div *ngIf=\"f.submitted && date.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"date.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"time\">Id\u0151pont: </label>\n            <input placeholder=\"Id\u0151\" [owlDateTimeTrigger]=\"dt1\" [owlDateTime]=\"dt1\" class=\"form-control\" name=\"time\"\n            [(ngModel)]=\"model.time\" #time=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && time.invalid }\" required/>\n            <owl-date-time [pickerType]=\"'timer'\" #dt1></owl-date-time>\n            <div *ngIf=\"f.submitted && time.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"time.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"location\">Helysz\u00EDn: </label>\n            <input type=\"text\" class=\"form-control\" name=\"location\" [(ngModel)]=\"model.location\"\n            #location=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && location.invalid }\" required/>\n            <div *ngIf=\"f.submitted && location.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"location.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"subject\">Tant\u00E1rgy: </label>\n            <input type=\"text\" class=\"form-control\" name=\"subject\" [(ngModel)]=\"model.subject\"\n            #subject=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && subject.invalid }\" required/>\n            <div *ngIf=\"f.submitted && subject.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"subject.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"topic\">T\u00E9ma: </label>\n            <input type=\"text\" class=\"form-control\" name=\"topic\" [(ngModel)]=\"model.topic\"\n            #topic=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && topic.invalid }\" required/>\n            <div *ngIf=\"f.submitted && topic.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"topic.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"comment\">Megjegyz\u00E9s: </label>\n            <textarea maxlength=\"255\" class=\"form-control\" name=\"comment\" [(ngModel)]=\"model.comment\"\n            #comment=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && comment.invalid }\" required></textarea>\n            <div *ngIf=\"f.submitted && comment.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"comment.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <button [disabled]=\"loading\">Ment\u00E9s</button>\n        </div>\n    </form>\n    <button type=\"button\" (click)=\"newLessonPopup.close()\">M\u00E9gsem</button>\n</ngx-smart-modal>\n";
 
 
 /***/ }),
@@ -854,6 +861,8 @@ var NewLessonPopupComponent = /** @class */ (function () {
     }
     NewLessonPopupComponent.prototype.onSubmit = function () {
         console.log(this.model);
+        this.model.date = this.model.date.getMonth() + '/' + this.model.date.getDate() + '/' + this.model.date.getFullYear();
+        this.model.time = this.model.time.getHours() + ':' + this.model.time.getMinutes();
         // this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => console.log(status); newLessonPopup.close());
     };
     NewLessonPopupComponent = __decorate([
@@ -1010,7 +1019,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/szi/Documents/lathatatlan_iskola/rft-project/rftfrontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/kisfiu/git/rft-project/rftfrontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })
