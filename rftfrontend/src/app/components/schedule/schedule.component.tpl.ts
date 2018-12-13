@@ -5,7 +5,7 @@ export const scheduletemplate = `
 <div>
     <div>
         Szűrés:
-        <select>
+        <select [(ngModel)]="actualInstitution">
             <option>Intézmény</option>
             <option *ngFor="let institution of institutions">{{institution}}</option>
         </select>
@@ -18,7 +18,7 @@ export const scheduletemplate = `
         <th>Mappa link</th>
     </thead>
     <tbody>
-        <tr *ngFor="let contact of contacts; let i=index">
+        <tr *ngFor="let contact of getCorrectContacts()">
             <td class=popuptr (click)="showMentor(contact.mentorId)">{{contact.mentorName}}</td>
             <td class=popuptr (click)="showMentored(contact.menteeId)">{{contact.menteeName}}</td>
             <td class=popuptr (click)="showInstitution(contact.institutionId)">{{contact.institutionName}}</td>

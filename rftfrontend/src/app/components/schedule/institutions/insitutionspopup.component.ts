@@ -11,6 +11,6 @@ export class InstitutionsPopupComponent {
   institution: any;
 
   constructor(private http: HttpClient) {
-    this.http.get('/menetrend').subscribe(result => { console.log(this.institution); });
+    // this.http.get('/menetrend').subscribe(result => { console.log(this.institution); });
   }
 }

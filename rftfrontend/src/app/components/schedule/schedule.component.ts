@@ -14,12 +14,12 @@ export class ScheduleComponent {
     createNewContact = false;
     newContact = [{mentorName: '', menteeName : '', institutionName : '', folder: '' }];
     institutions = [];
+    actualInstitution: String = 'Intézmény';
 
     constructor(public ngxSmartModalService: NgxSmartModalService, private http: HttpClient) {
        this.http.get('/menetrend').subscribe(result => {
             this.contacts = result;
             this.institutions = Array.from(new Set(this.contacts.map((contact) => contact.institutionName)));
-            console.log(this.institutions);
     });
     }
 
@@ -40,7 +40,14 @@ export class ScheduleComponent {
     }
 
     addContact() {
-        console.log(this.newContact);
         this.createNewContact = !this.createNewContact;
+    }
+
+    getCorrectContacts() {
+        if (this.actualInstitution === 'Intézmény') {
+            return this.contacts;
+        } else {
+            return this.contacts.filter((c) => c.institutionName === this.actualInstitution);
+        }
     }
 }
