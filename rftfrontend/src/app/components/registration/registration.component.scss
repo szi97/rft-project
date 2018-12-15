@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .form-group {
     padding: 20px;
     color: #444444;
@@ -5,7 +7,7 @@
 
     input[type="text"], input[type="password"] {
         border: none;
-        border-bottom: 2px solid #CEDFF2;
+        border-bottom: 2px solid $main_color_light;
         height: 30px; 
         display: flex;
         width: 20em;
@@ -13,11 +15,11 @@
 
     input:focus {
         outline: none;
-        border-bottom: 2px solid #214F81;
+        border-bottom: 2px solid $main_color;
     }
 
     .invalid-feedback {
-        color: red;
+        color: $error_color;
         font-size: 12px;
     }
 
@@ -27,8 +29,8 @@
     }
 
     button {
-        background-color: #214F81;
-        color: white;
+        background-color: $button_background-color;
+        color: $button_font_color;
         font-size: 18px;
         border: none;
         height: 30px;

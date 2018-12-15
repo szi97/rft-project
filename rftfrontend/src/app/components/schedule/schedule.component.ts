@@ -12,39 +12,40 @@ import { HttpClient } from '@angular/common/http';
 export class ScheduleComponent {
     contacts: any;
     createNewContact = false;
-    newContact = {mentorId: 0, mentorName: '', menteeId: 0, menteeName : '', institutionId: 0, institutionName : '', folder: '' };
+    newContact = {mentorId: 0, mentorName: '', menteeId: 0, menteeName : '', institutionId: 0, institutionName : '', folderLink: '' };
     actualInstitution: String = 'Intézmény';
-    allMentors = [];
-    allMentees = [];
-    allInstitutions = [];
+    allMentors: any;
+    allMentees: any;
+    allInstitutions: any;
     editableRow = -1;
     editedRow: any;
+    usersRole: String;
+    modifiedRow = {mentorName: '', menteeName: '', institutionName: '', folderLink: ''};
 
     constructor(public ngxSmartModalService: NgxSmartModalService, private http: HttpClient) {
-       this.http.get('/menetrend').subscribe(result => {
-            this.contacts = result;
-            this.allInstitutions = [{institutionId: 1, institutionName: 'Ize'}, {institutionId: 2, institutionName: 'Izeke'}];
-            this.allMentors = [{mentorId: 1, mentorName: 'Kis Pista'}, {mentorId: 2, mentorName: 'Nagy Pista'}];
-            this.allMentees = [{menteeId: 1, menteeName: 'Balla Tibi'}, {menteeId: 2, menteeName: 'Kovács Krisfót'}];
-    });
-    // itt majd meg kell kapnom a mentorokat, mentoráltakat és intézményeket
-    // akkor majd az institutions tömb sem fog kelleni, mert az összes meglesz :D
+       this.http.get('/menetrend').subscribe(result =>  {
+           this.contacts = Object.values(result)[0];
+           this.usersRole = Object.keys(result)[0];
+        } );
+        this.http.get('/testmentee').subscribe(result => this.allMentees = result );
+        this.http.get('/testmentor').subscribe(result => this.allMentors = result);
+        this.http.get('/testinstitution').subscribe(result => this.allInstitutions = result );
     }
 
 
     showMentor(id: number) {
         this.ngxSmartModalService.getModal('mentorsPopup').open();
-        this.ngxSmartModalService.setModalData(id, 'mentorsPopup', true);
+        this.ngxSmartModalService.setModalData(this.allMentors.filter((m) => m.id === id)[0], 'mentorsPopup', true);
     }
 
-    showMentored(id: number) {
+    showMentee(id: number) {
         this.ngxSmartModalService.getModal('menteesPopup').open();
-        this.ngxSmartModalService.setModalData(id, 'menteesPopup', true);
+        this.ngxSmartModalService.setModalData(this.allMentees.filter((m) => m.id === id)[0], 'menteesPopup', true);
     }
 
     showInstitution(id: number) {
         this.ngxSmartModalService.getModal('institutionsPopup').open();
-        this.ngxSmartModalService.setModalData(id, 'institutionsPopup', true);
+        this.ngxSmartModalService.setModalData(this.allInstitutions.filter((i) => i.id === id)[0], 'institutionsPopup', true);
     }
 
     getCorrectContacts() {
@@ -63,22 +64,47 @@ export class ScheduleComponent {
     }
 
     SetNewContactMentor(index: number) {
-        this.newContact.mentorId = this.allMentors[index].mentorId;
-        this.newContact.mentorName = this.allMentors[index].mentorName;
+        this.newContact.mentorId = this.allMentors[index].id;
+        this.newContact.mentorName = this.allMentors[index].name;
     }
 
     SetNewContactMentee(index: number) {
-        this.newContact.menteeId = this.allMentees[index].menteeId;
-        this.newContact.menteeName = this.allMentees[index].menteeName;
+        this.newContact.menteeId = this.allMentees[index].id;
+        this.newContact.menteeName = this.allMentees[index].name;
     }
 
     SetNewContactInstitution(index: number) {
-        this.newContact.institutionId = this.allInstitutions[index].institutionId;
-        this.newContact.institutionName = this.allInstitutions[index].institutionName;
+        this.newContact.institutionId = this.allInstitutions[index].id;
+        this.newContact.institutionName = this.allInstitutions[index].name;
     }
 
     addContact() {
         this.createNewContact = !this.createNewContact;
         console.log(this.newContact);
+       //  this.http.post('/?', this.newContact, {responseType: 'text'}).subscribe(status => console.log(status));
+
+    }
+
+    editRow(contact: any, index: number) {
+        this.modifiedRow.mentorName = contact.mentorName;
+        this.modifiedRow.menteeName = contact.menteeName;
+        this.modifiedRow.institutionName = contact.institutionName;
+        this.modifiedRow.folderLink = contact.folderLink;
+        this.editableRow = index;
+    }
+
+    saveModification(contact: any) {
+        this.editableRow = -1;
+        console.log(contact);
+        // this.http.post('/?', contact, {responseType: 'text'}).subscribe(status => console.log(status));
+
+    }
+
+    cancelModification(index: number) {
+        this.contacts[index].mentorName = this.modifiedRow.mentorName;
+        this.contacts[index].menteeName = this.modifiedRow.menteeName;
+        this.contacts[index].institutionName = this.modifiedRow.institutionName;
+        this.contacts[index].folderLink = this.modifiedRow.folderLink;
+        this.editableRow = -1;
     }
 }

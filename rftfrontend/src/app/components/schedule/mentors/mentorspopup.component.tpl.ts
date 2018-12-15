@@ -3,35 +3,35 @@ export const mentorsPopupTemplate = `
     <table>
         <tr>
             <td>Név: </td>
-            <td>{{mentorsPopup.getData()}}</td>
+            <td>{{mentorsPopup.getData().name}}</td>
         </tr>
         <tr>
             <td>E-mail cím: </td>
-            <td></td>
+            <td>{{mentorsPopup.getData().email}}</td>
         </tr>
         <tr>
             <td>Telefonszám: </td>
-            <td></td>
+            <td>{{mentorsPopup.getData().phone}}</td>
         </tr>
         <tr>
             <td>Facebook adatlap:  </td>
-            <td></td>
+            <td>{{mentorsPopup.getData().facebook}}</td>
         </tr>
         <tr>
             <td>Korcsoport: </td>
-            <td></td>
+            <td>{{mentorsPopup.getData().agegroup}}</td>
         </tr>
         <tr>
             <td>Tantárgy: </td>
-            <td></td>
+            <td>{{mentorsPopup.getData().subject}}</td>
         </tr>
         <tr>
             <td>Intézmény felelős: </td>
-            <td></td>
+            <td>{{mentorsPopup.getData().responsible}}</td>
         </tr>
         <tr>
             <td>Megjegyzés: </td>
-            <td></td>
+            <td>{{mentorsPopup.getData().comment}}</td>
         </tr>
     </table>
     <button (click)="mentorsPopup.close()">Close</button>

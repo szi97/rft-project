@@ -1,7 +1,11 @@
+@import '../../variables.scss';
+
 .header{
+    display: flex;
+    justify-content: center;
     height:200px;
     padding: 0px;
-    background-color: #214F81;
+    background-color: $background-color;
     position: relative;
 
     img {
@@ -17,7 +21,7 @@
 }
 
 .topnavigation{
-    background-color: white;
+    background-color: $main_color;
     overflow: hidden;
     list-style: none;
     line-height: 60px;
@@ -25,6 +29,7 @@
     top: 0px;
     display: flex;
     justify-content: center;
+    box-shadow: 0px 8px 10px -4px black;
 
     .navbarlist {
         li {
@@ -34,16 +39,17 @@
                position: relative;
                display: block;
                padding: 0px 10px;
-               color: black;
+               color: $font_on_main_color;
                text-decoration: none;
            }
    
            a:hover {
-                color: #214F81;
+                color: $main_color_light;
            }
 
            a.active-link {
-                background-color: #CEDFF2;
+                color: $font_on_main_color;
+                text-decoration: underline;
            }
        }
    }
