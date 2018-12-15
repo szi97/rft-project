@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 @Entity
 @Table(name = "mentorok", schema = "sulimuri")
-@Embeddable
 public class Mentor implements Serializable {
 
     @Id
@@ -34,8 +33,8 @@ public class Mentor implements Serializable {
     @Column(name = "Tantargy")
     private String subject;
 
-    @Column(name = "Intezmenyfelelos")
-    private String responsible;
+    @Column(name = "Intezmeny_ID")
+    private Integer responsible;
 
     @Column(name = "Megjegyzes")
     private String comment;
@@ -47,7 +46,7 @@ public class Mentor implements Serializable {
     private ArrayList<String> subjectList;
 
 
-    public Mentor(long id, String name, String email, String phone, String facebook, String agegroup, String subject, String responsible, String comment){
+    public Mentor(long id, String name, String email, String phone, String facebook, String agegroup, String subject, Integer responsible, String comment){
         this.id = id;
         this.name = name;
         this.email = email;
@@ -143,11 +142,11 @@ public class Mentor implements Serializable {
         this.subject = subject;
     }
 
-    public String getResponsible() {
+    public Integer getResponsible() {
         return responsible;
     }
 
-    public void setResponsible(String resposible) {
+    public void setResponsible(Integer resposible) {
         this.responsible = resposible;
     }
 

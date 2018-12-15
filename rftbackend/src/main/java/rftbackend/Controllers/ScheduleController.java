@@ -4,13 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import rftbackend.Logic.DatabaseLogic;
-import rftbackend.Models.Mentor;
 import rftbackend.Models.Schedule;
 import rftbackend.Models.ScheduleTableRow;
 import rftbackend.Repositories.ScheduleRepository;
+import rftbackend.Services.UserService;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @RestController
 public class ScheduleController{
@@ -21,11 +20,16 @@ public class ScheduleController{
     @Autowired
     DatabaseLogic dbLogic;
 
+    @Autowired
+    UserService userService;
+
     private List<ScheduleTableRow> tableContent = new ArrayList<>();
 
     @GetMapping("/menetrend")
-    public List<ScheduleTableRow> listSchedule() {
+    public Map<String, List<ScheduleTableRow>> listSchedule() {
         System.console().writer().println("------------------schedule-----------------");
+        Map<String, List<ScheduleTableRow>> response = new HashMap<>();
+
         tableContent.clear();
         dbLogic.readSchedulesFromDb();
         dbLogic.readTimetablesFromDb();
@@ -34,30 +38,23 @@ public class ScheduleController{
         dbLogic.readMentorsFromDb();
         List<Schedule> schedule = dbLogic.getSchedules();
         for (Schedule actual: schedule) {
-            //System.console().writer().println("---DATA---");
-            //System.console().writer().println(actual.getMentorid());
-            //System.console().writer().println(actual.getMenteeid());
-            //System.console().writer().println(actual.getInstitutionid());
             String mentorName = "";
             String menteeName = "";
             String institutionName = "";
             if(dbLogic.getMentorById(actual.getMentorid()).isPresent()){
-                //System.console().writer().println("---INSIDE-GETMENTORBYID---");
                 mentorName= dbLogic.getMentorById(actual.getMentorid()).get().getName();
-                //System.console().writer().println(mentorName);
             }
             if(dbLogic.getMenteeById(actual.getMenteeid()).isPresent()){
-                //System.console().writer().println("---INSIDE-GETMENTEEBYID---");
                 menteeName= dbLogic.getMenteeById(actual.getMenteeid()).get().getName();
-                //System.console().writer().println(menteeName);
             }
             if(dbLogic.getInstitutionById(actual.getInstitutionid()).isPresent()){
-                //System.console().writer().println("---INSIDE-amimaradt---");
                 institutionName= dbLogic.getInstitutionById(actual.getInstitutionid()).get().getName();
-                //System.console().writer().println(institutionName);
             }
             tableContent.add(new ScheduleTableRow(mentorName, actual.getMentorid(), menteeName, actual.getMenteeid(), institutionName, actual.getInstitutionid(), actual.getFolder()));
         }
-        return tableContent;
+
+        response.put(userService.returnHighestRole(), tableContent);
+
+        return response;
     }
 }

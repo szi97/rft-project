@@ -3,27 +3,27 @@ export const menteesPopupTemplate = `
     <table>
         <tr>
             <td>Név: </td>
-            <td>{{menteesPopup.getData()}}</td>
+            <td>{{menteesPopup.getData().name}}</td>
         </tr>
         <tr>
             <td>Születési dátum: </td>
-            <td></td>
+            <td>{{menteesPopup.getData().birth}}</td>
         </tr>
         <tr>
             <td>Osztály: </td>
-            <td></td>
+            <td>{{menteesPopup.getData().schoolclass}}</td>
         </tr>
         <tr>
             <td>Tantárgy:  </td>
-            <td></td>
+            <td>{{menteesPopup.getData().subject}}</td>
         </tr>
         <tr>
             <td>Intézmény: </td>
-            <td></td>
+            <td>{{menteesPopup.getData().institutionid}}</td>
         </tr>
         <tr>
             <td>Megjegyzés: </td>
-            <td></td>
+            <td>comment</td>
         </tr>
     </table>
     <button (click)="menteesPopup.close()">Close</button>

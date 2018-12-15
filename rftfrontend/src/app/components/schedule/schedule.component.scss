@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 table {
     border-spacing: 0px;
 
@@ -5,26 +7,42 @@ table {
         text-align: center;
         padding: 5px 10px;;
         min-width: 200px;
+        height: $table_height;;
     }
 
     th {
-        background-color:  #214F81;
-        color: white;
+        background-color:  $main_color;
+        color: $font_on_main_color;
     }
 
-    tr:nth-child(even) >  td{
-        background-color: #CEDFF2;
+    tr:nth-child(odd) >  td{
+        background-color: $main_color_light;
     }
 
     p {
-        background-color: white;
+        background-color: $background-color;
         height: 100%;
     }
 
-    .popuptr:hover {
-        color: #214F81;
+    td > input:disabled {
+        border: none; 
+        display: flex;
+        background-color: transparent;
+        color: $default_font_color;
+    }
+
+    td > input:disabled:hover {
+        color: $main_color;
         cursor: pointer;
     }
+
 }
 
+.filtering-select {
+    padding: 10px;
+}
 
+select {
+    height: 30px;
+    border: none;
+}

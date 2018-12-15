@@ -1,8 +1,16 @@
 export const timetableTemplate = `
 <app-newlesson-popup></app-newlesson-popup>
 <div>
+    <div>
+        Szűrés:
+        <select [(ngModel)]="actualMentor">
+            <option>Mentor</option>
+            <option *ngFor="let mentor of allmentors">{{mentor}}</option>
+        </select>
+    </div>
     <table>
         <thead>
+            <th>Mentor</th>
             <th>Óraszám</th>
             <th>Dátum</th>
             <th>Időpont</th>
@@ -12,7 +20,8 @@ export const timetableTemplate = `
             <th>Megjegyzés</th>
         </thead>
         <tbody>
-        <tr *ngFor="let lesson of lessons">
+        <tr *ngFor="let lesson of getCorrectMentors()">
+            <td>{{lesson.mentorName}}</td>
             <td>{{lesson.lessonnumber}}</td>
             <td>{{lesson.date | date: 'y. MM. d'}}</td>
             <td>{{lesson.time | date: 'HH:mm'}}</td>

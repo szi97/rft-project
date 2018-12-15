@@ -539,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/szi/Documents/lathatatlan_iskola/rft-project/rftfrontend/src/styles.scss */"./src/styles.scss");
+module.exports = __webpack_require__(/*! C:\Users\Dora Dusyn\git\kurva5\rft-project-master\rftfrontend\src\styles.scss */"./src/styles.scss");
 
 
 /***/ })

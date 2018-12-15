@@ -28,11 +28,11 @@ public class Institution {
     @Column(name = "Vezeto")
     private String director;
 
-    @Column(name = "Intezmenyfelelos")
-    private String responsible;
+    @Column(name = "Intezmenyfelelos_ID")
+    private Integer responsible;
 
 
-    public Institution(long id, String name, String email, String phone, String address, String director, String responsible){
+    public Institution(long id, String name, String email, String phone, String address, String director, Integer responsible){
         this.id = id;
         this.name = name;
         this.email= email;
@@ -95,11 +95,11 @@ public class Institution {
         this.director = director;
     }
 
-    public String getResponsible() {
+    public Integer getResponsible() {
         return responsible;
     }
 
-    public void setResponsible(String responsible) {
+    public void setResponsible(Integer responsible) {
         this.responsible = responsible;
     }
 

@@ -8,9 +8,9 @@ import rftbackend.Logic.DatabaseLogic;
 import rftbackend.Models.TimetableTableRow;
 import rftbackend.Models.Timetable;
 import rftbackend.Repositories.TimetableRepository;
+import rftbackend.Services.UserService;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -21,6 +21,9 @@ public class TimetableController{
 
     @Autowired
     DatabaseLogic dbLogic;
+
+    @Autowired
+    UserService userService;
 
     private List<TimetableTableRow> tableContent = new ArrayList<>();
 
@@ -34,24 +37,36 @@ public class TimetableController{
         dbLogic.readInstitutionsFromDb();
         dbLogic.readMentorsFromDb();
         List<Timetable> timetable= dbLogic.getTimetables();
-        for (Timetable actual: timetable) {
-            //System.console().writer().println("---DATA_TIME_---");
-            //System.console().writer().println(actual.getMentorid());
-            //System.console().writer().println(actual.getMenteeid());
-            String mentorName = "";
-            String menteeName = "";
-            if(dbLogic.getMentorById(actual.getMentorid()).isPresent()){
-                //System.console().writer().println("---TIMTEIMTIMTEEE-----INSIDE-GETMENTORBYID---");
-                mentorName= dbLogic.getMentorById(actual.getMentorid()).get().getName();
-                //System.console().writer().println(mentorName);
+        if(userService.returnHighestRole().equals("ROLE_Leader")){
+            for (Timetable actual: timetable) {
+                String mentorName = "";
+                String menteeName = "";
+                if(dbLogic.getMentorById(actual.getMentorid()).isPresent()){
+                    mentorName= dbLogic.getMentorById(actual.getMentorid()).get().getName();
+                }
+                if(dbLogic.getMenteeById(actual.getMenteeid()).isPresent()){
+                    menteeName= dbLogic.getMenteeById(actual.getMenteeid()).get().getName();
+                }
+                tableContent.add(new TimetableTableRow(actual.getLessonnumber(), actual.getDate(), actual.getTime(), actual.getLocation(), actual.getSubject(), actual.getTopic(), actual.getComment(), actual.getMentorid(), mentorName, actual.getMenteeid(), menteeName, actual.getTimetableid()));
             }
-            if(dbLogic.getMenteeById(actual.getMenteeid()).isPresent()){
-                //System.console().writer().println("---TIMTEIMTIMTEEE-----INSIDE-GETMENTEEBYID---");
-                menteeName= dbLogic.getMenteeById(actual.getMenteeid()).get().getName();
-                //System.console().writer().println(menteeName);
-            }
-            tableContent.add(new TimetableTableRow(actual.getLessonnumber(), actual.getDate(), actual.getTime(), actual.getLocation(), actual.getSubject(), actual.getTopic(), actual.getComment(), actual.getMentorid(), mentorName, actual.getMenteeid(), menteeName, actual.getTimetableid()));
         }
+        else{
+            long actualUserId = dbLogic.getMentorIdByEmail(userService.returnActualUserName());
+            for (Timetable actual: timetable) {
+                String mentorName = "";
+                String menteeName = "";
+                if(dbLogic.getMentorById(actualUserId).isPresent()){
+                    if(actual.getMentorid() == actualUserId){
+                        mentorName= dbLogic.getMentorById(actual.getMentorid()).get().getName();
+                        if(dbLogic.getMenteeById(actual.getMenteeid()).isPresent()){
+                            menteeName= dbLogic.getMenteeById(actual.getMenteeid()).get().getName();
+                        }
+                        tableContent.add(new TimetableTableRow(actual.getLessonnumber(), actual.getDate(), actual.getTime(), actual.getLocation(), actual.getSubject(), actual.getTopic(), actual.getComment(), actual.getMentorid(), mentorName, actual.getMenteeid(), menteeName, actual.getTimetableid()));
+                    }
+                }
+            }
+        }
+
         return tableContent;
     }
 }

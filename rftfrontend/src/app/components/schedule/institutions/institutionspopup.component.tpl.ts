@@ -3,31 +3,27 @@ export const institutionsPopupTemplate = `
     <table>
         <tr>
             <td>Név: </td>
-            <td>{{institutionsPopup.getData()}}</td>
+            <td>{{institutionsPopup.getData().name}}</td>
         </tr>
         <tr>
             <td>E-mail cím: </td>
-            <td></td>
+            <td>{{institutionsPopup.getData().email}}</td>
         </tr>
         <tr>
             <td>Telefonszám: </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Facebook adatlap:  </td>
-            <td></td>
+            <td>{{institutionsPopup.getData().phone}}</td>
         </tr>
         <tr>
             <td>Cím: </td>
-            <td></td>
+            <td>{{institutionsPopup.getData().address}}</td>
         </tr>
         <tr>
             <td>Vezető: </td>
-            <td></td>
+            <td>{{institutionsPopup.getData().director}}</td>
         </tr>
         <tr>
             <td>Intézmény felelős: </td>
-            <td></td>
+            <td>{{institutionsPopup.getData().responsible}}</td>
         </tr>
     </table>
     <button (click)="institutionsPopup.close()">Close</button>

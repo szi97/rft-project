@@ -27,12 +27,20 @@ public class DatabaseLogic {
     @Autowired
     TimetableRepository timetableRepo;
 
+    @Autowired
+    LeaderRepository leaderRepo;
+
+    @Autowired
+    EventRepository eventRepo;
+
 
     private List<Mentor> mentors = new ArrayList<Mentor>();
     private List<Mentee> mentees = new ArrayList<Mentee>();
     private List<Institution> institutions = new ArrayList<Institution>();
-    private List<Schedule> schedules= new ArrayList<Schedule>();
-    private List<Timetable> timetables= new ArrayList<Timetable>();
+    private List<Schedule> schedules = new ArrayList<Schedule>();
+    private List<Timetable> timetables = new ArrayList<Timetable>();
+    private List<Leader> leaders = new ArrayList<>();
+    private List<Event> events = new ArrayList<>();
 
     public DatabaseLogic(){
         //readMentorsFromDb();
@@ -54,8 +62,15 @@ public class DatabaseLogic {
         this.timetables = timetableRepo.findAll();
     }
 
+    public void readEventsFromDb(){
+        this.events = eventRepo.findAll();
+    }
 
-    public boolean containsId(long id){
+    public void readLeadersFromDb(){
+        this.leaders = leaderRepo.findAll();
+    }
+
+    public boolean containsId(long id){ //átnevezni MentorId-re mert másre is lesz majd
         return mentorRepo.existsById(id);
     }
 
@@ -69,6 +84,18 @@ public class DatabaseLogic {
             return false;
         }
         return true;
+    }
+
+    public long getMentorIdByEmail(String email){
+        long id = 0;
+        int i = 0;
+        while(id == 0){
+            if(mentors.get(i).getEmail().equals(email)){
+                id = mentors.get(i).getId();
+            }
+            i++;
+        }
+        return id;
     }
 
     public List<Mentor> getMentors() {
@@ -122,6 +149,22 @@ public class DatabaseLogic {
 
     public void setTimetables(List<Timetable> timetables) {
         this.timetables = timetables;
+    }
+
+    public List<Leader> getLeaders() {
+        return leaders;
+    }
+
+    public Optional<Leader> getLeaderById(long id){
+        return leaderRepo.findById(id);
+    }
+
+    public List<Event> getEvents() {
+        return events;
+    }
+
+    public Optional<Event> getEventById(long id){
+        return eventRepo.findById(id);
     }
 
 

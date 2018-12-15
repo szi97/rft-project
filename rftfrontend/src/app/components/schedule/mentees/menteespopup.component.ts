@@ -10,7 +10,4 @@ import { HttpClient } from '@angular/common/http';
 export class MenteesPopupComponent {
   mentee: any;
 
-  constructor(private http: HttpClient) {
-    this.http.get('/menetrend').subscribe(result => { console.log(this.mentee); });
-  }
 }
