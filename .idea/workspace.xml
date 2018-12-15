@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3044d54f-4002-4647-8dee-275750516372" name="Default Changelist" comment="" />
+    <list default="true" id="3044d54f-4002-4647-8dee-275750516372" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/rftfrontend/target/" />
     <ignored path="$PROJECT_DIR$/rftbackend/target/" />
@@ -27,6 +29,17 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="sulimuri@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="sulimuri@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="sulimuri@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sulimuri: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
     </expand>
     <select />
   </component>
@@ -34,7 +47,7 @@
     <session id="915336254">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="18" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.16" value="2" />
@@ -149,84 +162,65 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://5a5a362f-7acd-4fd0-9872-06ad75fe1b1b/schema/sulimuri/table/mentorok">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://5a5a362f-7acd-4fd0-9872-06ad75fe1b1b/schema/sulimuri/table/orarend">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Controllers/TimetableController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+        <entry file="das://5a5a362f-7acd-4fd0-9872-06ad75fe1b1b/schema/sulimuri/table/vezetok">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Services/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <entry file="das://5a5a362f-7acd-4fd0-9872-06ad75fe1b1b/schema/sulimuri/table/intezmenyek">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rftbackend/src/main/java/rftbackend/Logic/DatabaseLogic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
-              <folding>
-                <element signature="e#1218#1219#0" expanded="true" />
-                <element signature="e#1269#1270#0" expanded="true" />
-                <element signature="e#1306#1307#0" expanded="true" />
-                <element signature="e#1357#1358#0" expanded="true" />
-                <element signature="e#1399#1400#0" expanded="true" />
-                <element signature="e#1460#1461#0" expanded="true" />
-                <element signature="e#1499#1500#0" expanded="true" />
-                <element signature="e#1554#1555#0" expanded="true" />
-                <element signature="e#1594#1595#0" expanded="true" />
-                <element signature="e#1651#1652#0" expanded="true" />
-                <element signature="e#1688#1689#0" expanded="true" />
-                <element signature="e#1737#1738#0" expanded="true" />
-                <element signature="e#1775#1776#0" expanded="true" />
-                <element signature="e#1826#1827#0" expanded="true" />
-                <element signature="e#1868#1869#0" expanded="true" />
-                <element signature="e#1964#1965#0" expanded="true" />
-                <element signature="e#2537#2538#0" expanded="true" />
-                <element signature="e#2567#2568#0" expanded="true" />
-                <element signature="e#2620#2621#0" expanded="true" />
-                <element signature="e#2666#2667#0" expanded="true" />
-                <element signature="e#2719#2720#0" expanded="true" />
-                <element signature="e#2765#2766#0" expanded="true" />
-                <element signature="e#2828#2829#0" expanded="true" />
-                <element signature="e#2879#2880#0" expanded="true" />
-                <element signature="e#2931#2932#0" expanded="true" />
-                <element signature="e#2969#2970#0" expanded="true" />
-                <element signature="e#3010#3011#0" expanded="true" />
-                <element signature="e#3040#3041#0" expanded="true" />
-                <element signature="e#3092#3093#0" expanded="true" />
-                <element signature="e#3130#3131#0" expanded="true" />
-                <element signature="e#3180#3181#0" expanded="true" />
-                <element signature="e#3215#3216#0" expanded="true" />
-                <element signature="e#3282#3283#0" expanded="true" />
-                <element signature="e#3330#3331#0" expanded="true" />
-                <element signature="e#3374#3375#0" expanded="true" />
-                <element signature="e#3406#3407#0" expanded="true" />
-                <element signature="e#3464#3465#0" expanded="true" />
-                <element signature="e#3506#3507#0" expanded="true" />
-                <element signature="e#3552#3553#0" expanded="true" />
-                <element signature="e#3585#3586#0" expanded="true" />
-                <element signature="e#3646#3647#0" expanded="true" />
-                <element signature="e#3690#3691#0" expanded="true" />
-                <element signature="e#3730#3731#0" expanded="true" />
-                <element signature="e#3760#3761#0" expanded="true" />
-                <element signature="e#3813#3814#0" expanded="true" />
-                <element signature="e#3859#3860#0" expanded="true" />
-                <element signature="e#3897#3898#0" expanded="true" />
-                <element signature="e#3926#3927#0" expanded="true" />
-                <element signature="e#3977#3978#0" expanded="true" />
-                <element signature="e#4022#4023#0" expanded="true" />
-              </folding>
+        <entry file="das://5a5a362f-7acd-4fd0-9872-06ad75fe1b1b/schema/sulimuri/table/menetrend">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://5a5a362f-7acd-4fd0-9872-06ad75fe1b1b/schema/sulimuri/table/mentoraltak">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://5a5a362f-7acd-4fd0-9872-06ad75fe1b1b/schema/sulimuri/table/esemenyek">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -800,53 +794,53 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project-master" type="462c0819:PsiDirectoryNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project-master" type="462c0819:PsiDirectoryNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
               <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project-master" type="462c0819:PsiDirectoryNode" />
-              <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project-master" type="462c0819:PsiDirectoryNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
               <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project-master" type="462c0819:PsiDirectoryNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
               <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project-master" type="462c0819:PsiDirectoryNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
               <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
+              <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project-master" type="462c0819:PsiDirectoryNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
               <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -856,7 +850,7 @@
             </path>
             <path>
               <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project-master" type="462c0819:PsiDirectoryNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
               <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -866,7 +860,7 @@
             </path>
             <path>
               <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project-master" type="462c0819:PsiDirectoryNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
               <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -876,7 +870,7 @@
             </path>
             <path>
               <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project-master" type="462c0819:PsiDirectoryNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
               <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -886,7 +880,7 @@
             </path>
             <path>
               <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project-master" type="462c0819:PsiDirectoryNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
               <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -896,7 +890,7 @@
             </path>
             <path>
               <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project-master" type="462c0819:PsiDirectoryNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
               <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -906,11 +900,55 @@
             </path>
             <path>
               <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rft-project-master" type="462c0819:PsiDirectoryNode" />
-              <item name="rftbackend" type="462c0819:PsiDirectoryNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
+              <item name="rftfrontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
+              <item name="rftfrontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
+              <item name="rftfrontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
+              <item name="rftfrontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
+              <item name="rftfrontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="schedule" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
+              <item name="rftfrontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="schedule" type="462c0819:PsiDirectoryNode" />
+              <item name="mentors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rftproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rft-project" type="462c0819:PsiDirectoryNode" />
+              <item name="rftfrontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -925,7 +963,7 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544905324306" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="database.data.extractors.current.id" value="SQL Inserts" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -1028,10 +1066,9 @@
     <option name="totallyTimeSpent" value="101063000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21946308" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22111663" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
