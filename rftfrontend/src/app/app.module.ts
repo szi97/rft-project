@@ -19,6 +19,7 @@ import { InstitutionsPopupComponent } from './components/schedule/institutions/i
 import { HttpClientModule } from '@angular/common/http';
 import { NewLessonPopupComponent } from './components/timetable/newlesson/newlessonpopup.component';
 import { EventComponent } from './components/events/event.component';
+import { NewEventPopupComponent } from './components/events/newEventPopup/newEventPopup.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EventComponent } from './components/events/event.component';
     TimetableComponent,
     NewLessonPopupComponent,
     LoginComponent,
-    EventComponent
+    EventComponent,
+    NewEventPopupComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { newLessonPopupTemplate } from './newlessonpopup.component.tpl';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-newlesson-popup',
@@ -10,7 +11,7 @@ import { newLessonPopupTemplate } from './newlessonpopup.component.tpl';
 export class NewLessonPopupComponent {
   model: any;
 
-  constructor(private http: HttpClient) {
+  constructor(public ngxSmartModalService: NgxSmartModalService, private http: HttpClient) {
       this.model = [];
   }
 
@@ -18,7 +19,7 @@ export class NewLessonPopupComponent {
     console.log(this.model);
     this.model.date = this.model.date.getMonth() + '/' + this.model.date.getDate() + '/' + this.model.date.getFullYear();
     this.model.time = this.model.time.getHours() + ':' + this.model.time.getMinutes();
-    // this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => console.log(status); newLessonPopup.close());
-
+    // this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => {
+    //  console.log(status); this.ngxSmartModalService.getModal('newLessonPopup').close(); });
   }
 }

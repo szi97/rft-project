@@ -114,6 +114,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _components_timetable_newlesson_newlessonpopup_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/timetable/newlesson/newlessonpopup.component */ "./src/app/components/timetable/newlesson/newlessonpopup.component.ts");
 /* harmony import */ var _components_events_event_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/events/event.component */ "./src/app/components/events/event.component.ts");
+/* harmony import */ var _components_events_newEventPopup_newEventPopup_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/events/newEventPopup/newEventPopup.component */ "./src/app/components/events/newEventPopup/newEventPopup.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -123,6 +124,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -159,7 +161,8 @@ var AppModule = /** @class */ (function () {
                 _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_13__["TimetableComponent"],
                 _components_timetable_newlesson_newlessonpopup_component__WEBPACK_IMPORTED_MODULE_18__["NewLessonPopupComponent"],
                 _components_login_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"],
-                _components_events_event_component__WEBPACK_IMPORTED_MODULE_19__["EventComponent"]
+                _components_events_event_component__WEBPACK_IMPORTED_MODULE_19__["EventComponent"],
+                _components_events_newEventPopup_newEventPopup_component__WEBPACK_IMPORTED_MODULE_20__["NewEventPopupComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -254,7 +257,7 @@ var AppComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "table {\n  border-collapse: collapse;\n  margin: 10px;\n  text-align: center; }\n  table #date {\n    border-color: #214F81;\n    border-style: solid;\n    border-width: 20px 2px 0px 2px;\n    font-size: 25px;\n    min-width: 80px;\n    vertical-align: bottom; }\n  table #time {\n    border-color: #214F81;\n    border-style: solid;\n    border-width: 0px 2px 2px 2px;\n    font-size: 12px;\n    vertical-align: top; }\n  table .content {\n    min-width: 200px; }\n"
+module.exports = "table {\n  border-collapse: collapse;\n  margin: 20px;\n  text-align: center; }\n  table #date {\n    border-color: #214F81;\n    border-style: solid;\n    border-width: 20px 2px 0px 2px;\n    font-size: 25px;\n    min-width: 80px;\n    vertical-align: bottom; }\n  table #time {\n    border-color: #214F81;\n    border-style: solid;\n    border-width: 0px 2px 2px 2px;\n    font-size: 12px;\n    vertical-align: top; }\n  table .content {\n    min-width: 200px; }\n"
 
 /***/ }),
 
@@ -268,7 +271,7 @@ module.exports = "table {\n  border-collapse: collapse;\n  margin: 10px;\n  text
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eventTemplate", function() { return eventTemplate; });
-var eventTemplate = "\n<div>\n    <table *ngFor=\"let event of events\">\n        <tr>\n            <td id=\"date\">{{event.date | date: 'MM.dd.'}}</td>\n            <td class=\"content\">{{event.name}}</td>\n        </tr>\n        <tr>\n            <td id=\"time\">{{event.time}}</td>\n            <td class=\"content\">{{event.location}}</td>\n        </tr>\n    </table>\n</div>\n";
+var eventTemplate = "\n<div>\n    <table *ngFor=\"let event of events\">\n        <tr>\n            <td id=\"date\">{{event.date | date: 'MM.dd.'}}</td>\n            <td class=\"content\">{{event.name}}</td>\n        </tr>\n        <tr>\n            <td id=\"time\">{{event.time}}</td>\n            <td class=\"content\">{{event.location}}</td>\n        </tr>\n    </table>\n</div>\n\n<button (click)=\"createNewEvent()\">+ \u00DAj esem\u00E9ny</button>\n<app-new-event-popup></app-new-event-popup>\n";
 
 
 /***/ }),
@@ -286,6 +289,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _event_component_tpl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./event.component.tpl */ "./src/app/components/events/event.component.tpl.ts");
+/* harmony import */ var ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-smart-modal */ "./node_modules/ngx-smart-modal/esm5/ngx-smart-modal.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -298,20 +302,108 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var EventComponent = /** @class */ (function () {
-    function EventComponent(http) {
+    function EventComponent(ngxSmartModalService, http) {
         var _this = this;
+        this.ngxSmartModalService = ngxSmartModalService;
+        this.http = http;
         http.get('/events').subscribe(function (result) { return (_this.events = result); });
     }
+    EventComponent.prototype.createNewEvent = function () {
+        this.ngxSmartModalService.getModal('newEventPopup').open();
+    };
     EventComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-events',
             template: _event_component_tpl__WEBPACK_IMPORTED_MODULE_2__["eventTemplate"],
             styles: [__webpack_require__(/*! ./event.component.scss */ "./src/app/components/events/event.component.scss")]
         }),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+        __metadata("design:paramtypes", [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], EventComponent);
     return EventComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/events/newEventPopup/newEventPopup.component.scss":
+/*!******************************************************************************!*\
+  !*** ./src/app/components/events/newEventPopup/newEventPopup.component.scss ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "div {\n  margin: 10px; }\n  div textarea {\n    min-height: 50px; }\n  div input, div label {\n    display: block; }\n"
+
+/***/ }),
+
+/***/ "./src/app/components/events/newEventPopup/newEventPopup.component.tpl.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/components/events/newEventPopup/newEventPopup.component.tpl.ts ***!
+  \********************************************************************************/
+/*! exports provided: newEventPopupTemplate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newEventPopupTemplate", function() { return newEventPopupTemplate; });
+var newEventPopupTemplate = "\n    <ngx-smart-modal #newEventPopup [identifier]=\"'newEventPopup'\">\n        <div>\n            <label>N\u00E9v: </label>\n            <input [(ngModel)]=\"event.name\">\n        </div>\n        <div>\n            <label>D\u00E1tum: </label>\n            <input [(ngModel)]=\"event.date\" placeholder=\"D\u00E1tum\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\">\n            <owl-date-time [pickerType]=\"'calendar'\" #dt2></owl-date-time>\n        </div>\n        <div>\n            <label>Id\u0151: </label>\n            <input [(ngModel)]=\"event.time\" placeholder=\"Id\u0151\" [owlDateTimeTrigger]=\"dt1\" [owlDateTime]=\"dt1\">\n            <owl-date-time [pickerType]=\"'timer'\" #dt1></owl-date-time>\n        </div>\n        <div>\n            <label>Hely: </label>\n            <input [(ngModel)]=\"event.location\">\n        </div>\n        <div>\n            <label>Le\u00EDr\u00E1s: </label>\n            <textarea [(ngModel)]=\"event.description\"></textarea>\n        </div>\n        <div>\n            <label>Szervez\u0151k:</label>\n            <p>select szervez\u0151knek</p>\n        </div>\n        <button (click)=\"saveNewEvent()\">Ment\u00E9s</button>\n        <button (click)=\"newEventPopup.close()\">M\u00E9gse</button>\n    </ngx-smart-modal>\n";
+
+
+/***/ }),
+
+/***/ "./src/app/components/events/newEventPopup/newEventPopup.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/components/events/newEventPopup/newEventPopup.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: NewEventPopupComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewEventPopupComponent", function() { return NewEventPopupComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _newEventPopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./newEventPopup.component.tpl */ "./src/app/components/events/newEventPopup/newEventPopup.component.tpl.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-smart-modal */ "./node_modules/ngx-smart-modal/esm5/ngx-smart-modal.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var NewEventPopupComponent = /** @class */ (function () {
+    function NewEventPopupComponent(ngxSmartModalService, http) {
+        this.ngxSmartModalService = ngxSmartModalService;
+        this.http = http;
+        this.event = { name: '', date: '', time: '', location: '', description: '', organizers: [] };
+    }
+    NewEventPopupComponent.prototype.saveNewEvent = function () {
+        console.log(this.event);
+        /*  this.http.post('/?', event, {responseType: 'text'}).subscribe(status => {
+              console.log(status);
+              this.ngxSmartModalService.getModal('newEventPopup').close();
+          });
+          */
+    };
+    NewEventPopupComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-new-event-popup',
+            template: _newEventPopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__["newEventPopupTemplate"],
+            styles: [__webpack_require__(/*! ./newEventPopup.component.scss */ "./src/app/components/events/newEventPopup/newEventPopup.component.scss")]
+        }),
+        __metadata("design:paramtypes", [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], NewEventPopupComponent);
+    return NewEventPopupComponent;
 }());
 
 
@@ -930,7 +1022,7 @@ module.exports = "div {\n  padding: 10px; }\n  div input {\n    border: none;\n 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newLessonPopupTemplate", function() { return newLessonPopupTemplate; });
-var newLessonPopupTemplate = "\n<ngx-smart-modal #newLessonPopup [identifier]=\"'newLessonPopup'\">\n    <form name='lessonForm' (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n        <div class=\"lesson-form-group\">\n            <label for=\"lessonnumber\">\u00F3rasz\u00E1m: </label>\n            <input type=\"number\" class=\"form-control\" name=\"lessonnumber\" [(ngModel)]=\"model.lessonnumber\"\n            #lessonnumber=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && lessonnumber.invalid }\" required/>\n            <div *ngIf=\"f.submitted && lessonnumber.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"lessonnumber.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"date\">D\u00E1tum: </label>\n            <input placeholder=\"D\u00E1tum\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\" class=\"form-control\" name=\"date\"\n            [(ngModel)]=\"model.date\" #date=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && date.invalid }\" required />\n            <owl-date-time [pickerType]=\"'calendar'\" #dt2></owl-date-time>\n            <div *ngIf=\"f.submitted && date.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"date.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"time\">Id\u0151pont: </label>\n            <input placeholder=\"Id\u0151\" [owlDateTimeTrigger]=\"dt1\" [owlDateTime]=\"dt1\" class=\"form-control\" name=\"time\"\n            [(ngModel)]=\"model.time\" #time=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && time.invalid }\" required/>\n            <owl-date-time [pickerType]=\"'timer'\" #dt1></owl-date-time>\n            <div *ngIf=\"f.submitted && time.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"time.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"location\">Helysz\u00EDn: </label>\n            <input type=\"text\" class=\"form-control\" name=\"location\" [(ngModel)]=\"model.location\"\n            #location=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && location.invalid }\" required/>\n            <div *ngIf=\"f.submitted && location.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"location.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"subject\">Tant\u00E1rgy: </label>\n            <input type=\"text\" class=\"form-control\" name=\"subject\" [(ngModel)]=\"model.subject\"\n            #subject=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && subject.invalid }\" required/>\n            <div *ngIf=\"f.submitted && subject.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"subject.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"topic\">T\u00E9ma: </label>\n            <input type=\"text\" class=\"form-control\" name=\"topic\" [(ngModel)]=\"model.topic\"\n            #topic=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && topic.invalid }\" required/>\n            <div *ngIf=\"f.submitted && topic.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"topic.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"comment\">Megjegyz\u00E9s: </label>\n            <textarea maxlength=\"255\" class=\"form-control\" name=\"comment\" [(ngModel)]=\"model.comment\"\n            #comment=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && comment.invalid }\" required></textarea>\n            <div *ngIf=\"f.submitted && comment.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"comment.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <button [disabled]=\"loading\">Ment\u00E9s</button>\n        </div>\n    </form>\n    <button type=\"button\" (click)=\"newLessonPopup.close()\">M\u00E9gsem</button>\n</ngx-smart-modal>\n";
+var newLessonPopupTemplate = "\n<ngx-smart-modal #newLessonPopup [identifier]=\"'newLessonPopup'\">\n    <form name='lessonForm' (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n        <div class=\"lesson-form-group\">\n            <label for=\"lessonnumber\">\u00F3rasz\u00E1m: </label>\n            <input type=\"number\" class=\"form-control\" name=\"lessonnumber\" [(ngModel)]=\"model.lessonnumber\"\n            #lessonnumber=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && lessonnumber.invalid }\" required/>\n            <div *ngIf=\"f.submitted && lessonnumber.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"lessonnumber.errors.required\">Add meg az \u00F3rasz\u00E1mot!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"date\">D\u00E1tum: </label>\n            <input placeholder=\"D\u00E1tum\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\" class=\"form-control\" name=\"date\"\n            [(ngModel)]=\"model.date\" #date=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && date.invalid }\" required />\n            <owl-date-time [pickerType]=\"'calendar'\" #dt2></owl-date-time>\n            <div *ngIf=\"f.submitted && date.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"date.errors.required\">V\u00E1laszd ki a d\u00E1tumot!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"time\">Id\u0151pont: </label>\n            <input placeholder=\"Id\u0151\" [owlDateTimeTrigger]=\"dt1\" [owlDateTime]=\"dt1\" class=\"form-control\" name=\"time\"\n            [(ngModel)]=\"model.time\" #time=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && time.invalid }\" required/>\n            <owl-date-time [pickerType]=\"'timer'\" #dt1></owl-date-time>\n            <div *ngIf=\"f.submitted && time.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"time.errors.required\">V\u00E1lasz ki az id\u0151t!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"location\">Helysz\u00EDn: </label>\n            <input type=\"text\" class=\"form-control\" name=\"location\" [(ngModel)]=\"model.location\"\n            #location=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && location.invalid }\" required/>\n            <div *ngIf=\"f.submitted && location.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"location.errors.required\">Add meg a helysz\u00EDnt!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"subject\">Tant\u00E1rgy: </label>\n            <input type=\"text\" class=\"form-control\" name=\"subject\" [(ngModel)]=\"model.subject\"\n            #subject=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && subject.invalid }\" required/>\n            <div *ngIf=\"f.submitted && subject.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"subject.errors.required\">Add meg a tant\u00E1rgyat!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"topic\">T\u00E9ma: </label>\n            <input type=\"text\" class=\"form-control\" name=\"topic\" [(ngModel)]=\"model.topic\"\n            #topic=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && topic.invalid }\" required/>\n            <div *ngIf=\"f.submitted && topic.invalid\" class=\"invalid-feedback\">\n                <div *ngIf=\"topic.errors.required\">Add meg a t\u00E9m\u00E1t!</div>\n            </div>\n        </div>\n        <div class=\"lesson-form-group\">\n            <label for=\"comment\">Megjegyz\u00E9s: </label>\n            <textarea maxlength=\"255\" class=\"form-control\" name=\"comment\" [(ngModel)]=\"model.comment\"\n            #comment=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && comment.invalid }\"></textarea>\n        </div>\n        <div class=\"lesson-form-group\">\n            <button [disabled]=\"loading\">Ment\u00E9s</button>\n        </div>\n    </form>\n    <button type=\"button\" (click)=\"newLessonPopup.close()\">M\u00E9gsem</button>\n</ngx-smart-modal>\n";
 
 
 /***/ }),
@@ -948,6 +1040,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _newlessonpopup_component_tpl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./newlessonpopup.component.tpl */ "./src/app/components/timetable/newlesson/newlessonpopup.component.tpl.ts");
+/* harmony import */ var ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-smart-modal */ "./node_modules/ngx-smart-modal/esm5/ngx-smart-modal.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -960,8 +1053,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var NewLessonPopupComponent = /** @class */ (function () {
-    function NewLessonPopupComponent(http) {
+    function NewLessonPopupComponent(ngxSmartModalService, http) {
+        this.ngxSmartModalService = ngxSmartModalService;
         this.http = http;
         this.model = [];
     }
@@ -969,7 +1064,8 @@ var NewLessonPopupComponent = /** @class */ (function () {
         console.log(this.model);
         this.model.date = this.model.date.getMonth() + '/' + this.model.date.getDate() + '/' + this.model.date.getFullYear();
         this.model.time = this.model.time.getHours() + ':' + this.model.time.getMinutes();
-        // this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => console.log(status); newLessonPopup.close());
+        // this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => {
+        //  console.log(status); this.ngxSmartModalService.getModal('newLessonPopup').close(); });
     };
     NewLessonPopupComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -977,7 +1073,7 @@ var NewLessonPopupComponent = /** @class */ (function () {
             template: _newlessonpopup_component_tpl__WEBPACK_IMPORTED_MODULE_2__["newLessonPopupTemplate"],
             styles: [__webpack_require__(/*! ./newlessonpopup.component.scss */ "./src/app/components/timetable/newlesson/newlessonpopup.component.scss")]
         }),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+        __metadata("design:paramtypes", [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], NewLessonPopupComponent);
     return NewLessonPopupComponent;
 }());

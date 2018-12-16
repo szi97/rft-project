@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { eventTemplate } from './event.component.tpl';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
     selector: 'app-events',
@@ -11,7 +12,11 @@ export class EventComponent {
 
     events: any;
 
-    constructor(http: HttpClient) {
+    constructor(public ngxSmartModalService: NgxSmartModalService, private http: HttpClient) {
         http.get('/events').subscribe(result => (this.events = result));
+    }
+
+    createNewEvent() {
+        this.ngxSmartModalService.getModal('newEventPopup').open();
     }
 }

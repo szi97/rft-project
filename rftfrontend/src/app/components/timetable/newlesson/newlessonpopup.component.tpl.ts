@@ -6,7 +6,7 @@ export const newLessonPopupTemplate = `
             <input type="number" class="form-control" name="lessonnumber" [(ngModel)]="model.lessonnumber"
             #lessonnumber="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lessonnumber.invalid }" required/>
             <div *ngIf="f.submitted && lessonnumber.invalid" class="invalid-feedback">
-                <div *ngIf="lessonnumber.errors.required">Add meg az e-mail címed!</div>
+                <div *ngIf="lessonnumber.errors.required">Add meg az óraszámot!</div>
             </div>
         </div>
         <div class="lesson-form-group">
@@ -15,7 +15,7 @@ export const newLessonPopupTemplate = `
             [(ngModel)]="model.date" #date="ngModel" [ngClass]="{ 'is-invalid': f.submitted && date.invalid }" required />
             <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
             <div *ngIf="f.submitted && date.invalid" class="invalid-feedback">
-                <div *ngIf="date.errors.required">Add meg az e-mail címed!</div>
+                <div *ngIf="date.errors.required">Válaszd ki a dátumot!</div>
             </div>
         </div>
         <div class="lesson-form-group">
@@ -24,7 +24,7 @@ export const newLessonPopupTemplate = `
             [(ngModel)]="model.time" #time="ngModel" [ngClass]="{ 'is-invalid': f.submitted && time.invalid }" required/>
             <owl-date-time [pickerType]="'timer'" #dt1></owl-date-time>
             <div *ngIf="f.submitted && time.invalid" class="invalid-feedback">
-                <div *ngIf="time.errors.required">Add meg az e-mail címed!</div>
+                <div *ngIf="time.errors.required">Válasz ki az időt!</div>
             </div>
         </div>
         <div class="lesson-form-group">
@@ -32,7 +32,7 @@ export const newLessonPopupTemplate = `
             <input type="text" class="form-control" name="location" [(ngModel)]="model.location"
             #location="ngModel" [ngClass]="{ 'is-invalid': f.submitted && location.invalid }" required/>
             <div *ngIf="f.submitted && location.invalid" class="invalid-feedback">
-                <div *ngIf="location.errors.required">Add meg az e-mail címed!</div>
+                <div *ngIf="location.errors.required">Add meg a helyszínt!</div>
             </div>
         </div>
         <div class="lesson-form-group">
@@ -40,7 +40,7 @@ export const newLessonPopupTemplate = `
             <input type="text" class="form-control" name="subject" [(ngModel)]="model.subject"
             #subject="ngModel" [ngClass]="{ 'is-invalid': f.submitted && subject.invalid }" required/>
             <div *ngIf="f.submitted && subject.invalid" class="invalid-feedback">
-                <div *ngIf="subject.errors.required">Add meg az e-mail címed!</div>
+                <div *ngIf="subject.errors.required">Add meg a tantárgyat!</div>
             </div>
         </div>
         <div class="lesson-form-group">
@@ -48,16 +48,13 @@ export const newLessonPopupTemplate = `
             <input type="text" class="form-control" name="topic" [(ngModel)]="model.topic"
             #topic="ngModel" [ngClass]="{ 'is-invalid': f.submitted && topic.invalid }" required/>
             <div *ngIf="f.submitted && topic.invalid" class="invalid-feedback">
-                <div *ngIf="topic.errors.required">Add meg az e-mail címed!</div>
+                <div *ngIf="topic.errors.required">Add meg a témát!</div>
             </div>
         </div>
         <div class="lesson-form-group">
             <label for="comment">Megjegyzés: </label>
             <textarea maxlength="255" class="form-control" name="comment" [(ngModel)]="model.comment"
-            #comment="ngModel" [ngClass]="{ 'is-invalid': f.submitted && comment.invalid }" required></textarea>
-            <div *ngIf="f.submitted && comment.invalid" class="invalid-feedback">
-                <div *ngIf="comment.errors.required">Add meg az e-mail címed!</div>
-            </div>
+            #comment="ngModel" [ngClass]="{ 'is-invalid': f.submitted && comment.invalid }"></textarea>
         </div>
         <div class="lesson-form-group">
             <button [disabled]="loading">Mentés</button>

@@ -11,4 +11,7 @@ export const eventTemplate = `
         </tr>
     </table>
 </div>
+
+<button (click)="createNewEvent()">+ Új esemény</button>
+<app-new-event-popup></app-new-event-popup>
 `;
