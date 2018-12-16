@@ -17,4 +17,8 @@ table {
     tr:nth-child(even) {
         background-color: $main_color_light;
     }
+
+    input {
+        max-width: 100px;
+    }
 }
