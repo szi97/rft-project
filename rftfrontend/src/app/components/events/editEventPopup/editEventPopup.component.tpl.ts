@@ -1,5 +1,5 @@
 export const editEventPopupTemplate = `
-    <ngx-smart-modal #editEventPopup [identifier]="'editEventPopup'">
+    <ngx-smart-modal #editEventPopup [identifier]="'editEventPopup'" [autostart]="false">
         <div>
             <label>Név: </label>
             <input [(ngModel)]="editEventPopup.getData().name">
@@ -26,7 +26,7 @@ export const editEventPopupTemplate = `
             <label>Szervezők:</label>
             <p>select szervezőknek</p>
         </div>
-        <button (click)="saveNewEvent()">Mentés</button>
+        <button (click)="saveEvent()">Mentés</button>
         <button (click)="editEventPopup.close()">Mégse</button>
     </ngx-smart-modal>
 `;

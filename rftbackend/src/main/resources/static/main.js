@@ -211,7 +211,7 @@ module.exports = ".header {\n  display: flex;\n  justify-content: center;\n  hei
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "apptemplate", function() { return apptemplate; });
-var apptemplate = "\n<div class=\"header\">\n    <img src=\"../assets/lathatatlan_logokek.png\">\n</div>\n<nav class=\"topnavigation\" id=\"mynav\">\n      <div>\n          <ul class=\"navbarlist\">\n              <li><a routerLink=\"\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{ exact: true }\">Kezd\u0151oldal</a></li>\n              <li><a routerLink=\"menetrend\" routerLinkActive=\"active-link\">Menetrend</a></li>\n              <li><a routerLink=\"regisztracio\" routerLinkActive=\"active-link\">Regisztr\u00E1ci\u00F3</a></li>\n              <li><a routerLink=\"esemenyek\" routerLinkActive=\"active-link\">Esem\u00E9nyek</a></li>\n              <li><a routerLink=\"orarend\" routerLinkActive=\"active-link\">\u00D3rarend</a></li>\n              <li><a routerLink=\"bejelentkezes\" routerLinkActive=\"active-link\">Bejelentkez\u00E9s</a></li>\n          </ul>\n      </div>\n  </nav>\n  <div id=\"container\">\n    <router-outlet></router-outlet>\n  </div>\n  <footer>\n    <div class=\"footerdiv\">\n        <p>El\u00E9rhet\u0151s\u00E9gek:\n        </p>\n    </div>\n  </footer>\n  ";
+var apptemplate = "\n<div class=\"header\">\n    <img src=\"../assets/lathatatlan_logokek.png\">\n</div>\n<nav class=\"topnavigation\" id=\"mynav\">\n      <div>\n          <ul class=\"navbarlist\">\n              <li><a routerLink=\"\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{ exact: true }\">Kezd\u0151oldal</a></li>\n              <li><a routerLink=\"menetrend\" routerLinkActive=\"active-link\">Menetrend</a></li>\n              <li><a routerLink=\"regisztracio\" routerLinkActive=\"active-link\">Regisztr\u00E1ci\u00F3</a></li>\n              <li><a routerLink=\"esemenyek\" routerLinkActive=\"active-link\">Esem\u00E9nyek</a></li>\n              <li><a routerLink=\"orarend\" routerLinkActive=\"active-link\">\u00D3rarend</a></li>\n          </ul>\n      </div>\n  </nav>\n  <div id=\"container\">\n    <router-outlet></router-outlet>\n  </div>\n  <footer>\n    <div class=\"footerdiv\">\n        <p>El\u00E9rhet\u0151s\u00E9gek:</p>\n        <p>L\u00E1thatatlan Iskola</p>\n        <p>Honlap: www.lathatatlaniskola.hu</p>\n        <p>Email: info@lathatatlaniskola.hu</p>\n        <p>FB: www.facebook.com/lathatatlaniskola</p>\n        <p>Insta: www.instagram.com/lathatatlaniskola</p>\n    </div>\n  </footer>\n  ";
 
 
 /***/ }),
@@ -274,7 +274,7 @@ module.exports = "div {\n  margin: 10px; }\n  div textarea {\n    min-height: 50
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editEventPopupTemplate", function() { return editEventPopupTemplate; });
-var editEventPopupTemplate = "\n    <ngx-smart-modal #editEventPopup [identifier]=\"'editEventPopup'\">\n        <div>\n            <label>N\u00E9v: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().name\">\n        </div>\n        <div>\n            <label>D\u00E1tum: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().date\" placeholder=\"D\u00E1tum\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\">\n            <owl-date-time [pickerType]=\"'calendar'\" #dt2></owl-date-time>\n        </div>\n        <div>\n            <label>Id\u0151: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().time\" placeholder=\"Id\u0151\" [owlDateTimeTrigger]=\"dt1\" [owlDateTime]=\"dt1\">\n            <owl-date-time [pickerType]=\"'timer'\" #dt1></owl-date-time>\n        </div>\n        <div>\n            <label>Hely: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().location\">\n        </div>\n        <div>\n            <label>Le\u00EDr\u00E1s: </label>\n            <textarea [(ngModel)]=\"editEventPopup.getData().description\"></textarea>\n        </div>\n        <div>\n            <label>Szervez\u0151k:</label>\n            <p>select szervez\u0151knek</p>\n        </div>\n        <button (click)=\"saveNewEvent()\">Ment\u00E9s</button>\n        <button (click)=\"editEventPopup.close()\">M\u00E9gse</button>\n    </ngx-smart-modal>\n";
+var editEventPopupTemplate = "\n    <ngx-smart-modal #editEventPopup [identifier]=\"'editEventPopup'\" [autostart]=\"false\">\n        <div>\n            <label>N\u00E9v: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().name\">\n        </div>\n        <div>\n            <label>D\u00E1tum: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().date\" placeholder=\"D\u00E1tum\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\">\n            <owl-date-time [pickerType]=\"'calendar'\" #dt2></owl-date-time>\n        </div>\n        <div>\n            <label>Id\u0151: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().time\" placeholder=\"Id\u0151\" [owlDateTimeTrigger]=\"dt1\" [owlDateTime]=\"dt1\">\n            <owl-date-time [pickerType]=\"'timer'\" #dt1></owl-date-time>\n        </div>\n        <div>\n            <label>Hely: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().location\">\n        </div>\n        <div>\n            <label>Le\u00EDr\u00E1s: </label>\n            <textarea [(ngModel)]=\"editEventPopup.getData().description\"></textarea>\n        </div>\n        <div>\n            <label>Szervez\u0151k:</label>\n            <p>select szervez\u0151knek</p>\n        </div>\n        <button (click)=\"saveEvent()\">Ment\u00E9s</button>\n        <button (click)=\"editEventPopup.close()\">M\u00E9gse</button>\n    </ngx-smart-modal>\n";
 
 
 /***/ }),
@@ -293,6 +293,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editEventPopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./editEventPopup.component.tpl */ "./src/app/components/events/editEventPopup/editEventPopup.component.tpl.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-smart-modal */ "./node_modules/ngx-smart-modal/esm5/ngx-smart-modal.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -306,24 +307,46 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var EditEventPopupComponent = /** @class */ (function () {
-    function EditEventPopupComponent(ngxSmartModalService, http) {
+    function EditEventPopupComponent(ngxSmartModalService, datepipe, http) {
         this.ngxSmartModalService = ngxSmartModalService;
+        this.datepipe = datepipe;
         this.http = http;
-        this.modifiedEvent = { name: '', date: '', time: '', location: '', description: '', organizers: [] };
-        ngxSmartModalService
-            .setModalData({ name: '', date: '', time: '', location: '', description: '', organizers: [] }, 'editEventPopup', true);
     }
     EditEventPopupComponent.prototype.saveEvent = function () {
+        var _this = this;
+        this.modifiedEvent = this.ngxSmartModalService.getModalData('editEventPopup');
+        this.modifiedEvent.date = this.datepipe.transform(this.modifiedEvent.date, 'yyyy-MM-dd');
+        this.modifiedEvent.time = this.datepipe.transform(this.modifiedEvent.time, 'HH:mm:00');
+        delete this.modifiedEvent['organizer'];
+        this.http.post('/?', this.modifiedEvent, { responseType: 'text' }).subscribe(function (status) {
+            console.log(status);
+            _this.ngxSmartModalService.getModal('editEventPopup').close();
+        });
+    };
+    EditEventPopupComponent.prototype.ngAfterViewInit = function () {
+        var data = this.ngxSmartModalService.getModalData('editEventPopup');
+        this.modifiedEvent.name = data.name;
+        this.modifiedEvent.date = data.date;
+        this.modifiedEvent.time = data.time;
+        this.modifiedEvent.location = data.location;
+        this.modifiedEvent.description = data.description;
+        this.modifiedEvent.organizers = data.organizers;
+        console.log('MODIFIED');
         console.log(this.modifiedEvent);
+    };
+    EditEventPopupComponent.prototype.cancelEdit = function () {
+        // this.ngxSmartModalService.setModalData(this.modifiedEvent, 'editEventPopup', true);
     };
     EditEventPopupComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-edit-event-popup',
             template: _editEventPopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__["editEventPopupTemplate"],
-            styles: [__webpack_require__(/*! ./editEventPopup.component.scss */ "./src/app/components/events/editEventPopup/editEventPopup.component.scss")]
+            styles: [__webpack_require__(/*! ./editEventPopup.component.scss */ "./src/app/components/events/editEventPopup/editEventPopup.component.scss")],
+            providers: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"]]
         }),
-        __metadata("design:paramtypes", [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+        __metadata("design:paramtypes", [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalService"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], EditEventPopupComponent);
     return EditEventPopupComponent;
 }());
@@ -353,7 +376,7 @@ module.exports = "table {\n  border-collapse: collapse;\n  margin: 20px;\n  text
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eventTemplate", function() { return eventTemplate; });
-var eventTemplate = "\n<div>\n    <table *ngFor=\"let actevent of events\">\n        <tr>\n            <td id=\"date\" (click)=\"editEvent(actevent)\">{{actevent.date | date: 'MM.dd.'}}</td>\n            <td class=\"content\">{{actevent.name}}</td>\n        </tr>\n        <tr>\n            <td id=\"time\" (click)=\"editEvent(actevent)\">{{actevent.time}}</td>\n            <td class=\"content\">{{actevent.location}}</td>\n        </tr>\n    </table>\n</div>\n\n<button (click)=\"createNewEvent()\">+ \u00DAj esem\u00E9ny</button>\n<app-new-event-popup></app-new-event-popup>\n<app-edit-event-popup></app-edit-event-popup>\n";
+var eventTemplate = "\n<div>\n    <table *ngFor=\"let actevent of events\">\n        <tr>\n            <td id=\"date\" (click)=\"editEvent(actevent)\">{{actevent.date | date: 'MM.dd.'}}</td>\n            <td class=\"content\">{{actevent.name}}</td>\n        </tr>\n        <tr>\n            <td id=\"time\" (click)=\"editEvent(actevent)\">{{actevent.time  | date: 'HH:mm:ss'}}</td>\n            <td class=\"content\">{{actevent.location}}</td>\n        </tr>\n    </table>\n</div>\n\n<button (click)=\"createNewEvent()\">+ \u00DAj esem\u00E9ny</button>\n<app-new-event-popup></app-new-event-popup>\n<app-edit-event-popup></app-edit-event-popup>\n";
 
 
 /***/ }),
@@ -390,13 +413,22 @@ var EventComponent = /** @class */ (function () {
         var _this = this;
         this.ngxSmartModalService = ngxSmartModalService;
         this.http = http;
-        http.get('/events').subscribe(function (result) { return (_this.events = result); });
+        http.get('/events').subscribe(function (result) {
+            _this.events = result;
+            _this.events.forEach(function (element) {
+                var time = element.time.split(':');
+                var date = new Date();
+                date.setHours(time[0]);
+                date.setMinutes(time[1]);
+                date.setSeconds(time[2]);
+                element.time = date;
+            });
+        });
     }
     EventComponent.prototype.createNewEvent = function () {
         this.ngxSmartModalService.getModal('newEventPopup').open();
     };
     EventComponent.prototype.editEvent = function (actualEvent) {
-        console.log(actualEvent);
         this.ngxSmartModalService.getModal('editEventPopup').open();
         this.ngxSmartModalService.setModalData(actualEvent, 'editEventPopup', true);
     };
@@ -455,6 +487,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _newEventPopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./newEventPopup.component.tpl */ "./src/app/components/events/newEventPopup/newEventPopup.component.tpl.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-smart-modal */ "./node_modules/ngx-smart-modal/esm5/ngx-smart-modal.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -468,27 +501,32 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var NewEventPopupComponent = /** @class */ (function () {
-    function NewEventPopupComponent(ngxSmartModalService, http) {
+    function NewEventPopupComponent(ngxSmartModalService, datepipe, http) {
         this.ngxSmartModalService = ngxSmartModalService;
+        this.datepipe = datepipe;
         this.http = http;
         this.newEvent = { name: '', date: '', time: '', location: '', description: '', organizers: ['Béla', 'Kati'] };
     }
     NewEventPopupComponent.prototype.saveNewEvent = function () {
+        var _this = this;
+        this.newEvent.date = this.datepipe.transform(this.newEvent.date, 'yyyy-MM-dd');
+        this.newEvent.time = this.datepipe.transform(this.newEvent.date, 'HH:mm:00');
         console.log(this.newEvent);
-        /*  this.http.post('/?', event, {responseType: 'text'}).subscribe(status => {
-              console.log(status);
-              this.ngxSmartModalService.getModal('newEventPopup').close();
-          });
-          */
+        this.http.post('/?', this.newEvent, { responseType: 'text' }).subscribe(function (status) {
+            console.log(status);
+            _this.ngxSmartModalService.getModal('newEventPopup').close();
+        });
     };
     NewEventPopupComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-new-event-popup',
             template: _newEventPopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__["newEventPopupTemplate"],
-            styles: [__webpack_require__(/*! ./newEventPopup.component.scss */ "./src/app/components/events/newEventPopup/newEventPopup.component.scss")]
+            styles: [__webpack_require__(/*! ./newEventPopup.component.scss */ "./src/app/components/events/newEventPopup/newEventPopup.component.scss")],
+            providers: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"]]
         }),
-        __metadata("design:paramtypes", [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+        __metadata("design:paramtypes", [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalService"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], NewEventPopupComponent);
     return NewEventPopupComponent;
 }());
@@ -960,7 +998,7 @@ module.exports = "table {\n  border-spacing: 0px; }\n  table th, table td {\n   
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scheduletemplate", function() { return scheduletemplate; });
-var scheduletemplate = "\n<app-mentors-popup></app-mentors-popup>\n<app-mentees-popup></app-mentees-popup>\n<app-institutions-popup></app-institutions-popup>\n<div>\n    <div class=filtering-select>\n        Sz\u0171r\u00E9s:\n        <select [(ngModel)]=\"actualInstitution\">\n            <option>Int\u00E9zm\u00E9ny</option>\n            <option *ngFor=\"let institution of allInstitutions\">{{institution.name}}</option>\n        </select>\n    </div>\n<table>\n    <thead>\n        <th>Mentor</th>\n        <th>Mentor\u00E1lt</th>\n        <th>Int\u00E9zm\u00E9ny</th>\n        <th>Mappa link</th>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let contact of getCorrectContacts(); let i = index\">\n            <td class=popuptr (click)=\"i !== editableRow && showMentor(contact.mentorId)\">\n                <input [(ngModel)]=\"contact.mentorName\" value={{contact.mentorName}} [disabled]=\"i !== editableRow\">\n            </td>\n            <td class=popuptr (click)=\"i !== editableRow && showMentee(contact.menteeId)\">\n                <input [(ngModel)]=\"contact.menteeName\" value={{contact.menteeName}} [disabled]=\"i !== editableRow\">\n            </td>\n            <td class=popuptr (click)=\"i !== editableRow && showInstitution(contact.institutionId)\">\n                <input [(ngModel)]=\"contact.institutionName\" value={{contact.institutionName}} [disabled]=\"i !== editableRow\">\n            </td>\n            <td><input [(ngModel)]=\"contact.folderLink\" value={{contact.folderLink}} [disabled]=\"i !== editableRow\"></td>\n            <p *ngIf=\"i !== editableRow\" (click)=\"editRow(contact, i)\">Edit</p>\n            <p *ngIf=\"i === editableRow\" (click)=\"saveModification(contact)\">Ment\u00E9s</p>\n            <p *ngIf=\"i === editableRow\" (click)=\"cancelModification(i)\">M\u00E9gse</p>\n        </tr>\n        <tr *ngIf=\"createNewContact == true\">\n            <td><select (change)=\"SetNewContactMentor($event.target.selectedIndex)\">\n                <option *ngFor=\"let mentor of allMentors\">{{mentor.name}}</option>\n                </select>\n            </td>\n            <td><select (change)=\"SetNewContactMentee($event.target.selectedIndex)\">\n                <option *ngFor=\"let mentee of allMentees\">{{mentee.name}}</option>\n                </select>\n            </td>\n            <td><select (change)=\"SetNewContactInstitution($event.target.selectedIndex)\">\n                <option *ngFor=\"let institution of allInstitutions\">{{institution.name}}</option>\n                </select>\n            </td>\n            <td><input [(ngModel)]=\"newContact.folder\"></td>\n            <p (click)=\"addContact()\">Ment\u00E9s</p>\n        </tr>\n    </tbody>\n</table>\n<button *ngIf=\"createNewContact == false\" (click)=\"setDefaultNewContact()\">+ \u00DAj sor</button>\n</div>\n";
+var scheduletemplate = "\n<app-mentors-popup></app-mentors-popup>\n<app-mentees-popup></app-mentees-popup>\n<app-institutions-popup></app-institutions-popup>\n<div>\n    <div class=filtering-select>\n        Sz\u0171r\u00E9s:\n        <select [(ngModel)]=\"actualInstitution\">\n            <option>Int\u00E9zm\u00E9ny</option>\n            <option *ngFor=\"let institution of allInstitutions\">{{institution.name}}</option>\n        </select>\n    </div>\n<table>\n    <thead>\n        <th>Mentor</th>\n        <th>Mentor\u00E1lt</th>\n        <th>Int\u00E9zm\u00E9ny</th>\n        <th>Mappa link</th>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let contact of getCorrectContacts(); let i = index\">\n            <td class=popuptr (click)=\"i !== editableRow && showMentor(contact.mentorId)\">\n                <input [(ngModel)]=\"contact.mentorName\" value={{contact.mentorName}} [disabled]=\"i !== editableRow\">\n            </td>\n            <td class=popuptr (click)=\"i !== editableRow && showMentee(contact.menteeId)\">\n                <input [(ngModel)]=\"contact.menteeName\" value={{contact.menteeName}} [disabled]=\"i !== editableRow\">\n            </td>\n            <td class=popuptr (click)=\"i !== editableRow && showInstitution(contact.institutionId)\">\n                <input [(ngModel)]=\"contact.institutionName\" value={{contact.institutionName}} [disabled]=\"i !== editableRow\">\n            </td>\n            <td><input [(ngModel)]=\"contact.folderLink\" value={{contact.folderLink}} [disabled]=\"i !== editableRow\"></td>\n            <p *ngIf=\"i !== editableRow\" (click)=\"editRow(contact, i)\">Edit</p>\n            <p *ngIf=\"i === editableRow\" (click)=\"saveModification(contact)\">Ment\u00E9s</p>\n            <p *ngIf=\"i === editableRow\" (click)=\"cancelModification(i)\">M\u00E9gse</p>\n        </tr>\n        <tr *ngIf=\"createNewContact == true\">\n            <td><select (change)=\"SetNewContactMentor($event.target.selectedIndex)\">\n                <option *ngFor=\"let mentor of allMentors\">{{mentor.name}}</option>\n                </select>\n            </td>\n            <td><select (change)=\"SetNewContactMentee($event.target.selectedIndex)\">\n                <option *ngFor=\"let mentee of allMentees\">{{mentee.name}}</option>\n                </select>\n            </td>\n            <td><select (change)=\"SetNewContactInstitution($event.target.selectedIndex)\">\n                <option *ngFor=\"let institution of allInstitutions\">{{institution.name}}</option>\n                </select>\n            </td>\n            <td><input [(ngModel)]=\"newContact.folderLink\"></td>\n            <p (click)=\"addContact()\">Ment\u00E9s</p>\n        </tr>\n    </tbody>\n</table>\n<button *ngIf=\"createNewContact == false\" (click)=\"setDefaultNewContact()\">+ \u00DAj sor</button>\n</div>\n";
 
 
 /***/ }),
@@ -1151,30 +1189,10 @@ var NewLessonPopupComponent = /** @class */ (function () {
         this.model = { mentorid: 1, menteeid: 1 };
     }
     NewLessonPopupComponent.prototype.onSubmit = function () {
-        /*let temp = this.model.date.getFullYear() + '-';
-        if (this.model.date.getMonth() + 1 < 10) {
-          temp += '0' + this.model.date.getMonth() + 1 + '-';
-        } else {
-          temp += this.model.date.getMonth() + '-';
-        }
-    
-        if (this.model.date.getDate() < 10) {
-          temp += '0' + this.model.date.getDate();
-        } else {
-          temp += this.model.date.getDate();
-        }
-    
-        this.model.date = temp;*/
-        //    this.model.date = this.model.date.getFullYear() + '-' + this.model.date.getMonth() + 1 + '-' + this.model.date.getDate();
         var _this = this;
-        /*if (this.model.time.getMinutes() < 10) {
-          this.model.time = this.model.time.getHours() + ':0' + this.model.time.getMinutes() + ':00';
-        } else {
-          this.model.time = this.model.time.getHours() + ':' + this.model.time.getMinutes() + ':00';
-        }*/
+        this.model.mentorid = this.ngxSmartModalService.getModalData('newLessonPopup').mentorid;
         this.model.date = this.datepipe.transform(this.model.date, 'yyyy-MM-dd');
         this.model.time = this.datepipe.transform(this.model.time, 'HH:mm:00');
-        console.log(this.model);
         this.http.post('/register', this.model, { responseType: 'text' }).subscribe(function (status) {
             console.log(status);
             _this.ngxSmartModalService.getModal('newLessonPopup').close();
@@ -1203,7 +1221,7 @@ var NewLessonPopupComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "table {\n  border-spacing: 0px; }\n  table th, table td {\n    text-align: center;\n    padding: 5px 10px;\n    height: 40px; }\n  table th {\n    background-color: #214F81;\n    color: white; }\n  table tr:nth-child(even) {\n    background-color: #CEDFF2; }\n  table input {\n    max-width: 100px; }\n"
+module.exports = "table {\n  border-spacing: 0px;\n  text-align: center; }\n  table th, table td {\n    text-align: center;\n    padding: 5px 10px;\n    height: 40px; }\n  table th {\n    background-color: #214F81;\n    color: white; }\n  table tr:nth-child(even) {\n    background-color: #CEDFF2; }\n  table td > input:disabled {\n    border: none;\n    max-width: 100px;\n    background-color: transparent;\n    color: black; }\n  table p {\n    background-color: white;\n    display: inline; }\n  table #mentee {\n    background-color: transparent;\n    font-size: 15px; }\n  .filtering-select {\n  padding: 10px; }\n  select {\n  height: 30px;\n  border: none; }\n"
 
 /***/ }),
 
@@ -1217,7 +1235,7 @@ module.exports = "table {\n  border-spacing: 0px; }\n  table th, table td {\n   
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "timetableTemplate", function() { return timetableTemplate; });
-var timetableTemplate = "\n<app-newlesson-popup></app-newlesson-popup>\n<div>\n    <div>\n        Sz\u0171r\u00E9s:\n        <select [(ngModel)]=\"actualMentor\">\n            <option>Mentor</option>\n            <option *ngFor=\"let mentor of allmentors\">{{mentor}}</option>\n        </select>\n    </div>\n    <table>\n        <thead>\n            <th>Mentor</th>\n            <th>Mentor\u00E1lt</th>\n            <th>\u00D3rasz\u00E1m</th>\n            <th>D\u00E1tum</th>\n            <th>Id\u0151pont</th>\n            <th>Helysz\u00EDn</th>\n            <th>Tant\u00E1rgy</th>\n            <th>T\u00E9ma</th>\n            <th>Megjegyz\u00E9s</th>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let lesson of getCorrectMentors(); let i=index\">\n            <td><input [(ngModel)]=\"lesson.mentorName\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.mentoeeName\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.lessonnumber\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.date\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.time\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.location\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.subject\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.topic\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.comment\" [disabled]=\"i !== editableRow\"></td>\n            <p *ngIf=\"i !== editableRow\" (click)=\"editRow(lesson, i)\">Edit</p>\n            <p *ngIf=\"i === editableRow\" (click)=\"saveModification(lesson)\">Ment\u00E9s</p>\n            <p *ngIf=\"i === editableRow\" (click)=\"cancelModification(i)\">M\u00E9gse</p>\n        <tr>\n        </tbody>\n    </table>\n    <button type=\"button\" (click)=\"newAppointment()\">\u00DAj \u00F3ra</button>\n</div>\n";
+var timetableTemplate = "\n<app-newlesson-popup></app-newlesson-popup>\n<div>\n    <div>\n        Sz\u0171r\u00E9s:\n        <select id=filtering-select [(ngModel)]=\"actualMentor\">\n            <option>Mentor</option>\n            <option *ngFor=\"let mentor of allmentors\">{{mentor}}</option>\n        </select>\n    </div>\n    <table>\n        <thead>\n            <th>Mentor</th>\n            <th>Mentor\u00E1lt</th>\n            <th>\u00D3rasz\u00E1m</th>\n            <th>D\u00E1tum</th>\n            <th>Id\u0151pont</th>\n            <th>Helysz\u00EDn</th>\n            <th>Tant\u00E1rgy</th>\n            <th>T\u00E9ma</th>\n            <th>Megjegyz\u00E9s</th>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let lesson of getCorrectMentors(); let i=index\">\n            <td><input [(ngModel)]=\"lesson.mentorName\" [disabled]=\"i !== editableRow\"></td>\n            <td><p id=mentee *ngIf=\"i !== editableRow\">{{lesson.menteeName}}</p>\n                <select [(ngModel)]=\"lesson.menteeName\" (change)=\"SetNewContactMentee($event.target.selectedIndex)\"\n                    *ngIf=\"i === editableRow\">\n                <option *ngFor=\"let mentee of allMentees\">{{mentee.name}}</option>\n                </select>\n            </td>\n            <td><input [(ngModel)]=\"lesson.lessonnumber\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.date\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.time\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.location\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.subject\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.topic\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.comment\" [disabled]=\"i !== editableRow\"></td>\n            <p *ngIf=\"i !== editableRow\" (click)=\"editRow(lesson, i)\">Edit</p>\n            <p *ngIf=\"i === editableRow\" (click)=\"saveModification(lesson)\">Ment\u00E9s</p>\n            <p *ngIf=\"i === editableRow\" (click)=\"cancelModification(i)\">M\u00E9gse</p>\n        <tr>\n        </tbody>\n    </table>\n    <button type=\"button\" (click)=\"newAppointment()\">\u00DAj \u00F3ra</button>\n</div>\n";
 
 
 /***/ }),
@@ -1257,11 +1275,12 @@ var TimetableComponent = /** @class */ (function () {
         this.allmentors = [];
         this.actualMentor = 'Mentor';
         this.editableRow = -1;
-        this.modifiedRow = { lessonnumber: '', date: '', time: '', location: '', subject: '', topic: '', comment: '', menteeName: '' };
+        this.modifiedRow = { lessonnumber: '', date: '', time: '', location: '', subject: '', topic: '', comment: '', menteeName: '', menteeid: 0 };
         this.http.get('/testtimetable').subscribe(function (result) {
             _this.lessons = result;
             _this.allmentors = Array.from(new Set(_this.lessons.map(function (l) { return l.mentorName; })));
         });
+        this.http.get('/testmentee').subscribe(function (result) { return _this.allMentees = result; });
     }
     TimetableComponent.prototype.newAppointment = function () {
         this.ngxSmartModalService.getModal('newLessonPopup').open();
@@ -1286,7 +1305,11 @@ var TimetableComponent = /** @class */ (function () {
         this.modifiedRow.topic = lesson.topic;
         this.modifiedRow.comment = lesson.comment;
         this.modifiedRow.menteeName = lesson.menteeName;
+        this.modifiedRow.menteeid = lesson.menteeid;
         this.editableRow = index;
+    };
+    TimetableComponent.prototype.SetNewContactMentee = function (index) {
+        this.lessons[this.editableRow].menteeid = this.allMentees[index].menteeid;
     };
     TimetableComponent.prototype.saveModification = function (lesson) {
         this.editableRow = -1;
@@ -1302,6 +1325,7 @@ var TimetableComponent = /** @class */ (function () {
         this.lessons[index].topic = this.modifiedRow.topic;
         this.lessons[index].comment = this.modifiedRow.comment;
         this.lessons[index].menteeName = this.modifiedRow.menteeName;
+        this.lessons[index].menteeid = this.modifiedRow.menteeid;
         this.editableRow = -1;
     };
     TimetableComponent = __decorate([

@@ -11,15 +11,17 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
 export class TimetableComponent {
     lessons: any;
     allmentors = [];
+    allMentees: any;
     actualMentor: String = 'Mentor' ;
     editableRow = -1;
-    modifiedRow = {lessonnumber: '', date: '', time: '', location: '', subject: '', topic: '', comment: '', menteeName: ''};
+    modifiedRow = {lessonnumber: '', date: '', time: '', location: '', subject: '', topic: '', comment: '', menteeName: '', menteeid: 0};
 
     constructor(public ngxSmartModalService: NgxSmartModalService, private http: HttpClient) {
         this.http.get('/testtimetable').subscribe(result => {
             this.lessons = result;
             this.allmentors = Array.from(new Set(this.lessons.map((l) => l.mentorName)));
         });
+        this.http.get('/testmentee').subscribe(result => this.allMentees = result );
     }
 
     newAppointment() {
@@ -45,7 +47,12 @@ export class TimetableComponent {
         this.modifiedRow.topic = lesson.topic;
         this.modifiedRow.comment = lesson.comment;
         this.modifiedRow.menteeName = lesson.menteeName;
+        this.modifiedRow.menteeid = lesson.menteeid;
         this.editableRow = index;
+    }
+
+    SetNewContactMentee(index: number) {
+        this.lessons[this.editableRow].menteeid = this.allMentees[index].menteeid;
     }
 
     saveModification(lesson: any) {
@@ -63,6 +70,7 @@ export class TimetableComponent {
         this.lessons[index].topic = this.modifiedRow.topic;
         this.lessons[index].comment = this.modifiedRow.comment;
         this.lessons[index].menteeName = this.modifiedRow.menteeName;
+        this.lessons[index].menteeid = this.modifiedRow.menteeid;
         this.editableRow = -1;
     }
 }

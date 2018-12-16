@@ -13,7 +13,17 @@ export class EventComponent {
     events: any;
 
     constructor(public ngxSmartModalService: NgxSmartModalService, private http: HttpClient) {
-        http.get('/events').subscribe(result => (this.events = result));
+        http.get('/events').subscribe(result => {
+            this.events = result;
+            this.events.forEach(element => {
+                const time = element.time.split(':');
+                const date = new Date();
+                date.setHours(time[0]);
+                date.setMinutes(time[1]);
+                date.setSeconds(time[2]);
+                element.time = date;
+            });
+        });
     }
 
     createNewEvent() {
@@ -21,7 +31,6 @@ export class EventComponent {
     }
 
     editEvent(actualEvent: any) {
-        console.log(actualEvent);
         this.ngxSmartModalService.getModal('editEventPopup').open();
         this.ngxSmartModalService.setModalData(actualEvent, 'editEventPopup', true);
 

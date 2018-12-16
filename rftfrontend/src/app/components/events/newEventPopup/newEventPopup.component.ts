@@ -20,7 +20,7 @@ export class NewEventPopupComponent {
 
     saveNewEvent() {
         this.newEvent.date = this.datepipe.transform(this.newEvent.date, 'yyyy-MM-dd');
-        this.newEvent.time = this.datepipe.transform(this.newEvent.date, 'yyyy-MM-dd');
+        this.newEvent.time = this.datepipe.transform(this.newEvent.date, 'HH:mm:00');
         console.log(this.newEvent);
         this.http.post('/?', this.newEvent, {responseType: 'text'}).subscribe(status => {
             console.log(status);

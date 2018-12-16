@@ -6,7 +6,7 @@ export const eventTemplate = `
             <td class="content">{{actevent.name}}</td>
         </tr>
         <tr>
-            <td id="time" (click)="editEvent(actevent)">{{actevent.time}}</td>
+            <td id="time" (click)="editEvent(actevent)">{{actevent.time  | date: 'HH:mm:ss'}}</td>
             <td class="content">{{actevent.location}}</td>
         </tr>
     </table>

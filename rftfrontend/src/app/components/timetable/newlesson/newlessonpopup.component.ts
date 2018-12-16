@@ -18,6 +18,7 @@ export class NewLessonPopupComponent {
   }
 
   onSubmit() {
+    this.model.mentorid = this.ngxSmartModalService.getModalData('newLessonPopup').mentorid;
     this.model.date = this.datepipe.transform(this.model.date, 'yyyy-MM-dd');
     this.model.time = this.datepipe.transform(this.model.time, 'HH:mm:00');
     this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => {
