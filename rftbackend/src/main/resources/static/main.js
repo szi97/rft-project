@@ -310,6 +310,7 @@ var EditEventPopupComponent = /** @class */ (function () {
     function EditEventPopupComponent(ngxSmartModalService, http) {
         this.ngxSmartModalService = ngxSmartModalService;
         this.http = http;
+        this.modifiedEvent = { name: '', date: '', time: '', location: '', description: '', organizers: [] };
         ngxSmartModalService
             .setModalData({ name: '', date: '', time: '', location: '', description: '', organizers: [] }, 'editEventPopup', true);
     }
@@ -1127,6 +1128,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _newlessonpopup_component_tpl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./newlessonpopup.component.tpl */ "./src/app/components/timetable/newlesson/newlessonpopup.component.tpl.ts");
 /* harmony import */ var ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-smart-modal */ "./node_modules/ngx-smart-modal/esm5/ngx-smart-modal.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1140,35 +1142,38 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var NewLessonPopupComponent = /** @class */ (function () {
-    function NewLessonPopupComponent(ngxSmartModalService, http) {
+    function NewLessonPopupComponent(ngxSmartModalService, datepipe, http) {
         this.ngxSmartModalService = ngxSmartModalService;
+        this.datepipe = datepipe;
         this.http = http;
         this.model = { mentorid: 1, menteeid: 1 };
     }
     NewLessonPopupComponent.prototype.onSubmit = function () {
-        var _this = this;
-        var temp = this.model.date.getFullYear() + '-';
+        /*let temp = this.model.date.getFullYear() + '-';
         if (this.model.date.getMonth() + 1 < 10) {
-            temp += '0' + this.model.date.getMonth() + 1 + '-';
+          temp += '0' + this.model.date.getMonth() + 1 + '-';
+        } else {
+          temp += this.model.date.getMonth() + '-';
         }
-        else {
-            temp += this.model.date.getMonth() + '-';
-        }
+    
         if (this.model.date.getDate() < 10) {
-            temp += '0' + this.model.date.getDate();
+          temp += '0' + this.model.date.getDate();
+        } else {
+          temp += this.model.date.getDate();
         }
-        else {
-            temp += this.model.date.getDate();
-        }
-        this.model.date = temp;
+    
+        this.model.date = temp;*/
         //    this.model.date = this.model.date.getFullYear() + '-' + this.model.date.getMonth() + 1 + '-' + this.model.date.getDate();
-        if (this.model.time.getMinutes() < 10) {
-            this.model.time = this.model.time.getHours() + ':0' + this.model.time.getMinutes() + ':00';
-        }
-        else {
-            this.model.time = this.model.time.getHours() + ':' + this.model.time.getMinutes() + ':00';
-        }
+        var _this = this;
+        /*if (this.model.time.getMinutes() < 10) {
+          this.model.time = this.model.time.getHours() + ':0' + this.model.time.getMinutes() + ':00';
+        } else {
+          this.model.time = this.model.time.getHours() + ':' + this.model.time.getMinutes() + ':00';
+        }*/
+        this.model.date = this.datepipe.transform(this.model.date, 'yyyy-MM-dd');
+        this.model.time = this.datepipe.transform(this.model.time, 'HH:mm:00');
         console.log(this.model);
         this.http.post('/register', this.model, { responseType: 'text' }).subscribe(function (status) {
             console.log(status);
@@ -1179,9 +1184,10 @@ var NewLessonPopupComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-newlesson-popup',
             template: _newlessonpopup_component_tpl__WEBPACK_IMPORTED_MODULE_2__["newLessonPopupTemplate"],
-            styles: [__webpack_require__(/*! ./newlessonpopup.component.scss */ "./src/app/components/timetable/newlesson/newlessonpopup.component.scss")]
+            styles: [__webpack_require__(/*! ./newlessonpopup.component.scss */ "./src/app/components/timetable/newlesson/newlessonpopup.component.scss")],
+            providers: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"]]
         }),
-        __metadata("design:paramtypes", [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+        __metadata("design:paramtypes", [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalService"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"], _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], NewLessonPopupComponent);
     return NewLessonPopupComponent;
 }());
