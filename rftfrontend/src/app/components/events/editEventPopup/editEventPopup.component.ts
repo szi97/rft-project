@@ -10,14 +10,15 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
 })
 export class EditEventPopupComponent {
 
-    event: any;
+    modifiedEvent: any;
 
     constructor(public ngxSmartModalService: NgxSmartModalService, private http: HttpClient) {
-
+        ngxSmartModalService
+            .setModalData({name: '', date: '', time: '', location: '', description: '', organizers: []}, 'editEventPopup', true);
     }
 
     saveEvent() {
-        console.log(this.event);
+        console.log(this.modifiedEvent);
     }
 
 }

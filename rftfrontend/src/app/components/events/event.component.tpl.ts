@@ -1,13 +1,13 @@
 export const eventTemplate = `
 <div>
-    <table *ngFor="let event of events">
+    <table *ngFor="let actevent of events">
         <tr>
-            <td id="date" (click)="editEvent(event)">{{event.date | date: 'MM.dd.'}}</td>
-            <td class="content">{{event.name}}</td>
+            <td id="date" (click)="editEvent(actevent)">{{actevent.date | date: 'MM.dd.'}}</td>
+            <td class="content">{{actevent.name}}</td>
         </tr>
         <tr>
-            <td id="time" (click)="editEvent(event)">{{event.time}}</td>
-            <td class="content">{{event.location}}</td>
+            <td id="time" (click)="editEvent(actevent)">{{actevent.time}}</td>
+            <td class="content">{{actevent.location}}</td>
         </tr>
     </table>
 </div>

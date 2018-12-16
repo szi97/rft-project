@@ -10,14 +10,14 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
 })
 export class NewEventPopupComponent {
 
-    event = {name: '', date: '', time: '', location: '', description: '', organizers: ['Béla', 'Kati']};
+    newEvent = {name: '', date: '', time: '', location: '', description: '', organizers: ['Béla', 'Kati']};
 
     constructor(public ngxSmartModalService: NgxSmartModalService, private http: HttpClient) {
 
     }
 
     saveNewEvent() {
-        console.log(this.event);
+        console.log(this.newEvent);
       /*  this.http.post('/?', event, {responseType: 'text'}).subscribe(status => {
             console.log(status);
             this.ngxSmartModalService.getModal('newEventPopup').close();

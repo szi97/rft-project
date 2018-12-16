@@ -274,7 +274,7 @@ module.exports = "div {\n  margin: 10px; }\n  div textarea {\n    min-height: 50
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editEventPopupTemplate", function() { return editEventPopupTemplate; });
-var editEventPopupTemplate = "\n    <ngx-smart-modal #editEventPopup [identifier]=\"'editEventPopup'\">\n        <div>\n            <label>N\u00E9v: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().name\">\n        </div>\n        <div>\n            <label>D\u00E1tum: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().date\" placeholder=\"D\u00E1tum\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\">\n            <owl-date-time [pickerType]=\"'calendar'\" #dt2></owl-date-time>\n        </div>\n        <div>\n            <label>Id\u0151: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().time\" placeholder=\"Id\u0151\" [owlDateTimeTrigger]=\"dt1\" [owlDateTime]=\"dt1\">\n            <owl-date-time [pickerType]=\"'timer'\" #dt1></owl-date-time>\n        </div>\n        <div>\n            <label>Hely: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().location\">\n        </div>\n        <div>\n            <label>Le\u00EDr\u00E1s: </label>\n            <textarea [(ngModel)]=\"editEventPopup.getData().description\"></textarea>\n        </div>\n        <div>\n            <label>Szervez\u0151k:</label>\n            <p>select szervez\u0151knek</p>\n        </div>\n        <button (click)=\"saveNewEvent()\">Ment\u00E9s</button>\n        <button (click)=\"newEventPopup.close()\">M\u00E9gse</button>\n    </ngx-smart-modal>\n";
+var editEventPopupTemplate = "\n    <ngx-smart-modal #editEventPopup [identifier]=\"'editEventPopup'\">\n        <div>\n            <label>N\u00E9v: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().name\">\n        </div>\n        <div>\n            <label>D\u00E1tum: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().date\" placeholder=\"D\u00E1tum\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\">\n            <owl-date-time [pickerType]=\"'calendar'\" #dt2></owl-date-time>\n        </div>\n        <div>\n            <label>Id\u0151: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().time\" placeholder=\"Id\u0151\" [owlDateTimeTrigger]=\"dt1\" [owlDateTime]=\"dt1\">\n            <owl-date-time [pickerType]=\"'timer'\" #dt1></owl-date-time>\n        </div>\n        <div>\n            <label>Hely: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().location\">\n        </div>\n        <div>\n            <label>Le\u00EDr\u00E1s: </label>\n            <textarea [(ngModel)]=\"editEventPopup.getData().description\"></textarea>\n        </div>\n        <div>\n            <label>Szervez\u0151k:</label>\n            <p>select szervez\u0151knek</p>\n        </div>\n        <button (click)=\"saveNewEvent()\">Ment\u00E9s</button>\n        <button (click)=\"editEventPopup.close()\">M\u00E9gse</button>\n    </ngx-smart-modal>\n";
 
 
 /***/ }),
@@ -310,9 +310,11 @@ var EditEventPopupComponent = /** @class */ (function () {
     function EditEventPopupComponent(ngxSmartModalService, http) {
         this.ngxSmartModalService = ngxSmartModalService;
         this.http = http;
+        ngxSmartModalService
+            .setModalData({ name: '', date: '', time: '', location: '', description: '', organizers: [] }, 'editEventPopup', true);
     }
     EditEventPopupComponent.prototype.saveEvent = function () {
-        console.log(this.event);
+        console.log(this.modifiedEvent);
     };
     EditEventPopupComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -350,7 +352,7 @@ module.exports = "table {\n  border-collapse: collapse;\n  margin: 20px;\n  text
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eventTemplate", function() { return eventTemplate; });
-var eventTemplate = "\n<div>\n    <table *ngFor=\"let event of events\">\n        <tr>\n            <td id=\"date\" (click)=\"editEvent(event)\">{{event.date | date: 'MM.dd.'}}</td>\n            <td class=\"content\">{{event.name}}</td>\n        </tr>\n        <tr>\n            <td id=\"time\">{{event.time}}</td>\n            <td class=\"content\">{{event.location}}</td>\n        </tr>\n    </table>\n</div>\n\n<button (click)=\"createNewEvent()\">+ \u00DAj esem\u00E9ny</button>\n<app-new-event-popup></app-new-event-popup>\n<app-edit-event-popup></app-edit-event-popup>\n";
+var eventTemplate = "\n<div>\n    <table *ngFor=\"let actevent of events\">\n        <tr>\n            <td id=\"date\" (click)=\"editEvent(actevent)\">{{actevent.date | date: 'MM.dd.'}}</td>\n            <td class=\"content\">{{actevent.name}}</td>\n        </tr>\n        <tr>\n            <td id=\"time\" (click)=\"editEvent(actevent)\">{{actevent.time}}</td>\n            <td class=\"content\">{{actevent.location}}</td>\n        </tr>\n    </table>\n</div>\n\n<button (click)=\"createNewEvent()\">+ \u00DAj esem\u00E9ny</button>\n<app-new-event-popup></app-new-event-popup>\n<app-edit-event-popup></app-edit-event-popup>\n";
 
 
 /***/ }),
@@ -392,9 +394,10 @@ var EventComponent = /** @class */ (function () {
     EventComponent.prototype.createNewEvent = function () {
         this.ngxSmartModalService.getModal('newEventPopup').open();
     };
-    EventComponent.prototype.editEvent = function (event) {
+    EventComponent.prototype.editEvent = function (actualEvent) {
+        console.log(actualEvent);
         this.ngxSmartModalService.getModal('editEventPopup').open();
-        this.ngxSmartModalService.setModalData(event, 'editEventPopup', true);
+        this.ngxSmartModalService.setModalData(actualEvent, 'editEventPopup', true);
     };
     EventComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -432,7 +435,7 @@ module.exports = "div {\n  margin: 10px; }\n  div textarea {\n    min-height: 50
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newEventPopupTemplate", function() { return newEventPopupTemplate; });
-var newEventPopupTemplate = "\n    <ngx-smart-modal #newEventPopup [identifier]=\"'newEventPopup'\">\n        <div>\n            <label>N\u00E9v: </label>\n            <input [(ngModel)]=\"event.name\">\n        </div>\n        <div>\n            <label>D\u00E1tum: </label>\n            <input [(ngModel)]=\"event.date\" placeholder=\"D\u00E1tum\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\">\n            <owl-date-time [pickerType]=\"'calendar'\" #dt2></owl-date-time>\n        </div>\n        <div>\n            <label>Id\u0151: </label>\n            <input [(ngModel)]=\"event.time\" placeholder=\"Id\u0151\" [owlDateTimeTrigger]=\"dt1\" [owlDateTime]=\"dt1\">\n            <owl-date-time [pickerType]=\"'timer'\" #dt1></owl-date-time>\n        </div>\n        <div>\n            <label>Hely: </label>\n            <input [(ngModel)]=\"event.location\">\n        </div>\n        <div>\n            <label>Le\u00EDr\u00E1s: </label>\n            <textarea [(ngModel)]=\"event.description\"></textarea>\n        </div>\n        <div>\n            <label>Szervez\u0151k:</label>\n            <p>select szervez\u0151knek</p>\n        </div>\n        <button (click)=\"saveNewEvent()\">Ment\u00E9s</button>\n        <button (click)=\"newEventPopup.close()\">M\u00E9gse</button>\n    </ngx-smart-modal>\n";
+var newEventPopupTemplate = "\n    <ngx-smart-modal #newEventPopup [identifier]=\"'newEventPopup'\">\n        <div>\n            <label>N\u00E9v: </label>\n            <input [(ngModel)]=\"newEvent.name\">\n        </div>\n        <div>\n            <label>D\u00E1tum: </label>\n            <input [(ngModel)]=\"newEvent.date\" placeholder=\"D\u00E1tum\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\">\n            <owl-date-time [pickerType]=\"'calendar'\" #dt2></owl-date-time>\n        </div>\n        <div>\n            <label>Id\u0151: </label>\n            <input [(ngModel)]=\"newEvent.time\" placeholder=\"Id\u0151\" [owlDateTimeTrigger]=\"dt1\" [owlDateTime]=\"dt1\">\n            <owl-date-time [pickerType]=\"'timer'\" #dt1></owl-date-time>\n        </div>\n        <div>\n            <label>Hely: </label>\n            <input [(ngModel)]=\"newEvent.location\">\n        </div>\n        <div>\n            <label>Le\u00EDr\u00E1s: </label>\n            <textarea [(ngModel)]=\"newEvent.description\"></textarea>\n        </div>\n        <div>\n            <label>Szervez\u0151k:</label>\n            <p>select szervez\u0151knek</p>\n        </div>\n        <button (click)=\"saveNewEvent()\">Ment\u00E9s</button>\n        <button (click)=\"newEventPopup.close()\">M\u00E9gse</button>\n    </ngx-smart-modal>\n";
 
 
 /***/ }),
@@ -468,10 +471,10 @@ var NewEventPopupComponent = /** @class */ (function () {
     function NewEventPopupComponent(ngxSmartModalService, http) {
         this.ngxSmartModalService = ngxSmartModalService;
         this.http = http;
-        this.event = { name: '', date: '', time: '', location: '', description: '', organizers: [] };
+        this.newEvent = { name: '', date: '', time: '', location: '', description: '', organizers: ['Béla', 'Kati'] };
     }
     NewEventPopupComponent.prototype.saveNewEvent = function () {
-        console.log(this.event);
+        console.log(this.newEvent);
         /*  this.http.post('/?', event, {responseType: 'text'}).subscribe(status => {
               console.log(status);
               this.ngxSmartModalService.getModal('newEventPopup').close();
@@ -1141,12 +1144,31 @@ var NewLessonPopupComponent = /** @class */ (function () {
     function NewLessonPopupComponent(ngxSmartModalService, http) {
         this.ngxSmartModalService = ngxSmartModalService;
         this.http = http;
-        this.model = [];
+        this.model = { mentorid: 1, menteeid: 1 };
     }
     NewLessonPopupComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.model.date = this.model.date.getMonth() + '/' + this.model.date.getDate() + '/' + this.model.date.getFullYear();
-        this.model.time = this.model.time.getHours() + ':' + this.model.time.getMinutes();
+        var temp = this.model.date.getFullYear() + '-';
+        if (this.model.date.getMonth() + 1 < 10) {
+            temp += '0' + this.model.date.getMonth() + 1 + '-';
+        }
+        else {
+            temp += this.model.date.getMonth() + '-';
+        }
+        if (this.model.date.getDate() < 10) {
+            temp += '0' + this.model.date.getDate();
+        }
+        else {
+            temp += this.model.date.getDate();
+        }
+        this.model.date = temp;
+        //    this.model.date = this.model.date.getFullYear() + '-' + this.model.date.getMonth() + 1 + '-' + this.model.date.getDate();
+        if (this.model.time.getMinutes() < 10) {
+            this.model.time = this.model.time.getHours() + ':0' + this.model.time.getMinutes() + ':00';
+        }
+        else {
+            this.model.time = this.model.time.getHours() + ':' + this.model.time.getMinutes() + ':00';
+        }
         console.log(this.model);
         this.http.post('/register', this.model, { responseType: 'text' }).subscribe(function (status) {
             console.log(status);
@@ -1237,6 +1259,8 @@ var TimetableComponent = /** @class */ (function () {
     }
     TimetableComponent.prototype.newAppointment = function () {
         this.ngxSmartModalService.getModal('newLessonPopup').open();
+        this.ngxSmartModalService.
+            setModalData({ mentorName: this.lessons[0].mentorName, mentorid: this.lessons[0].mentorid }, 'newLessonPopup', true);
     };
     TimetableComponent.prototype.getCorrectMentors = function () {
         var _this = this;
