@@ -115,6 +115,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_timetable_newlesson_newlessonpopup_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/timetable/newlesson/newlessonpopup.component */ "./src/app/components/timetable/newlesson/newlessonpopup.component.ts");
 /* harmony import */ var _components_events_event_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/events/event.component */ "./src/app/components/events/event.component.ts");
 /* harmony import */ var _components_events_newEventPopup_newEventPopup_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/events/newEventPopup/newEventPopup.component */ "./src/app/components/events/newEventPopup/newEventPopup.component.ts");
+/* harmony import */ var _components_events_editEventPopup_editEventPopup_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/events/editEventPopup/editEventPopup.component */ "./src/app/components/events/editEventPopup/editEventPopup.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -124,6 +125,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -162,7 +164,8 @@ var AppModule = /** @class */ (function () {
                 _components_timetable_newlesson_newlessonpopup_component__WEBPACK_IMPORTED_MODULE_18__["NewLessonPopupComponent"],
                 _components_login_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"],
                 _components_events_event_component__WEBPACK_IMPORTED_MODULE_19__["EventComponent"],
-                _components_events_newEventPopup_newEventPopup_component__WEBPACK_IMPORTED_MODULE_20__["NewEventPopupComponent"]
+                _components_events_newEventPopup_newEventPopup_component__WEBPACK_IMPORTED_MODULE_20__["NewEventPopupComponent"],
+                _components_events_editEventPopup_editEventPopup_component__WEBPACK_IMPORTED_MODULE_21__["EditEventPopupComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -250,6 +253,82 @@ var AppComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/events/editEventPopup/editEventPopup.component.scss":
+/*!********************************************************************************!*\
+  !*** ./src/app/components/events/editEventPopup/editEventPopup.component.scss ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "div {\n  margin: 10px; }\n  div textarea {\n    min-height: 50px; }\n  div input, div label {\n    display: block; }\n"
+
+/***/ }),
+
+/***/ "./src/app/components/events/editEventPopup/editEventPopup.component.tpl.ts":
+/*!**********************************************************************************!*\
+  !*** ./src/app/components/events/editEventPopup/editEventPopup.component.tpl.ts ***!
+  \**********************************************************************************/
+/*! exports provided: editEventPopupTemplate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editEventPopupTemplate", function() { return editEventPopupTemplate; });
+var editEventPopupTemplate = "\n    <ngx-smart-modal #editEventPopup [identifier]=\"'editEventPopup'\">\n        <div>\n            <label>N\u00E9v: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().name\">\n        </div>\n        <div>\n            <label>D\u00E1tum: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().date\" placeholder=\"D\u00E1tum\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\">\n            <owl-date-time [pickerType]=\"'calendar'\" #dt2></owl-date-time>\n        </div>\n        <div>\n            <label>Id\u0151: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().time\" placeholder=\"Id\u0151\" [owlDateTimeTrigger]=\"dt1\" [owlDateTime]=\"dt1\">\n            <owl-date-time [pickerType]=\"'timer'\" #dt1></owl-date-time>\n        </div>\n        <div>\n            <label>Hely: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().location\">\n        </div>\n        <div>\n            <label>Le\u00EDr\u00E1s: </label>\n            <textarea [(ngModel)]=\"editEventPopup.getData().description\"></textarea>\n        </div>\n        <div>\n            <label>Szervez\u0151k:</label>\n            <p>select szervez\u0151knek</p>\n        </div>\n        <button (click)=\"saveNewEvent()\">Ment\u00E9s</button>\n        <button (click)=\"newEventPopup.close()\">M\u00E9gse</button>\n    </ngx-smart-modal>\n";
+
+
+/***/ }),
+
+/***/ "./src/app/components/events/editEventPopup/editEventPopup.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/components/events/editEventPopup/editEventPopup.component.ts ***!
+  \******************************************************************************/
+/*! exports provided: EditEventPopupComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditEventPopupComponent", function() { return EditEventPopupComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _editEventPopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./editEventPopup.component.tpl */ "./src/app/components/events/editEventPopup/editEventPopup.component.tpl.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-smart-modal */ "./node_modules/ngx-smart-modal/esm5/ngx-smart-modal.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var EditEventPopupComponent = /** @class */ (function () {
+    function EditEventPopupComponent(ngxSmartModalService, http) {
+        this.ngxSmartModalService = ngxSmartModalService;
+        this.http = http;
+    }
+    EditEventPopupComponent.prototype.saveEvent = function () {
+        console.log(this.event);
+    };
+    EditEventPopupComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-edit-event-popup',
+            template: _editEventPopup_component_tpl__WEBPACK_IMPORTED_MODULE_1__["editEventPopupTemplate"],
+            styles: [__webpack_require__(/*! ./editEventPopup.component.scss */ "./src/app/components/events/editEventPopup/editEventPopup.component.scss")]
+        }),
+        __metadata("design:paramtypes", [ngx_smart_modal__WEBPACK_IMPORTED_MODULE_3__["NgxSmartModalService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], EditEventPopupComponent);
+    return EditEventPopupComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/events/event.component.scss":
 /*!********************************************************!*\
   !*** ./src/app/components/events/event.component.scss ***!
@@ -271,7 +350,7 @@ module.exports = "table {\n  border-collapse: collapse;\n  margin: 20px;\n  text
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eventTemplate", function() { return eventTemplate; });
-var eventTemplate = "\n<div>\n    <table *ngFor=\"let event of events\">\n        <tr>\n            <td id=\"date\">{{event.date | date: 'MM.dd.'}}</td>\n            <td class=\"content\">{{event.name}}</td>\n        </tr>\n        <tr>\n            <td id=\"time\">{{event.time}}</td>\n            <td class=\"content\">{{event.location}}</td>\n        </tr>\n    </table>\n</div>\n\n<button (click)=\"createNewEvent()\">+ \u00DAj esem\u00E9ny</button>\n<app-new-event-popup></app-new-event-popup>\n";
+var eventTemplate = "\n<div>\n    <table *ngFor=\"let event of events\">\n        <tr>\n            <td id=\"date\" (click)=\"editEvent(event)\">{{event.date | date: 'MM.dd.'}}</td>\n            <td class=\"content\">{{event.name}}</td>\n        </tr>\n        <tr>\n            <td id=\"time\">{{event.time}}</td>\n            <td class=\"content\">{{event.location}}</td>\n        </tr>\n    </table>\n</div>\n\n<button (click)=\"createNewEvent()\">+ \u00DAj esem\u00E9ny</button>\n<app-new-event-popup></app-new-event-popup>\n<app-edit-event-popup></app-edit-event-popup>\n";
 
 
 /***/ }),
@@ -312,6 +391,10 @@ var EventComponent = /** @class */ (function () {
     }
     EventComponent.prototype.createNewEvent = function () {
         this.ngxSmartModalService.getModal('newEventPopup').open();
+    };
+    EventComponent.prototype.editEvent = function (event) {
+        this.ngxSmartModalService.getModal('editEventPopup').open();
+        this.ngxSmartModalService.setModalData(event, 'editEventPopup', true);
     };
     EventComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1061,11 +1144,14 @@ var NewLessonPopupComponent = /** @class */ (function () {
         this.model = [];
     }
     NewLessonPopupComponent.prototype.onSubmit = function () {
-        console.log(this.model);
+        var _this = this;
         this.model.date = this.model.date.getMonth() + '/' + this.model.date.getDate() + '/' + this.model.date.getFullYear();
         this.model.time = this.model.time.getHours() + ':' + this.model.time.getMinutes();
-        // this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => {
-        //  console.log(status); this.ngxSmartModalService.getModal('newLessonPopup').close(); });
+        console.log(this.model);
+        this.http.post('/register', this.model, { responseType: 'text' }).subscribe(function (status) {
+            console.log(status);
+            _this.ngxSmartModalService.getModal('newLessonPopup').close();
+        });
     };
     NewLessonPopupComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

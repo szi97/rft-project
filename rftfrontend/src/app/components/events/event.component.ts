@@ -19,4 +19,10 @@ export class EventComponent {
     createNewEvent() {
         this.ngxSmartModalService.getModal('newEventPopup').open();
     }
+
+    editEvent(event: any) {
+        this.ngxSmartModalService.getModal('editEventPopup').open();
+        this.ngxSmartModalService.setModalData(event, 'editEventPopup', true);
+
+    }
 }

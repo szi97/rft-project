@@ -12,14 +12,14 @@ export class NewLessonPopupComponent {
   model: any;
 
   constructor(public ngxSmartModalService: NgxSmartModalService, private http: HttpClient) {
-      this.model = [];
+      this.model = {};
   }
 
   onSubmit() {
-    console.log(this.model);
     this.model.date = this.model.date.getMonth() + '/' + this.model.date.getDate() + '/' + this.model.date.getFullYear();
     this.model.time = this.model.time.getHours() + ':' + this.model.time.getMinutes();
-    // this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => {
-    //  console.log(status); this.ngxSmartModalService.getModal('newLessonPopup').close(); });
+    console.log(this.model);
+    this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => {
+    console.log(status); this.ngxSmartModalService.getModal('newLessonPopup').close(); });
   }
 }

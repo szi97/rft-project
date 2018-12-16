@@ -24,6 +24,8 @@ export class TimetableComponent {
 
     newAppointment() {
         this.ngxSmartModalService.getModal('newLessonPopup').open();
+        this.ngxSmartModalService.
+        setModalData({mentorName: this.lessons[0].mentorName, mentorid: this.lessons[0].mentorid}, 'newLessonPopup', true);
     }
 
     getCorrectMentors() {

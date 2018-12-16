@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewLessonPopupComponent } from './components/timetable/newlesson/newlessonpopup.component';
 import { EventComponent } from './components/events/event.component';
 import { NewEventPopupComponent } from './components/events/newEventPopup/newEventPopup.component';
+import { editEventPopupTemplate } from './components/events/editEventPopup/editEventPopup.component.tpl';
+import { EditEventPopupComponent } from './components/events/editEventPopup/editEventPopup.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { NewEventPopupComponent } from './components/events/newEventPopup/newEve
     NewLessonPopupComponent,
     LoginComponent,
     EventComponent,
-    NewEventPopupComponent
+    NewEventPopupComponent,
+    EditEventPopupComponent
   ],
   imports: [
     BrowserModule,
