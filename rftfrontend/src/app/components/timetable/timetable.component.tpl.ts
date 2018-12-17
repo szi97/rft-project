@@ -36,7 +36,7 @@ export const timetableTemplate = `
             <td><input [(ngModel)]="lesson.subject" [disabled]="i !== editableRow"></td>
             <td><input [(ngModel)]="lesson.topic" [disabled]="i !== editableRow"></td>
             <td><input [(ngModel)]="lesson.comment" [disabled]="i !== editableRow"></td>
-            <img src="../assets/edit.jpg" *ngIf="i !== editableRow && checkRole(actualUser.id)" (click)="editRow(lesson, i)">
+            <img src="../assets/edit.jpg" *ngIf="i !== editableRow && checkRole(lesson)" (click)="editRow(lesson, i)">
             <img src="../assets/checkmark.png" *ngIf="i === editableRow" (click)="saveModification(lesson)">
             <img src="../assets/cancel.png" *ngIf="i === editableRow" (click)="cancelModification(i)">
         <tr>

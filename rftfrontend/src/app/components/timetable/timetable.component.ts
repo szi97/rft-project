@@ -80,7 +80,11 @@ export class TimetableComponent {
         this.editableRow = -1;
     }
 
-    checkRole(id: number) {
-        return this.actualUser.id === id || this.actualUserrole[0] === true;
+    checkRole(lesson: any) {
+        if (this.actualUser) {
+            return this.actualUser.id === lesson.mentorid;
+        } else {
+            return this.actualUserrole[0] === true;
+        }
     }
 }

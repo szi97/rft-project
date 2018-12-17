@@ -12,7 +12,7 @@ public class DatabaseConfig {
     @Bean
     public DataSource dataSource() {
 
-        String dbUrl = "jdbc:mysql://localhost:3306/rftdatabase?useSSL=false"; //database
+        String dbUrl = "jdbc:mysql://localhost:3306/sulimuri?useSSL=false"; //database
 
         return DataSourceBuilder
                 .create()
