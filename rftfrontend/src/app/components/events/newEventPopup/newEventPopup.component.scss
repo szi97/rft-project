@@ -8,5 +8,15 @@ div {
     input, label {
         display: block;
     }
+
+    .checkbox {
+        
+        input[type= "checkbox"], label {
+        height: 15px;
+        min-width: 30px;
+        display: inline-block;
+        }
+    }
+
 }
 

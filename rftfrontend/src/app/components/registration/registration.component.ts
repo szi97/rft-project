@@ -14,14 +14,14 @@ export class RegistrationComponent {
 
   model = new Model( '' , '', '', '', '', [] , []);
 
-  subjects: any;
-  agegroups: any;
+  subjectList: any;
+  agegroupList: any;
 
   constructor(private http: HttpClient) {
-    this.subjects = [
+    this.subjectList = [
       'Magyar irodalom és nyelvtan', 'Angol', 'Német', 'Földrajz', 'Kémia', 'Fizika', 'Történelem', 'Infomatika', 'Biológia', 'Matematika'
     ];
-    this.agegroups = [
+    this.agegroupList = [
       'Általános iskola 1-4', 'Általános iskola 5-8', 'Középiskola 1. év', 'Középiskola 2. év',
       'Középiskola 3. év', 'Középiskola 4. év', 'Érettségi felkészítés'
     ];
@@ -34,17 +34,17 @@ export class RegistrationComponent {
 
   updateCheckedSubjects(subject, event) {
     if (event.target.checked) {
-      this.model.subjects.push(subject);
+      this.model.subjectList.push(subject);
     } else {
-      this.model.subjects.splice(this.model.subjects.indexOf(subject), 1 );
+      this.model.subjectList.splice(this.model.subjectList.indexOf(subject), 1 );
     }
   }
 
   updateCheckedAgegroups(agegroup, event) {
     if (event.target.checked) {
-      this.model.agegroups.push(agegroup);
+      this.model.agegroupList.push(agegroup);
     } else {
-      this.model.agegroups.splice(this.model.agegroups.indexOf(agegroup), 1 );
+      this.model.agegroupList.splice(this.model.agegroupList.indexOf(agegroup), 1 );
     }
   }
 }
@@ -53,19 +53,19 @@ export class Model {
   email: string;
   password: string;
   name: string;
-  phoneNumber: string;
+  phone: string;
   facebook: string;
-  subjects: Array<String>;
-  agegroups: Array<String>;
+  subjectList: Array<String>;
+  agegroupList: Array<String>;
 
   constructor(email1: string, password1: string, name1: string, phone1: string, facebook1: string,
               agegroup1: Array<String>, subject1: Array<String>) {
     this.email = email1;
     this.password = password1;
     this.name = name1;
-    this.phoneNumber = phone1;
+    this.phone = phone1;
     this.facebook = facebook1;
-    this.subjects = subject1;
-    this.agegroups = agegroup1;
+    this.subjectList = subject1;
+    this.agegroupList = agegroup1;
   }
 }

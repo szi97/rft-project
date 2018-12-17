@@ -19,17 +19,16 @@ export class ScheduleComponent {
     allInstitutions: any;
     editableRow = -1;
     editedRow: any;
-    usersRole: String;
+    actualUser: any;
     modifiedRow = {mentorName: '', menteeName: '', institutionName: '', folderLink: ''};
 
     constructor(public ngxSmartModalService: NgxSmartModalService, private http: HttpClient) {
-       this.http.get('/menetrend').subscribe(result =>  {
-           this.contacts = Object.values(result)[0];
-           this.usersRole = Object.keys(result)[0];
-        } );
+        this.http.get('/getactualuser').subscribe(result => this.actualUser = result);
+        this.http.get('/menetrend').subscribe(result => this.contacts = result);
         this.http.get('/testmentee').subscribe(result => this.allMentees = result );
         this.http.get('/testmentor').subscribe(result => this.allMentors = result);
         this.http.get('/testinstitution').subscribe(result => this.allInstitutions = result );
+
     }
 
 
@@ -81,7 +80,8 @@ export class ScheduleComponent {
     addContact() {
         this.createNewContact = !this.createNewContact;
         console.log(this.newContact);
-       //  this.http.post('/?', this.newContact, {responseType: 'text'}).subscribe(status => console.log(status));
+       this.http.post('/newScheduleRow', this.newContact, {responseType: 'text'}).subscribe(status => console.log(status));
+       this.contacts.push(this.newContact);
 
     }
 
@@ -96,7 +96,7 @@ export class ScheduleComponent {
     saveModification(contact: any) {
         this.editableRow = -1;
         console.log(contact);
-        // this.http.post('/?', contact, {responseType: 'text'}).subscribe(status => console.log(status));
+        this.http.post('/saveExistingScheduleRow', contact, {responseType: 'text'}).subscribe(status => console.log(status));
 
     }
 

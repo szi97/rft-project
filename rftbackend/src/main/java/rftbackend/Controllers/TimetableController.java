@@ -105,6 +105,7 @@ public class TimetableController{
         System.console().writer().println("newrow.getMentorid() " + newrow.getMentorid());
         System.console().writer().println("newrow.getMenteeid() " + newrow.getMenteeid());
         System.console().writer().println("newrow.getTopic() " + newrow.getTopic());
+        System.console().writer().println("newrow.getSubject() " + newrow.getSubject());
 
         if(dbLogic.saveTimetable(newrow)){
             result = "Successful!";

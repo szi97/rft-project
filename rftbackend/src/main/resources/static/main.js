@@ -73,7 +73,7 @@ var AppRoutingModule = /** @class */ (function () {
     AppRoutingModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [
-                _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(appRoutes, { useHash: false })
+                _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(appRoutes, { useHash: true })
             ],
             exports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]
@@ -203,7 +203,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".header {\n  display: flex;\n  justify-content: center;\n  height: 200px;\n  padding: 0px;\n  background-color: white;\n  position: relative; }\n  .header img {\n    height: 200px; }\n  .header h1 {\n    line-height: 80px;\n    color: white;\n    float: left;\n    display: block; }\n  .topnavigation {\n  background-color: #214F81;\n  overflow: hidden;\n  list-style: none;\n  line-height: 60px;\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0px;\n  display: flex;\n  justify-content: center;\n  box-shadow: 0px 8px 10px -4px black; }\n  .topnavigation .navbarlist li {\n    display: inline-block; }\n  .topnavigation .navbarlist li a {\n      position: relative;\n      display: block;\n      padding: 0px 10px;\n      color: white;\n      text-decoration: none; }\n  .topnavigation .navbarlist li a:hover {\n      color: #CEDFF2; }\n  .topnavigation .navbarlist li a.active-link {\n      color: white;\n      text-decoration: underline; }\n  #container {\n  display: flex;\n  justify-content: center;\n  padding: 20px 0px;\n  width: 100%; }\n  footer {\n  color: #214F81;\n  overflow: hidden;\n  min-height: 100px;\n  border-top: 2px solid #BBB;\n  padding: 20px; }\n"
+module.exports = ".header {\n  display: flex;\n  justify-content: center;\n  height: 200px;\n  padding: 0px;\n  background-color: white;\n  position: relative; }\n  .header img {\n    height: 200px; }\n  .header h1 {\n    line-height: 80px;\n    color: white;\n    float: left;\n    display: block; }\n  .topnavigation {\n  background-color: #214F81;\n  overflow: hidden;\n  list-style: none;\n  line-height: 60px;\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0px;\n  display: flex;\n  justify-content: center;\n  box-shadow: 0px 8px 10px -4px black; }\n  .topnavigation .navbarlist li {\n    display: inline-block; }\n  .topnavigation .navbarlist li a {\n      position: relative;\n      display: block;\n      padding: 0px 10px;\n      color: white;\n      text-decoration: none; }\n  .topnavigation .navbarlist li a:hover {\n      color: #CEDFF2; }\n  .topnavigation .navbarlist li a.active-link {\n      color: white;\n      text-decoration: underline; }\n  #container {\n  display: flex;\n  justify-content: center;\n  padding: 20px 0px;\n  width: 100%; }\n  footer {\n  color: #214F81;\n  overflow: hidden;\n  min-height: 100px;\n  border-top: 2px solid #BBB;\n  padding: 20px; }\n  footer .footerlogo {\n    float: right; }\n  footer .footerdiv {\n    display: inline-block; }\n"
 
 /***/ }),
 
@@ -217,7 +217,7 @@ module.exports = ".header {\n  display: flex;\n  justify-content: center;\n  hei
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "apptemplate", function() { return apptemplate; });
-var apptemplate = "\n<div class=\"header\">\n    <img src=\"../assets/lathatatlan_logokek.png\">\n</div>\n<nav class=\"topnavigation\" id=\"mynav\">\n      <div>\n          <ul class=\"navbarlist\">\n              <li><a routerLink=\"\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{ exact: true }\">Kezd\u0151oldal</a></li>\n              <li><a routerLink=\"menetrend\" routerLinkActive=\"active-link\">Menetrend</a></li>\n              <li><a routerLink=\"regisztracio\" routerLinkActive=\"active-link\">Regisztr\u00E1ci\u00F3</a></li>\n              <li><a routerLink=\"esemenyek\" routerLinkActive=\"active-link\">Esem\u00E9nyek</a></li>\n              <li><a routerLink=\"orarend\" routerLinkActive=\"active-link\">\u00D3rarend</a></li>\n              <li><a routerLink=\"logout\" routerLinkActive=\"active-link\">Kijelentkez\u00E9s</a></li>\n          </ul>\n      </div>\n  </nav>\n  <div id=\"container\">\n    <router-outlet></router-outlet>\n  </div>\n  <footer>\n    <div class=\"footerdiv\">\n        <p>El\u00E9rhet\u0151s\u00E9gek:</p>\n        <p>L\u00E1thatatlan Iskola</p>\n        <p>Honlap: www.lathatatlaniskola.hu</p>\n        <p>Email: info@lathatatlaniskola.hu</p>\n        <p>FB: www.facebook.com/lathatatlaniskola</p>\n        <p>Insta: www.instagram.com/lathatatlaniskola</p>\n        <p>Telefonsz\u00E1m: +36123456789</p>\n    </div>\n  </footer>\n  ";
+var apptemplate = "\n<div class=\"header\">\n    <img src=\"../assets/lathatatlan_logokek.png\">\n</div>\n<nav class=\"topnavigation\" id=\"mynav\">\n      <div>\n          <ul class=\"navbarlist\">\n              <li><a routerLink=\"\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{ exact: true }\">Kezd\u0151oldal</a></li>\n              <li *ngIf=\"actualUser[0] === true\">\n                <a routerLink=\"menetrend\" routerLinkActive=\"active-link\">Menetrend</a>\n              </li>\n              <li><a routerLink=\"esemenyek\" routerLinkActive=\"active-link\">Esem\u00E9nyek</a></li>\n              <li><a routerLink=\"orarend\" routerLinkActive=\"active-link\">\u00D3rarend</a></li>\n              <li><a routerLink=\"regisztracio\" routerLinkActive=\"active-link\">Regisztr\u00E1ci\u00F3</a></li>\n              <li><a routerLink=\"logout\" routerLinkActive=\"active-link\">Kijelentkez\u00E9s</a></li>\n          </ul>\n      </div>\n  </nav>\n  <div id=\"container\">\n    <router-outlet></router-outlet>\n  </div>\n  <footer>\n    <div class=\"footerdiv\">\n        <p>L\u00E1thatatlan Iskola</p>\n        <p>Telefonsz\u00E1m: +36123456789</p>\n        <p>Email: info@lathatatlaniskola.hu</p>\n    </div>\n    <div class=\"footerlogo\">\n    \n    <a href=\"http://www.lathatatlaniskola.hu\"><img src=\"../assets/weblogo.png\"></a>\n    <a href=\"http://www.facebook.com/lathatatlaniskola\"><img src=\"../assets/facebook.png\"></a>\n    <a href=\"http://www.instagram.com/lathatatlaniskola\"><img src=\"../assets/insta.png\"></a>\n    \n   \n        <!--<img href=\"http://www.lathatatlaniskola.hu\" src=\"../assets/weblogo.png\">\n        <img href=\"http://www.facebook.com/lathatatlaniskola\" src=\"../assets/facebook.png\">\n        <img href=\"http://www.instagram.com/lathatatlaniskola\" src=\"../assets/insta.png\">-->\n    </div>\n  </footer>\n  ";
 
 
 /***/ }),
@@ -234,23 +234,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _app_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component.tpl */ "./src/app/components/app/app.component.tpl.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(http) {
+        this.http = http;
     }
+    AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.http.get('/testuserrole').subscribe(function (result) { _this.actualUser = result; console.log(_this.actualUser); });
+    };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: _app_component_tpl__WEBPACK_IMPORTED_MODULE_1__["apptemplate"],
             styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/components/app/app.component.scss")]
-        })
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -280,7 +291,7 @@ module.exports = "div {\n  margin: 10px; }\n  div textarea {\n    min-height: 50
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editEventPopupTemplate", function() { return editEventPopupTemplate; });
-var editEventPopupTemplate = "\n    <ngx-smart-modal #editEventPopup [identifier]=\"'editEventPopup'\" [autostart]=\"false\">\n        <div>\n            <label>N\u00E9v: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().name\">\n        </div>\n        <div>\n            <label>D\u00E1tum: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().date\" placeholder=\"D\u00E1tum\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\">\n            <owl-date-time [pickerType]=\"'calendar'\" #dt2></owl-date-time>\n        </div>\n        <div>\n            <label>Id\u0151: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().time\" placeholder=\"Id\u0151\" [owlDateTimeTrigger]=\"dt1\" [owlDateTime]=\"dt1\">\n            <owl-date-time [pickerType]=\"'timer'\" #dt1></owl-date-time>\n        </div>\n        <div>\n            <label>Hely: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().location\">\n        </div>\n        <div>\n            <label>Le\u00EDr\u00E1s: </label>\n            <textarea [(ngModel)]=\"editEventPopup.getData().description\"></textarea>\n        </div>\n        <div>\n            <label>Szervez\u0151k:</label>\n            <p>select szervez\u0151knek</p>\n        </div>\n        <button (click)=\"saveEvent()\">Ment\u00E9s</button>\n        <button (click)=\"editEventPopup.close()\">M\u00E9gse</button>\n    </ngx-smart-modal>\n";
+var editEventPopupTemplate = "\n    <ngx-smart-modal #editEventPopup [identifier]=\"'editEventPopup'\" [autostart]=\"false\">\n        <div>\n            <label>N\u00E9v: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().name\">\n        </div>\n        <div>\n            <label>D\u00E1tum: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().date\" placeholder=\"D\u00E1tum\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\">\n            <owl-date-time [pickerType]=\"'calendar'\" #dt2></owl-date-time>\n        </div>\n        <div>\n            <label>Id\u0151: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().time\" placeholder=\"Id\u0151\" [owlDateTimeTrigger]=\"dt1\" [owlDateTime]=\"dt1\">\n            <owl-date-time [pickerType]=\"'timer'\" #dt1></owl-date-time>\n        </div>\n        <div>\n            <label>Hely: </label>\n            <input [(ngModel)]=\"editEventPopup.getData().location\">\n        </div>\n        <div>\n            <label>Le\u00EDr\u00E1s: </label>\n            <textarea [(ngModel)]=\"editEventPopup.getData().description\"></textarea>\n        </div>\n        <div>\n            <label>Szervez\u0151k:</label>\n            <p><input [(ngModal)]=\"editEventPopup.getData().organizers\"></p>\n        </div>\n        <button (click)=\"saveEvent()\">Ment\u00E9s</button>\n        <button (click)=\"editEventPopup.close()\">M\u00E9gse</button>\n    </ngx-smart-modal>\n";
 
 
 /***/ }),
@@ -328,10 +339,11 @@ var EditEventPopupComponent = /** @class */ (function () {
         this.modifiedEvent = this.ngxSmartModalService.getModalData('editEventPopup');
         this.modifiedEvent.date = this.datepipe.transform(this.modifiedEvent.date, 'yyyy-MM-dd');
         this.modifiedEvent.time = this.datepipe.transform(this.modifiedEvent.time, 'HH:mm:00');
-        this.modifiedEvent.organizers = ['Béla', 'Kati'];
+        this.modifiedEvent.organizers = [];
         delete this.modifiedEvent['organizer'];
         this.http.post('/saveExistingEvent', this.modifiedEvent, { responseType: 'text' }).subscribe(function (status) {
             console.log(status);
+            location.reload();
             _this.ngxSmartModalService.getModal('editEventPopup').close();
         });
     };
@@ -347,6 +359,7 @@ var EditEventPopupComponent = /** @class */ (function () {
         console.log(this.modifiedEvent);
     };
     EditEventPopupComponent.prototype.cancelEdit = function () {
+        this.ngxSmartModalService.getModal('editEventPopup').close();
         // this.ngxSmartModalService.setModalData(this.modifiedEvent, 'editEventPopup', true);
     };
     EditEventPopupComponent = __decorate([
@@ -464,7 +477,7 @@ var EventComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "div {\n  margin: 10px; }\n  div textarea {\n    min-height: 50px; }\n  div input, div label {\n    display: block; }\n"
+module.exports = "div {\n  margin: 10px; }\n  div textarea {\n    min-height: 50px; }\n  div input, div label {\n    display: block; }\n  div .checkbox input[type=\"checkbox\"], div .checkbox label {\n    height: 15px;\n    min-width: 30px;\n    display: inline-block; }\n"
 
 /***/ }),
 
@@ -478,7 +491,7 @@ module.exports = "div {\n  margin: 10px; }\n  div textarea {\n    min-height: 50
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newEventPopupTemplate", function() { return newEventPopupTemplate; });
-var newEventPopupTemplate = "\n    <ngx-smart-modal #newEventPopup [identifier]=\"'newEventPopup'\">\n        <div>\n            <label>N\u00E9v: </label>\n            <input [(ngModel)]=\"newEvent.name\">\n        </div>\n        <div>\n            <label>D\u00E1tum: </label>\n            <input [(ngModel)]=\"newEvent.date\" placeholder=\"D\u00E1tum\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\">\n            <owl-date-time [pickerType]=\"'calendar'\" #dt2></owl-date-time>\n        </div>\n        <div>\n            <label>Id\u0151: </label>\n            <input [(ngModel)]=\"newEvent.time\" placeholder=\"Id\u0151\" [owlDateTimeTrigger]=\"dt1\" [owlDateTime]=\"dt1\">\n            <owl-date-time [pickerType]=\"'timer'\" #dt1></owl-date-time>\n        </div>\n        <div>\n            <label>Hely: </label>\n            <input [(ngModel)]=\"newEvent.location\">\n        </div>\n        <div>\n            <label>Le\u00EDr\u00E1s: </label>\n            <textarea [(ngModel)]=\"newEvent.description\"></textarea>\n        </div>\n        <div>\n            <label>Szervez\u0151k:</label>\n            <p>select szervez\u0151knek</p>\n        </div>\n        <button (click)=\"saveNewEvent()\">Ment\u00E9s</button>\n        <button (click)=\"newEventPopup.close()\">M\u00E9gse</button>\n    </ngx-smart-modal>\n";
+var newEventPopupTemplate = "\n    <ngx-smart-modal #newEventPopup [identifier]=\"'newEventPopup'\">\n        <div>\n            <label>N\u00E9v: </label>\n            <input [(ngModel)]=\"newEvent.name\">\n        </div>\n        <div>\n            <label>D\u00E1tum: </label>\n            <input [(ngModel)]=\"newEvent.date\" placeholder=\"D\u00E1tum\" [owlDateTimeTrigger]=\"dt2\" [owlDateTime]=\"dt2\">\n            <owl-date-time [pickerType]=\"'calendar'\" #dt2></owl-date-time>\n        </div>\n        <div>\n            <label>Id\u0151: </label>\n            <input [(ngModel)]=\"newEvent.time\" placeholder=\"Id\u0151\" [owlDateTimeTrigger]=\"dt1\" [owlDateTime]=\"dt1\">\n            <owl-date-time [pickerType]=\"'timer'\" #dt1></owl-date-time>\n        </div>\n        <div>\n            <label>Hely: </label>\n            <input [(ngModel)]=\"newEvent.location\">\n        </div>\n        <div>\n            <label>Le\u00EDr\u00E1s: </label>\n            <textarea [(ngModel)]=\"newEvent.description\"></textarea>\n        </div>\n        <div>\n            <label>Szervez\u0151k:</label>\n            <div *ngFor=\"let leader of allLeaders\" class=\"checkbox\">\n                <input type=\"checkbox\" value=\"{{leader.name}}\" (change)=\"updateLeaders(leader, $event)\" />\n                <label><span></span>{{leader.name}}</label>\n            </div>\n        </div>\n        <button (click)=\"saveNewEvent()\">Ment\u00E9s</button>\n        <button (click)=\"newEventPopup.close()\">M\u00E9gse</button>\n    </ngx-smart-modal>\n";
 
 
 /***/ }),
@@ -514,10 +527,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var NewEventPopupComponent = /** @class */ (function () {
     function NewEventPopupComponent(ngxSmartModalService, datepipe, http) {
+        var _this = this;
         this.ngxSmartModalService = ngxSmartModalService;
         this.datepipe = datepipe;
         this.http = http;
-        this.newEvent = { name: '', date: '', time: '', location: '', description: '', organizers: ['Béla', 'Kati'] };
+        this.newEvent = { name: '', date: '', time: '', location: '', description: '', organizers: [] };
+        http.get('/getleaders').subscribe(function (result) { return _this.allLeaders = result; });
     }
     NewEventPopupComponent.prototype.saveNewEvent = function () {
         var _this = this;
@@ -526,8 +541,17 @@ var NewEventPopupComponent = /** @class */ (function () {
         console.log(this.newEvent);
         this.http.post('/newEvent', this.newEvent, { responseType: 'text' }).subscribe(function (status) {
             console.log(status);
+            location.reload();
             _this.ngxSmartModalService.getModal('newEventPopup').close();
         });
+    };
+    NewEventPopupComponent.prototype.updateLeaders = function (leader, event) {
+        if (event.target.checked) {
+            this.newEvent.organizers.push(leader.getName());
+        }
+        else {
+            this.newEvent.organizers.splice(this.newEvent.organizers.indexOf(leader.getName()), 1);
+        }
     };
     NewEventPopupComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -552,7 +576,7 @@ var NewEventPopupComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "div {\n    padding: 20px 0px;\n}\n\ncontainerdiv {\n    max-width: 500px;\n}"
 
 /***/ }),
 
@@ -566,7 +590,7 @@ module.exports = ""
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hometemplate", function() { return hometemplate; });
-var hometemplate = "\n<div>\n<p>Kedves mentorunk, \u00FCdv\u00F6zl\u00FCnk a L\u00E1thatatlan Iskola mentor-port\u00E1lj\u00E1n!</p>\n<p>Itt tudod vezetni a mentor\u00F3r\u00E1idat a mentor\u00E1ltjaiddal kapcsolatban \u00E9s itt \u00E9rtes\u00FClsz majd a\nk\u00F6zelg\u0151 esem\u00E9nyekr\u0151l is.</p>\n<p>Emellett a vezet\u0151s\u00E9g is itt igazgatja a program elemeit.</p>\n\n <p>- Az \u201CEsem\u00E9nyek\u201D f\u00FCl alatt tal\u00E1lj\u00E1tok a k\u00F6zelg\u0151 esem\u00E9nyeket \u00E9s azoknak a le\u00EDr\u00E1s\u00E1t.</p>\n <p>- Az \u201C\u00D3rarend\u201D f\u00FCl alatt el\u00E9ritek az eddigi mentor\u00F3r\u00E1itoknak a r\u00E9szleteit \u00E9s itt tudj\u00E1tok megadni az \u00FAj \u00F3r\u00E1kat.</p>\n <p>Int\u00E9z\u00E9nyfelel\u0151s\u00F6knek:</p>\n  <p>- Ti az \u201C\u00D3rarend\u201D f\u00FCl alatt l\u00E1thatj\u00E1tok az int\u00E9zm\u00E9nyetekben tartott mentor\u00F3r\u00E1kat \u00E9s \u00EDgy tudj\u00E1tok seg\u00EDteni a logisztik\u00E1t a mentorok k\u00F6z\u00F6tt.</p>\n\n<p>~ A L\u00E1thatatlan Iskola vezet\u0151s\u00E9ge</p>\n</div>\n";
+var hometemplate = "\n<div id=containerdiv>\n  <div>\n    <p>Kedves mentorunk, \u00FCdv\u00F6zl\u00FCnk a L\u00E1thatatlan Iskola mentor-port\u00E1lj\u00E1n!</p>\n    <p>Itt tudod vezetni a mentor\u00F3r\u00E1idat a mentor\u00E1ltjaiddal kapcsolatban \u00E9s itt \u00E9rtes\u00FClsz majd a\n    k\u00F6zelg\u0151 esem\u00E9nyekr\u0151l is.</p>\n    <p>Emellett a vezet\u0151s\u00E9g is itt igazgatja a program elemeit.</p>\n  </div>\n  <div>\n    <p>- Az \u201CEsem\u00E9nyek\u201D f\u00FCl alatt tal\u00E1lj\u00E1tok a k\u00F6zelg\u0151 esem\u00E9nyeket \u00E9s azoknak a le\u00EDr\u00E1s\u00E1t.</p>\n    <p>- Az \u201C\u00D3rarend\u201D f\u00FCl alatt el\u00E9ritek az eddigi mentor\u00F3r\u00E1itoknak a r\u00E9szleteit \u00E9s itt tudj\u00E1tok megadni\n    az \u00FAj \u00F3r\u00E1kat.</p>\n  </div>\n  <div>\n    <p>Int\u00E9z\u00E9nyfelel\u0151s\u00F6knek:</p>\n    <p>- Ti az \u201C\u00D3rarend\u201D f\u00FCl alatt l\u00E1thatj\u00E1tok az int\u00E9zm\u00E9nyetekben tartott mentor\u00F3r\u00E1kat \u00E9s \u00EDgy tudj\u00E1tok\n      seg\u00EDteni a logisztik\u00E1t a mentorok k\u00F6z\u00F6tt.</p>\n  </div>\n  <p>~ A L\u00E1thatatlan Iskola vezet\u0151s\u00E9ge</p>\n</div>\n";
 
 
 /***/ }),
@@ -779,7 +803,7 @@ module.exports = ".form-group {\n  padding: 20px;\n  color: #444444;\n  width: 1
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registrationTemplate", function() { return registrationTemplate; });
-var registrationTemplate = "\n<form name=\"form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n    <div class=\"form-group\">\n        <label for=\"email\">E-mail c\u00EDm: </label>\n        <input type=\"text\" class=\"form-control\" name=\"email\" [(ngModel)]=\"model.email\"\n        #email=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && email.invalid }\" required email/>\n        <div *ngIf=\"f.submitted && email.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"email.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            <div *ngIf=\"email.errors.email\">\u00C9rv\u00E9nytelen e-mail c\u00EDm.</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"password\">Jelsz\u00F3: </label>\n        <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"model.password\"\n            #password=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && password.invalid }\" required minlength=\"8\"/>\n        <div *ngIf=\"f.submitted && password.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"password.errors.required\">Add meg a jelszavad\"!</div>\n            <div *ngIf=\"password.errors.minlength\">A jelsz\u00F3nak legal\u00E1bb 8 karakter hossz\u00FAnak kell lennie</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"name\">N\u00E9v: </label>\n        <input type=\"text\" class=\"form-control\" name=\"name\" [(ngModel)]=\"model.name\"\n            #name=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && name.invalid }\" required />\n        <div *ngIf=\"f.submitted && name.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"name.errors.required\">Add meg a neved!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"phoneNumber\">Telefonsz\u00E1m:</label>\n        <input type=\"text\" class=\"form-control\" name=\"phoneNumber\" [(ngModel)]=\"model.phoneNumber\"\n        #phoneNumber=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && phoneNumber.invalid }\" required />\n        <div *ngIf=\"f.submitted && phoneNumber.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"phoneNumber.errors.required\">Add meg a telefonsz\u00E1mod!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"facebook\">Facebook adatlap: </label>\n        <input type=\"text\" class=\"form-control\" name=\"facebook\" [(ngModel)]=\"model.facebook\"\n        #facebook=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && facebook.invalid }\" required />\n        <div *ngIf=\"f.submitted && facebook.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"facebook.errors.required\">Add meg a facebook adatlapod linkj\u00E9t!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"agegroups\">Korcsoport: </label>\n        <div *ngFor=\"let agegroup of agegroups\">\n        <input type=\"checkbox\" name=\"agegroups\" value=\"{{agegroup}}\" (change)=\"updateCheckedAgegroups(agegroup, $event)\" />\n            <label><span></span>{{agegroup}}</label>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"subjects\">Tant\u00E1rgy: </label>\n        <div *ngFor=\"let subject of subjects\">\n        <input type=\"checkbox\" name=\"subjects\" value=\"{{subject}}\" (change)=\"updateCheckedSubjects(subject, $event)\" />\n            <label><span></span>{{subject}}</label>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <button [disabled]=\"loading\">Regisztr\u00E1ci\u00F3</button>\n    </div>\n</form>\n";
+var registrationTemplate = "\n<form name=\"form\" (ngSubmit)=\"f.form.valid && onSubmit()\" #f=\"ngForm\">\n    <div class=\"form-group\">\n        <label for=\"email\">E-mail c\u00EDm: </label>\n        <input type=\"text\" class=\"form-control\" name=\"email\" [(ngModel)]=\"model.email\"\n        #email=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && email.invalid }\" required email/>\n        <div *ngIf=\"f.submitted && email.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"email.errors.required\">Add meg az e-mail c\u00EDmed!</div>\n            <div *ngIf=\"email.errors.email\">\u00C9rv\u00E9nytelen e-mail c\u00EDm.</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"password\">Jelsz\u00F3: </label>\n        <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"model.password\"\n            #password=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && password.invalid }\" required minlength=\"8\"/>\n        <div *ngIf=\"f.submitted && password.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"password.errors.required\">Add meg a jelszavad\"!</div>\n            <div *ngIf=\"password.errors.minlength\">A jelsz\u00F3nak legal\u00E1bb 8 karakter hossz\u00FAnak kell lennie</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"name\">N\u00E9v: </label>\n        <input type=\"text\" class=\"form-control\" name=\"name\" [(ngModel)]=\"model.name\"\n            #name=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && name.invalid }\" required />\n        <div *ngIf=\"f.submitted && name.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"name.errors.required\">Add meg a neved!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"phone\">Telefonsz\u00E1m:</label>\n        <input type=\"text\" class=\"form-control\" name=\"phone\" [(ngModel)]=\"model.phone\"\n        #phoneNumber=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && phone.invalid }\" required />\n        <div *ngIf=\"f.submitted && phone.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"phone.errors.required\">Add meg a telefonsz\u00E1mod!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"facebook\">Facebook adatlap: </label>\n        <input type=\"text\" class=\"form-control\" name=\"facebook\" [(ngModel)]=\"model.facebook\"\n        #facebook=\"ngModel\" [ngClass]=\"{ 'is-invalid': f.submitted && facebook.invalid }\" required />\n        <div *ngIf=\"f.submitted && facebook.invalid\" class=\"invalid-feedback\">\n            <div *ngIf=\"facebook.errors.required\">Add meg a facebook adatlapod linkj\u00E9t!</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"agegroupList\">Korcsoport: </label>\n        <div *ngFor=\"let agegroup of agegroupList\">\n        <input type=\"checkbox\" name=\"agegroupList\" value=\"{{agegroup}}\" (change)=\"updateCheckedAgegroups(agegroup, $event)\" />\n            <label><span></span>{{agegroup}}</label>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label for=\"subjectList\">Tant\u00E1rgy: </label>\n        <div *ngFor=\"let subject of subjectList\">\n        <input type=\"checkbox\" name=\"subjectList\" value=\"{{subject}}\" (change)=\"updateCheckedSubjects(subject, $event)\" />\n            <label><span></span>{{subject}}</label>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <button [disabled]=\"loading\">Regisztr\u00E1ci\u00F3</button>\n    </div>\n</form>\n";
 
 
 /***/ }),
@@ -816,10 +840,10 @@ var RegistrationComponent = /** @class */ (function () {
     function RegistrationComponent(http) {
         this.http = http;
         this.model = new Model('', '', '', '', '', [], []);
-        this.subjects = [
+        this.subjectList = [
             'Magyar irodalom és nyelvtan', 'Angol', 'Német', 'Földrajz', 'Kémia', 'Fizika', 'Történelem', 'Infomatika', 'Biológia', 'Matematika'
         ];
-        this.agegroups = [
+        this.agegroupList = [
             'Általános iskola 1-4', 'Általános iskola 5-8', 'Középiskola 1. év', 'Középiskola 2. év',
             'Középiskola 3. év', 'Középiskola 4. év', 'Érettségi felkészítés'
         ];
@@ -830,18 +854,18 @@ var RegistrationComponent = /** @class */ (function () {
     };
     RegistrationComponent.prototype.updateCheckedSubjects = function (subject, event) {
         if (event.target.checked) {
-            this.model.subjects.push(subject);
+            this.model.subjectList.push(subject);
         }
         else {
-            this.model.subjects.splice(this.model.subjects.indexOf(subject), 1);
+            this.model.subjectList.splice(this.model.subjectList.indexOf(subject), 1);
         }
     };
     RegistrationComponent.prototype.updateCheckedAgegroups = function (agegroup, event) {
         if (event.target.checked) {
-            this.model.agegroups.push(agegroup);
+            this.model.agegroupList.push(agegroup);
         }
         else {
-            this.model.agegroups.splice(this.model.agegroups.indexOf(agegroup), 1);
+            this.model.agegroupList.splice(this.model.agegroupList.indexOf(agegroup), 1);
         }
     };
     RegistrationComponent = __decorate([
@@ -861,10 +885,10 @@ var Model = /** @class */ (function () {
         this.email = email1;
         this.password = password1;
         this.name = name1;
-        this.phoneNumber = phone1;
+        this.phone = phone1;
         this.facebook = facebook1;
-        this.subjects = subject1;
-        this.agegroups = agegroup1;
+        this.subjectList = subject1;
+        this.agegroupList = agegroup1;
     }
     return Model;
 }());
@@ -1083,7 +1107,7 @@ module.exports = "table {\n  border-spacing: 0px; }\n  table th, table td {\n   
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scheduletemplate", function() { return scheduletemplate; });
-var scheduletemplate = "\n<app-mentors-popup></app-mentors-popup>\n<app-mentees-popup></app-mentees-popup>\n<app-institutions-popup></app-institutions-popup>\n<div>\n    <div class=filtering-select>\n        Sz\u0171r\u00E9s:\n        <select [(ngModel)]=\"actualInstitution\">\n            <option>Int\u00E9zm\u00E9ny</option>\n            <option *ngFor=\"let institution of allInstitutions\">{{institution.name}}</option>\n        </select>\n    </div>\n<table>\n    <thead>\n        <th>Mentor</th>\n        <th>Mentor\u00E1lt</th>\n        <th>Int\u00E9zm\u00E9ny</th>\n        <th>Mappa link</th>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let contact of getCorrectContacts(); let i = index\">\n            <td class=popuptr (click)=\"i !== editableRow && showMentor(contact.mentorId)\">\n                <input [(ngModel)]=\"contact.mentorName\" value={{contact.mentorName}} [disabled]=\"i !== editableRow\">\n            </td>\n            <td class=popuptr (click)=\"i !== editableRow && showMentee(contact.menteeId)\">\n                <input [(ngModel)]=\"contact.menteeName\" value={{contact.menteeName}} [disabled]=\"i !== editableRow\">\n            </td>\n            <td class=popuptr (click)=\"i !== editableRow && showInstitution(contact.institutionId)\">\n                <input [(ngModel)]=\"contact.institutionName\" value={{contact.institutionName}} [disabled]=\"i !== editableRow\">\n            </td>\n            <td><input [(ngModel)]=\"contact.folderLink\" value={{contact.folderLink}} [disabled]=\"i !== editableRow\"></td>\n            <p *ngIf=\"i !== editableRow\" (click)=\"editRow(contact, i)\">Szerkeszt\u00E9s</p>\n            <p *ngIf=\"i === editableRow\" (click)=\"saveModification(contact)\">Ment\u00E9s</p>\n            <p *ngIf=\"i === editableRow\" (click)=\"cancelModification(i)\">M\u00E9gse</p>\n        </tr>\n        <tr *ngIf=\"createNewContact == true\">\n            <td><select (change)=\"SetNewContactMentor($event.target.selectedIndex)\">\n                <option *ngFor=\"let mentor of allMentors\">{{mentor.name}}</option>\n                </select>\n            </td>\n            <td><select (change)=\"SetNewContactMentee($event.target.selectedIndex)\">\n                <option *ngFor=\"let mentee of allMentees\">{{mentee.name}}</option>\n                </select>\n            </td>\n            <td><select (change)=\"SetNewContactInstitution($event.target.selectedIndex)\">\n                <option *ngFor=\"let institution of allInstitutions\">{{institution.name}}</option>\n                </select>\n            </td>\n            <td><input [(ngModel)]=\"newContact.folderLink\"></td>\n            <p (click)=\"addContact()\">Ment\u00E9s</p>\n        </tr>\n    </tbody>\n</table>\n<button *ngIf=\"createNewContact == false\" (click)=\"setDefaultNewContact()\">+ \u00DAj sor</button>\n</div>\n";
+var scheduletemplate = "\n<app-mentors-popup></app-mentors-popup>\n<app-mentees-popup></app-mentees-popup>\n<app-institutions-popup></app-institutions-popup>\n<div>\n    <div class=filtering-select>\n        Sz\u0171r\u00E9s:\n        <select [(ngModel)]=\"actualInstitution\">\n            <option>Int\u00E9zm\u00E9ny</option>\n            <option *ngFor=\"let institution of allInstitutions\">{{institution.name}}</option>\n        </select>\n    </div>\n<table>\n    <thead>\n        <th>Mentor</th>\n        <th>Mentor\u00E1lt</th>\n        <th>Int\u00E9zm\u00E9ny</th>\n        <th>Mappa link</th>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let contact of getCorrectContacts(); let i = index\">\n            <td class=popuptr (click)=\"i !== editableRow && showMentor(contact.mentorId)\">\n                <input [(ngModel)]=\"contact.mentorName\" value={{contact.mentorName}} [disabled]=\"i !== editableRow\">\n            </td>\n            <td class=popuptr (click)=\"i !== editableRow && showMentee(contact.menteeId)\">\n                <input [(ngModel)]=\"contact.menteeName\" value={{contact.menteeName}} [disabled]=\"i !== editableRow\">\n            </td>\n            <td class=popuptr (click)=\"i !== editableRow && showInstitution(contact.institutionId)\">\n                <input [(ngModel)]=\"contact.institutionName\" value={{contact.institutionName}} [disabled]=\"i !== editableRow\">\n            </td>\n            <td><input [(ngModel)]=\"contact.folderLink\" value={{contact.folderLink}} [disabled]=\"i !== editableRow\"></td>\n            <img src=\"../assets/edit.jpg\" *ngIf=\"i !== editableRow\" (click)=\"editRow(contact, i)\">\n            <img src=\"../assets/checkmark.png\" *ngIf=\"i === editableRow\" (click)=\"saveModification(contact)\">\n            <img src=\"../assets/cancel.png\" *ngIf=\"i === editableRow\" (click)=\"cancelModification(i)\">\n        </tr>\n        <tr *ngIf=\"createNewContact == true\">\n            <td><select (change)=\"SetNewContactMentor($event.target.selectedIndex)\">\n                <option *ngFor=\"let mentor of allMentors\">{{mentor.name}}</option>\n                </select>\n            </td>\n            <td><select (change)=\"SetNewContactMentee($event.target.selectedIndex)\">\n                <option *ngFor=\"let mentee of allMentees\">{{mentee.name}}</option>\n                </select>\n            </td>\n            <td><select (change)=\"SetNewContactInstitution($event.target.selectedIndex)\">\n                <option *ngFor=\"let institution of allInstitutions\">{{institution.name}}</option>\n                </select>\n            </td>\n            <td><input [(ngModel)]=\"newContact.folderLink\"></td>\n            <img src=\"../assets/checkmark.png\" (click)=\"addContact()\">\n        </tr>\n    </tbody>\n</table>\n<button *ngIf=\"createNewContact == false\" (click)=\"setDefaultNewContact()\">+ \u00DAj sor</button>\n</div>\n";
 
 
 /***/ }),
@@ -1125,10 +1149,8 @@ var ScheduleComponent = /** @class */ (function () {
         this.actualInstitution = 'Intézmény';
         this.editableRow = -1;
         this.modifiedRow = { mentorName: '', menteeName: '', institutionName: '', folderLink: '' };
-        this.http.get('/menetrend').subscribe(function (result) {
-            _this.contacts = Object.values(result)[0];
-            _this.usersRole = Object.keys(result)[0];
-        });
+        this.http.get('/getactualuser').subscribe(function (result) { return _this.actualUser = result; });
+        this.http.get('/menetrend').subscribe(function (result) { return _this.contacts = result; });
         this.http.get('/testmentee').subscribe(function (result) { return _this.allMentees = result; });
         this.http.get('/testmentor').subscribe(function (result) { return _this.allMentors = result; });
         this.http.get('/testinstitution').subscribe(function (result) { return _this.allInstitutions = result; });
@@ -1175,7 +1197,8 @@ var ScheduleComponent = /** @class */ (function () {
     ScheduleComponent.prototype.addContact = function () {
         this.createNewContact = !this.createNewContact;
         console.log(this.newContact);
-        //  this.http.post('/?', this.newContact, {responseType: 'text'}).subscribe(status => console.log(status));
+        this.http.post('/newScheduleRow', this.newContact, { responseType: 'text' }).subscribe(function (status) { return console.log(status); });
+        this.contacts.push(this.newContact);
     };
     ScheduleComponent.prototype.editRow = function (contact, index) {
         this.modifiedRow.mentorName = contact.mentorName;
@@ -1187,7 +1210,7 @@ var ScheduleComponent = /** @class */ (function () {
     ScheduleComponent.prototype.saveModification = function (contact) {
         this.editableRow = -1;
         console.log(contact);
-        // this.http.post('/?', contact, {responseType: 'text'}).subscribe(status => console.log(status));
+        this.http.post('/saveExistingScheduleRow', contact, { responseType: 'text' }).subscribe(function (status) { return console.log(status); });
     };
     ScheduleComponent.prototype.cancelModification = function (index) {
         this.contacts[index].mentorName = this.modifiedRow.mentorName;
@@ -1280,6 +1303,7 @@ var NewLessonPopupComponent = /** @class */ (function () {
         this.model.time = this.datepipe.transform(this.model.time, 'HH:mm:00');
         this.http.post('/newTimetableRow', this.model, { responseType: 'text' }).subscribe(function (status) {
             console.log(status);
+            location.reload();
             _this.ngxSmartModalService.getModal('newLessonPopup').close();
         });
     };
@@ -1306,7 +1330,7 @@ var NewLessonPopupComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "table {\n  border-spacing: 0px;\n  text-align: center; }\n  table th, table td {\n    text-align: center;\n    padding: 5px 10px;\n    height: 40px; }\n  table th {\n    background-color: #214F81;\n    color: white; }\n  table tr:nth-child(even) {\n    background-color: #CEDFF2; }\n  table td > input:disabled {\n    border: none;\n    max-width: 100px;\n    background-color: transparent;\n    color: black; }\n  table p {\n    background-color: white;\n    display: inline; }\n  table #mentee {\n    background-color: transparent;\n    font-size: 15px; }\n  .filtering-select {\n  padding: 10px; }\n  select {\n  height: 30px;\n  border: none; }\n"
+module.exports = "table {\n  border-spacing: 0px;\n  text-align: center; }\n  table th, table td {\n    text-align: center;\n    padding: 5px 10px;\n    height: 40px; }\n  table th {\n    background-color: #214F81;\n    color: white; }\n  table tr:nth-child(even) {\n    background-color: #CEDFF2; }\n  table input {\n    max-width: 100px; }\n  table td > input:disabled {\n    border: none;\n    background-color: transparent;\n    color: black; }\n  table p {\n    background-color: white;\n    display: inline; }\n  table #mentee {\n    background-color: transparent;\n    font-size: 15px; }\n  .filtering-select {\n  padding: 10px; }\n  select {\n  height: 30px;\n  border: none; }\n"
 
 /***/ }),
 
@@ -1320,7 +1344,7 @@ module.exports = "table {\n  border-spacing: 0px;\n  text-align: center; }\n  ta
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "timetableTemplate", function() { return timetableTemplate; });
-var timetableTemplate = "\n<app-newlesson-popup></app-newlesson-popup>\n<div>\n    <div>\n        Sz\u0171r\u00E9s:\n        <select id=filtering-select [(ngModel)]=\"actualMentor\">\n            <option>Mentor</option>\n            <option *ngFor=\"let mentor of allmentors\">{{mentor}}</option>\n        </select>\n    </div>\n    <table>\n        <thead>\n            <th>Mentor</th>\n            <th>Mentor\u00E1lt</th>\n            <th>\u00D3rasz\u00E1m</th>\n            <th>D\u00E1tum</th>\n            <th>Id\u0151pont</th>\n            <th>Helysz\u00EDn</th>\n            <th>Tant\u00E1rgy</th>\n            <th>T\u00E9ma</th>\n            <th>Megjegyz\u00E9s</th>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let lesson of getCorrectMentors(); let i=index\">\n            <td><input [(ngModel)]=\"lesson.mentorName\" [disabled]=\"i !== editableRow\"></td>\n            <td><p id=mentee *ngIf=\"i !== editableRow\">{{lesson.menteeName}}</p>\n                <select [(ngModel)]=\"lesson.menteeName\" (change)=\"SetNewContactMentee($event.target.selectedIndex)\"\n                    *ngIf=\"i === editableRow\">\n                <option *ngFor=\"let mentee of allMentees\">{{mentee.name}}</option>\n                </select>\n            </td>\n            <td><input [(ngModel)]=\"lesson.lessonnumber\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.date\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.time\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.location\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.subject\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.topic\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.comment\" [disabled]=\"i !== editableRow\"></td>\n            <p *ngIf=\"i !== editableRow\" (click)=\"editRow(lesson, i)\">Szerkeszt\u00E9s</p>\n            <p *ngIf=\"i === editableRow\" (click)=\"saveModification(lesson)\">Ment\u00E9s</p>\n            <p *ngIf=\"i === editableRow\" (click)=\"cancelModification(i)\">M\u00E9gse</p>\n        <tr>\n        </tbody>\n    </table>\n    <button type=\"button\" (click)=\"newAppointment()\">+ \u00DAj \u00F3ra</button>\n</div>\n";
+var timetableTemplate = "\n<app-newlesson-popup></app-newlesson-popup>\n<div>\n    <div *ngIf=\"actualUserrole[2] === false\">\n        Sz\u0171r\u00E9s:\n        <select id=filtering-select [(ngModel)]=\"actualMentor\">\n            <option>Mentor</option>\n            <option *ngFor=\"let mentor of allmentors\">{{mentor}}</option>\n        </select>\n    </div>\n    <table>\n        <thead>\n            <th>Mentor</th>\n            <th>Mentor\u00E1lt</th>\n            <th>\u00D3rasz\u00E1m</th>\n            <th>D\u00E1tum</th>\n            <th>Id\u0151pont</th>\n            <th>Helysz\u00EDn</th>\n            <th>Tant\u00E1rgy</th>\n            <th>T\u00E9ma</th>\n            <th>Megjegyz\u00E9s</th>\n        </thead>\n        <tbody>\n        <tr *ngFor=\"let lesson of getCorrectMentors(); let i=index\">\n            <td><input [(ngModel)]=\"lesson.mentorName\" [disabled]=\"i !== editableRow\"></td>\n            <td><p id=mentee *ngIf=\"i !== editableRow\">{{lesson.menteeName}}</p>\n                <select [(ngModel)]=\"lesson.menteeName\" (change)=\"SetNewContactMentee($event.target.selectedIndex)\"\n                    *ngIf=\"i === editableRow\">\n                <option *ngFor=\"let mentee of allMentees\">{{mentee.name}}</option>\n                </select>\n            </td>\n            <td><input [(ngModel)]=\"lesson.lessonnumber\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.date\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.time\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.location\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.subject\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.topic\" [disabled]=\"i !== editableRow\"></td>\n            <td><input [(ngModel)]=\"lesson.comment\" [disabled]=\"i !== editableRow\"></td>\n            <img src=\"../assets/edit.jpg\" *ngIf=\"i !== editableRow && checkRole(actualUser.id)\" (click)=\"editRow(lesson, i)\">\n            <img src=\"../assets/checkmark.png\" *ngIf=\"i === editableRow\" (click)=\"saveModification(lesson)\">\n            <img src=\"../assets/cancel.png\" *ngIf=\"i === editableRow\" (click)=\"cancelModification(i)\">\n        <tr>\n        </tbody>\n    </table>\n    <button type=\"button\" (click)=\"newAppointment()\">+ \u00DAj \u00F3ra</button>\n</div>\n";
 
 
 /***/ }),
@@ -1366,6 +1390,8 @@ var TimetableComponent = /** @class */ (function () {
             _this.allmentors = Array.from(new Set(_this.lessons.map(function (l) { return l.mentorName; })));
         });
         this.http.get('/testmentee').subscribe(function (result) { return _this.allMentees = result; });
+        this.http.get('/testuserrole').subscribe(function (result) { return _this.actualUserrole = result; });
+        this.http.get('/getactualuser').subscribe(function (result) { return _this.actualUser = result; });
     }
     TimetableComponent.prototype.newAppointment = function () {
         this.ngxSmartModalService.getModal('newLessonPopup').open();
@@ -1375,9 +1401,11 @@ var TimetableComponent = /** @class */ (function () {
     TimetableComponent.prototype.getCorrectMentors = function () {
         var _this = this;
         if (this.actualMentor === 'Mentor') {
+            console.log(this.lessons);
             return this.lessons;
         }
         else {
+            console.log(this.lessons.filter(function (l) { return l.mentorName === _this.actualMentor; }));
             return this.lessons.filter(function (l) { return l.mentorName === _this.actualMentor; });
         }
     };
@@ -1400,7 +1428,6 @@ var TimetableComponent = /** @class */ (function () {
         this.editableRow = -1;
         console.log(lesson);
         this.http.post('/saveExistingTimetableRow', lesson, { responseType: 'text' }).subscribe(function (status) { return console.log(status); });
-        // this.http.post('/?', lesson, {responseType: 'text'}).subscribe(status => console.log(status));
     };
     TimetableComponent.prototype.cancelModification = function (index) {
         this.lessons[index].lessonnumber = this.modifiedRow.lessonnumber;
@@ -1413,6 +1440,9 @@ var TimetableComponent = /** @class */ (function () {
         this.lessons[index].menteeName = this.modifiedRow.menteeName;
         this.lessons[index].menteeid = this.modifiedRow.menteeid;
         this.editableRow = -1;
+    };
+    TimetableComponent.prototype.checkRole = function (id) {
+        return this.actualUser.id === id || this.actualUserrole[0] === true;
     };
     TimetableComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1490,7 +1520,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Dora Dusyn\git\kurva10\rft-project-master\rftfrontend\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Dora Dusyn\git\kurva11\rft-project-master\rftfrontend\src\main.ts */"./src/main.ts");
 
 
 /***/ })

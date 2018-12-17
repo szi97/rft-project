@@ -29,9 +29,9 @@ export const scheduletemplate = `
                 <input [(ngModel)]="contact.institutionName" value={{contact.institutionName}} [disabled]="i !== editableRow">
             </td>
             <td><input [(ngModel)]="contact.folderLink" value={{contact.folderLink}} [disabled]="i !== editableRow"></td>
-            <p *ngIf="i !== editableRow" (click)="editRow(contact, i)">Szerkesztés</p>
-            <p *ngIf="i === editableRow" (click)="saveModification(contact)">Mentés</p>
-            <p *ngIf="i === editableRow" (click)="cancelModification(i)">Mégse</p>
+            <img src="../assets/edit.jpg" *ngIf="i !== editableRow" (click)="editRow(contact, i)">
+            <img src="../assets/checkmark.png" *ngIf="i === editableRow" (click)="saveModification(contact)">
+            <img src="../assets/cancel.png" *ngIf="i === editableRow" (click)="cancelModification(i)">
         </tr>
         <tr *ngIf="createNewContact == true">
             <td><select (change)="SetNewContactMentor($event.target.selectedIndex)">
@@ -47,7 +47,7 @@ export const scheduletemplate = `
                 </select>
             </td>
             <td><input [(ngModel)]="newContact.folderLink"></td>
-            <p (click)="addContact()">Mentés</p>
+            <img src="../assets/checkmark.png" (click)="addContact()">
         </tr>
     </tbody>
 </table>

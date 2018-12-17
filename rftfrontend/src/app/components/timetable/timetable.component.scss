@@ -19,9 +19,12 @@ table {
         background-color: $main_color_light;
     }
 
+    input {
+        max-width: 100px;
+    }
+
     td > input:disabled {
         border: none;
-        max-width: 100px;
         background-color: transparent;
         color: $default_font_color;
     }

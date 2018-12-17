@@ -15,6 +15,8 @@ export class TimetableComponent {
     actualMentor: String = 'Mentor' ;
     editableRow = -1;
     modifiedRow = {lessonnumber: '', date: '', time: '', location: '', subject: '', topic: '', comment: '', menteeName: '', menteeid: 0};
+    actualUserrole: any;
+    actualUser: any;
 
     constructor(public ngxSmartModalService: NgxSmartModalService, private http: HttpClient) {
         this.http.get('/testtimetable').subscribe(result => {
@@ -22,6 +24,8 @@ export class TimetableComponent {
             this.allmentors = Array.from(new Set(this.lessons.map((l) => l.mentorName)));
         });
         this.http.get('/testmentee').subscribe(result => this.allMentees = result );
+        this.http.get('/testuserrole').subscribe(result => this.actualUserrole = result);
+        this.http.get('/getactualuser').subscribe(result => this.actualUser = result);
     }
 
     newAppointment() {
@@ -32,8 +36,10 @@ export class TimetableComponent {
 
     getCorrectMentors() {
         if (this.actualMentor === 'Mentor') {
+            console.log(this.lessons);
             return this.lessons;
         } else {
+            console.log(this.lessons.filter((l) => l.mentorName === this.actualMentor));
             return this.lessons.filter((l) => l.mentorName === this.actualMentor);
         }
     }
@@ -59,7 +65,6 @@ export class TimetableComponent {
         this.editableRow = -1;
         console.log(lesson);
       this.http.post('/saveExistingTimetableRow', lesson, {responseType: 'text'}).subscribe(status => console.log(status));
-        // this.http.post('/?', lesson, {responseType: 'text'}).subscribe(status => console.log(status));
     }
 
     cancelModification(index: number) {
@@ -73,5 +78,9 @@ export class TimetableComponent {
         this.lessons[index].menteeName = this.modifiedRow.menteeName;
         this.lessons[index].menteeid = this.modifiedRow.menteeid;
         this.editableRow = -1;
+    }
+
+    checkRole(id: number) {
+        return this.actualUser.id === id || this.actualUserrole[0] === true;
     }
 }

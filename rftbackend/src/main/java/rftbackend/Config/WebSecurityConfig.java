@@ -4,14 +4,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configurers.DefaultLoginPageConfigurer;
 import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import rftbackend.Logic.DatabaseLogic;
 import rftbackend.Models.Leader;
 import rftbackend.Models.Mentor;
@@ -38,32 +43,49 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         ((HttpSecurity)((HttpSecurity)((ExpressionUrlAuthorizationConfigurer.AuthorizedUrl)
+                http.authorizeRequests()
+                        /*.antMatchers("/#/regisztracio", "/login#/regisztracio").permitAll()*/
+                        .anyRequest())
+                .authenticated()
+                .and())
+                .formLogin().and())
+                .csrf().disable()
+                .httpBasic();
+
+
+        /*((HttpSecurity)((HttpSecurity)((ExpressionUrlAuthorizationConfigurer.AuthorizedUrl)
                 http.authorizeRequests().antMatchers("/regisztracio").permitAll()
-                .anyRequest()).authenticated().and()).formLogin().and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/").deleteCookies("JSESSIONID")
-                .invalidateHttpSession(true).and()).httpBasic();
-        http
+                .anyRequest()).authenticated()
+                .and()).formLogin()
+                .and().logout()
+                .logoutSuccessUrl("/").deleteCookies()
+                .invalidateHttpSession(true).and()).httpBasic();*/
+        /*http*/
+
                 /*.authorizeRequests()
-                .antMatchers("/", "/home").permitAll()
+                .antMatchers("/#/regisztracio").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/#/bejelentkezes")
-                .loginProcessingUrl("")
+                .loginPage("/#/bejelentkezesproba")
+                .loginProcessingUrl("/login")
                 .permitAll()
                 .and()
                 .logout()
-                .permitAll();*/
-                /*.authorizeRequests()
-                .antMatchers("/register*").permitAll()
+                .logoutUrl("/logout")
+                .invalidateHttpSession(true)
+                .deleteCookies("JSESSIONID")
+                .permitAll()
                 .and()*/
-
-                /*.logoutSuccessUrl("/#/")*/
-                /*.and()*/
-                .csrf().disable();
+        /*.csrf().disable();*/
 
         /*.csrf().ignoringAntMatchers("/saveExistingScheduleRow", "/newScheduleRow");*/
 
+    }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/#/regisztracio", "/regisztracio");
     }
 
     //As for the userDetailsService() method, it sets up an in-memory user store with a single user.

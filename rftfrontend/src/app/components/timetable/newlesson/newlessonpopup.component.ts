@@ -23,6 +23,7 @@ export class NewLessonPopupComponent {
     this.model.time = this.datepipe.transform(this.model.time, 'HH:mm:00');
     this.http.post('/newTimetableRow', this.model, {responseType: 'text'}).subscribe(status => {
       console.log(status);
+      location.reload();
       this.ngxSmartModalService.getModal('newLessonPopup').close();
     });
   }

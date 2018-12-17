@@ -25,10 +25,11 @@ export class EditEventPopupComponent implements AfterViewInit {
         this.modifiedEvent = this.ngxSmartModalService.getModalData('editEventPopup');
         this.modifiedEvent.date = this.datepipe.transform(this.modifiedEvent.date, 'yyyy-MM-dd');
         this.modifiedEvent.time = this.datepipe.transform(this.modifiedEvent.time, 'HH:mm:00');
-        this.modifiedEvent.organizers = ['Béla', 'Kati'];
+        this.modifiedEvent.organizers = [];
         delete this.modifiedEvent['organizer'];
         this.http.post('/saveExistingEvent', this.modifiedEvent, {responseType: 'text'}).subscribe(status => {
         console.log(status);
+          location.reload();
         this.ngxSmartModalService.getModal('editEventPopup').close();
       });
     }
@@ -46,6 +47,7 @@ export class EditEventPopupComponent implements AfterViewInit {
     }
 
     cancelEdit() {
+      this.ngxSmartModalService.getModal('editEventPopup').close();
         // this.ngxSmartModalService.setModalData(this.modifiedEvent, 'editEventPopup', true);
     }
 

@@ -122,7 +122,7 @@ public class DatabaseLogic {
 
     public boolean saveTimetable(TimetableTableRow newrow) {
         try{
-            Timetable timetable = new Timetable(newrow.getLessonnumber(), newrow.getDate(), newrow.getTime(), newrow.getLocation(), newrow.getTopic(), newrow.getComment(), newrow.getMentorid(), newrow.getMenteeid(), generatorService.generateId());
+            Timetable timetable = new Timetable(newrow.getLessonnumber(), newrow.getDate(), newrow.getTime(), newrow.getLocation(), newrow.getTopic(), newrow.getComment(), newrow.getMentorid(), newrow.getMenteeid(), generatorService.generateId(), newrow.getSubject());
             timetableRepo.save(timetable);
         }
         catch (Exception e){
@@ -187,6 +187,18 @@ public class DatabaseLogic {
         while(id == 0){
             if(mentors.get(i).getEmail().equals(email)){
                 id = mentors.get(i).getId();
+            }
+            i++;
+        }
+        return id;
+    }
+
+    public long getLeaderIdByEmail(String email){
+        long id = 0;
+        int i = 0;
+        while(id == 0){
+            if(leaders.get(i).getEmail().equals(email)){
+                id = leaders.get(i).getId();
             }
             i++;
         }

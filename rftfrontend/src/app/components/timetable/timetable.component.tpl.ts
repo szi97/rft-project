@@ -1,7 +1,7 @@
 export const timetableTemplate = `
 <app-newlesson-popup></app-newlesson-popup>
 <div>
-    <div>
+    <div *ngIf="actualUserrole[2] === false">
         Szűrés:
         <select id=filtering-select [(ngModel)]="actualMentor">
             <option>Mentor</option>
@@ -36,9 +36,9 @@ export const timetableTemplate = `
             <td><input [(ngModel)]="lesson.subject" [disabled]="i !== editableRow"></td>
             <td><input [(ngModel)]="lesson.topic" [disabled]="i !== editableRow"></td>
             <td><input [(ngModel)]="lesson.comment" [disabled]="i !== editableRow"></td>
-            <p *ngIf="i !== editableRow" (click)="editRow(lesson, i)">Szerkesztés</p>
-            <p *ngIf="i === editableRow" (click)="saveModification(lesson)">Mentés</p>
-            <p *ngIf="i === editableRow" (click)="cancelModification(i)">Mégse</p>
+            <img src="../assets/edit.jpg" *ngIf="i !== editableRow && checkRole(actualUser.id)" (click)="editRow(lesson, i)">
+            <img src="../assets/checkmark.png" *ngIf="i === editableRow" (click)="saveModification(lesson)">
+            <img src="../assets/cancel.png" *ngIf="i === editableRow" (click)="cancelModification(i)">
         <tr>
         </tbody>
     </table>

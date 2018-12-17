@@ -24,7 +24,7 @@ export const editEventPopupTemplate = `
         </div>
         <div>
             <label>Szervezők:</label>
-            <p>select szervezőknek</p>
+            <p><input [(ngModal)]="editEventPopup.getData().organizers"></p>
         </div>
         <button (click)="saveEvent()">Mentés</button>
         <button (click)="editEventPopup.close()">Mégse</button>

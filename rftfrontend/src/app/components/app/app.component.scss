@@ -68,4 +68,12 @@ footer {
     min-height: 100px;
     border-top: 2px solid #BBB;
     padding: 20px;
+
+    .footerlogo {
+        float: right;
+    }
+
+    .footerdiv {
+        display: inline-block;
+    }
 }

@@ -67,7 +67,7 @@ public class EventController {
         System.console().writer().println("newEvent.getTime() " + newEvent.getTime());
         System.console().writer().println("newEvent.getLocation() " + newEvent.getLocation());
         System.console().writer().println("newEvent.getDescription() " + newEvent.getDescription());
-        System.console().writer().println("newEvent.getOrganizer() " + newEvent.getOrganizer());
+        System.console().writer().println("newEvent.getOrganizers() " + newEvent.getOrganizers());
 
 
         if(dbLogic.saveEvent(newEvent)){

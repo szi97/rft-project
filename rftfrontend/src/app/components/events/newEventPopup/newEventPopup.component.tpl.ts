@@ -24,7 +24,10 @@ export const newEventPopupTemplate = `
         </div>
         <div>
             <label>Szervezők:</label>
-            <p>select szervezőknek</p>
+            <div *ngFor="let leader of allLeaders" class="checkbox">
+                <input type="checkbox" value="{{leader.name}}" (change)="updateLeaders(leader, $event)" />
+                <label><span></span>{{leader.name}}</label>
+            </div>
         </div>
         <button (click)="saveNewEvent()">Mentés</button>
         <button (click)="newEventPopup.close()">Mégse</button>

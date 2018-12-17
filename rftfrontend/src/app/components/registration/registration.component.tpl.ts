@@ -27,11 +27,11 @@ export const registrationTemplate = `
         </div>
     </div>
     <div class="form-group">
-        <label for="phoneNumber">Telefonszám:</label>
-        <input type="text" class="form-control" name="phoneNumber" [(ngModel)]="model.phoneNumber"
-        #phoneNumber="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phoneNumber.invalid }" required />
-        <div *ngIf="f.submitted && phoneNumber.invalid" class="invalid-feedback">
-            <div *ngIf="phoneNumber.errors.required">Add meg a telefonszámod!</div>
+        <label for="phone">Telefonszám:</label>
+        <input type="text" class="form-control" name="phone" [(ngModel)]="model.phone"
+        #phoneNumber="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" required />
+        <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
+            <div *ngIf="phone.errors.required">Add meg a telefonszámod!</div>
         </div>
     </div>
     <div class="form-group">
@@ -43,16 +43,16 @@ export const registrationTemplate = `
         </div>
     </div>
     <div class="form-group">
-        <label for="agegroups">Korcsoport: </label>
-        <div *ngFor="let agegroup of agegroups">
-        <input type="checkbox" name="agegroups" value="{{agegroup}}" (change)="updateCheckedAgegroups(agegroup, $event)" />
+        <label for="agegroupList">Korcsoport: </label>
+        <div *ngFor="let agegroup of agegroupList">
+        <input type="checkbox" name="agegroupList" value="{{agegroup}}" (change)="updateCheckedAgegroups(agegroup, $event)" />
             <label><span></span>{{agegroup}}</label>
         </div>
     </div>
     <div class="form-group">
-        <label for="subjects">Tantárgy: </label>
-        <div *ngFor="let subject of subjects">
-        <input type="checkbox" name="subjects" value="{{subject}}" (change)="updateCheckedSubjects(subject, $event)" />
+        <label for="subjectList">Tantárgy: </label>
+        <div *ngFor="let subject of subjectList">
+        <input type="checkbox" name="subjectList" value="{{subject}}" (change)="updateCheckedSubjects(subject, $event)" />
             <label><span></span>{{subject}}</label>
         </div>
     </div>

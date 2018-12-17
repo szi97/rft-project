@@ -41,7 +41,7 @@ public class Timetable {
     @Column(name = "Orarend_ID")
     Long timetableid;
 
-    public Timetable(long lessonnumber, LocalDate date, LocalTime time, String location, String topic, String comment, long mentorid, long menteeid, long timetableid)   {
+    public Timetable(long lessonnumber, LocalDate date, LocalTime time, String location, String topic, String comment, long mentorid, long menteeid, long timetableid, String subject)   {
         this.lessonnumber = lessonnumber;
         this.date = date;
         this.time = time;
@@ -50,6 +50,7 @@ public class Timetable {
         this.comment = comment;
         this.mentorid = mentorid;
         this.menteeid = menteeid;
+        this.subject = subject;
         this.timetableid = timetableid;
     }
 
