@@ -11,7 +11,7 @@ export const apptemplate = `
               </li>
               <li><a routerLink="esemenyek" routerLinkActive="active-link">Események</a></li>
               <li><a routerLink="orarend" routerLinkActive="active-link">Órarend</a></li>
-              <li><a routerLink="regisztracio" routerLinkActive="active-link">Regisztráció</a></li>
+              <li *ngIf="actualUser[0] === true"><a routerLink="regisztracio" routerLinkActive="active-link">Regisztráció</a></li>
           </ul>
       </div>
   </nav>

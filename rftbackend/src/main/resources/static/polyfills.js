@@ -5477,7 +5477,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/szi/Documents/lathatatlan_iskola/rft-project/rftfrontend/src/polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! /home/kisfiu/git/rft-project/rftfrontend/src/polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })

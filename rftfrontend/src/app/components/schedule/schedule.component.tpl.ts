@@ -28,7 +28,9 @@ export const scheduletemplate = `
             <td class=popuptr (click)="i !== editableRow && showInstitution(contact.institutionId)">
                 <input [(ngModel)]="contact.institutionName" value={{contact.institutionName}} [disabled]="i !== editableRow">
             </td>
-            <td><input [(ngModel)]="contact.folderLink" value={{contact.folderLink}} [disabled]="i !== editableRow"></td>
+            <td>
+                <a *ngIf="i !== editableRow" href={{contact.folderLink}}}>Mentormappa Link</a>
+                <input [(ngModel)]="contact.folderLink" value={{contact.folderLink}} *ngIf="i === editableRow"></td>
             <img src="../assets/edit.jpg" *ngIf="i !== editableRow" (click)="editRow(contact, i)">
             <img src="../assets/checkmark.png" *ngIf="i === editableRow" (click)="saveModification(contact)">
             <img src="../assets/cancel.png" *ngIf="i === editableRow" (click)="cancelModification(i)">

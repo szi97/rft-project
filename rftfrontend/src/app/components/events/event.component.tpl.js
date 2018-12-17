@@ -1,0 +1,4 @@
+"use strict";
+exports.__esModule = true;
+exports.eventTemplate = "\n<div>\n    <table *ngFor=\"let actevent of events\">\n        <tr>\n            <td id=\"date\" (click)=\"editEvent(actevent)\">{{actevent.date | date: 'MM.dd.'}}</td>\n            <td class=\"content\">{{actevent.name}}</td>\n        </tr>\n        <tr>\n            <td id=\"time\" (click)=\"editEvent(actevent)\">{{actevent.time  | date: 'HH:mm:ss'}}</td>\n            <td class=\"content\">{{actevent.location}}</td>\n        </tr>\n    </table>\n</div>\n\n<button (click)=\"createNewEvent()\">+ \u00DAj esem\u00E9ny</button>\n<app-new-event-popup></app-new-event-popup>\n<app-edit-event-popup></app-edit-event-popup>\n";
+//# sourceMappingURL=event.component.tpl.js.map

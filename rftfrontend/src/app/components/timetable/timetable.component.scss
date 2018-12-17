@@ -15,7 +15,7 @@ table {
         color: $font_on_main_color;
     }
 
-    tr:nth-child(even) {
+    tr:nth-child(even) > td{
         background-color: $main_color_light;
     }
 
