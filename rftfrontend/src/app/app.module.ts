@@ -22,7 +22,6 @@ import { EventComponent } from './components/events/event.component';
 import { NewEventPopupComponent } from './components/events/newEventPopup/newEventPopup.component';
 import { editEventPopupTemplate } from './components/events/editEventPopup/editEventPopup.component.tpl';
 import { EditEventPopupComponent } from './components/events/editEventPopup/editEventPopup.component';
-import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +37,7 @@ import { LogoutComponent } from './components/logout/logout.component';
     LoginComponent,
     EventComponent,
     NewEventPopupComponent,
-    EditEventPopupComponent,
-    LogoutComponent
+    EditEventPopupComponent
   ],
   imports: [
     BrowserModule,

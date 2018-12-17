@@ -42,7 +42,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/timetable/timetable.component */ "./src/app/components/timetable/timetable.component.ts");
 /* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
 /* harmony import */ var _components_events_event_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/events/event.component */ "./src/app/components/events/event.component.ts");
-/* harmony import */ var _components_logout_logout_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/logout/logout.component */ "./src/app/components/logout/logout.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,15 +56,13 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-
 var appRoutes = [
     { path: '', component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"] },
     { path: 'menetrend', component: _components_schedule_schedule_component__WEBPACK_IMPORTED_MODULE_3__["ScheduleComponent"] },
     { path: 'regisztracio', component: _components_registration_registration_component__WEBPACK_IMPORTED_MODULE_4__["RegistrationComponent"] },
     { path: 'orarend', component: _components_timetable_timetable_component__WEBPACK_IMPORTED_MODULE_5__["TimetableComponent"] },
     { path: 'bejelentkezes', component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"] },
-    { path: 'esemenyek', component: _components_events_event_component__WEBPACK_IMPORTED_MODULE_7__["EventComponent"] },
-    { path: 'logout', component: _components_logout_logout_component__WEBPACK_IMPORTED_MODULE_8__["LogoutComponent"] }
+    { path: 'esemenyek', component: _components_events_event_component__WEBPACK_IMPORTED_MODULE_7__["EventComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -119,7 +116,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_events_event_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/events/event.component */ "./src/app/components/events/event.component.ts");
 /* harmony import */ var _components_events_newEventPopup_newEventPopup_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/events/newEventPopup/newEventPopup.component */ "./src/app/components/events/newEventPopup/newEventPopup.component.ts");
 /* harmony import */ var _components_events_editEventPopup_editEventPopup_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/events/editEventPopup/editEventPopup.component */ "./src/app/components/events/editEventPopup/editEventPopup.component.ts");
-/* harmony import */ var _components_logout_logout_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/logout/logout.component */ "./src/app/components/logout/logout.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -129,7 +125,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -170,8 +165,7 @@ var AppModule = /** @class */ (function () {
                 _components_login_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"],
                 _components_events_event_component__WEBPACK_IMPORTED_MODULE_19__["EventComponent"],
                 _components_events_newEventPopup_newEventPopup_component__WEBPACK_IMPORTED_MODULE_20__["NewEventPopupComponent"],
-                _components_events_editEventPopup_editEventPopup_component__WEBPACK_IMPORTED_MODULE_21__["EditEventPopupComponent"],
-                _components_logout_logout_component__WEBPACK_IMPORTED_MODULE_22__["LogoutComponent"]
+                _components_events_editEventPopup_editEventPopup_component__WEBPACK_IMPORTED_MODULE_21__["EditEventPopupComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -217,7 +211,7 @@ module.exports = ".header {\n  display: flex;\n  justify-content: center;\n  hei
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "apptemplate", function() { return apptemplate; });
-var apptemplate = "\n<div class=\"header\">\n    <img src=\"../assets/lathatatlan_logokek.png\">\n</div>\n<nav class=\"topnavigation\" id=\"mynav\">\n      <div>\n          <ul class=\"navbarlist\">\n              <li><a routerLink=\"\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{ exact: true }\">Kezd\u0151oldal</a></li>\n              <li *ngIf=\"actualUser[0] === true\">\n                <a routerLink=\"menetrend\" routerLinkActive=\"active-link\">Menetrend</a>\n              </li>\n              <li><a routerLink=\"esemenyek\" routerLinkActive=\"active-link\">Esem\u00E9nyek</a></li>\n              <li><a routerLink=\"orarend\" routerLinkActive=\"active-link\">\u00D3rarend</a></li>\n              <li><a routerLink=\"regisztracio\" routerLinkActive=\"active-link\">Regisztr\u00E1ci\u00F3</a></li>\n              <li><a routerLink=\"logout\" routerLinkActive=\"active-link\">Kijelentkez\u00E9s</a></li>\n          </ul>\n      </div>\n  </nav>\n  <div id=\"container\">\n    <router-outlet></router-outlet>\n  </div>\n  <footer>\n    <div class=\"footerdiv\">\n        <p>L\u00E1thatatlan Iskola</p>\n        <p>Telefonsz\u00E1m: +36123456789</p>\n        <p>Email: info@lathatatlaniskola.hu</p>\n    </div>\n    <div class=\"footerlogo\">\n    \n    <a href=\"http://www.lathatatlaniskola.hu\"><img src=\"../assets/weblogo.png\"></a>\n    <a href=\"http://www.facebook.com/lathatatlaniskola\"><img src=\"../assets/facebook.png\"></a>\n    <a href=\"http://www.instagram.com/lathatatlaniskola\"><img src=\"../assets/insta.png\"></a>\n    \n   \n        <!--<img href=\"http://www.lathatatlaniskola.hu\" src=\"../assets/weblogo.png\">\n        <img href=\"http://www.facebook.com/lathatatlaniskola\" src=\"../assets/facebook.png\">\n        <img href=\"http://www.instagram.com/lathatatlaniskola\" src=\"../assets/insta.png\">-->\n    </div>\n  </footer>\n  ";
+var apptemplate = "\n<div class=\"header\">\n    <img src=\"../assets/lathatatlan_logokek.png\">\n</div>\n<nav class=\"topnavigation\" id=\"mynav\">\n      <div>\n          <ul class=\"navbarlist\">\n              <li><a routerLink=\"\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{ exact: true }\">Kezd\u0151oldal</a></li>\n              <li *ngIf=\"actualUser[0] === true\">\n                <a routerLink=\"menetrend\" routerLinkActive=\"active-link\">Menetrend</a>\n              </li>\n              <li><a routerLink=\"esemenyek\" routerLinkActive=\"active-link\">Esem\u00E9nyek</a></li>\n              <li><a routerLink=\"orarend\" routerLinkActive=\"active-link\">\u00D3rarend</a></li>\n              <li><a routerLink=\"regisztracio\" routerLinkActive=\"active-link\">Regisztr\u00E1ci\u00F3</a></li>\n          </ul>\n      </div>\n  </nav>\n  <div id=\"container\">\n    <router-outlet></router-outlet>\n  </div>\n  <footer>\n    <div class=\"footerdiv\">\n        <p>L\u00E1thatatlan Iskola</p>\n        <p>Telefonsz\u00E1m: +36123456789</p>\n        <p>Email: info@lathatatlaniskola.hu</p>\n    </div>\n    <div class=\"footerlogo\">\n\n    <a href=\"http://www.lathatatlaniskola.hu\"><img src=\"../assets/weblogo.png\"></a>\n    <a href=\"http://www.facebook.com/lathatatlaniskola\"><img src=\"../assets/facebook.png\"></a>\n    <a href=\"http://www.instagram.com/lathatatlaniskola\"><img src=\"../assets/insta.png\"></a>\n\n\n        <!--<img href=\"http://www.lathatatlaniskola.hu\" src=\"../assets/weblogo.png\">\n        <img href=\"http://www.facebook.com/lathatatlaniskola\" src=\"../assets/facebook.png\">\n        <img href=\"http://www.instagram.com/lathatatlaniskola\" src=\"../assets/insta.png\">-->\n    </div>\n  </footer>\n  ";
 
 
 /***/ }),
@@ -701,81 +695,6 @@ var LoginComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], LoginComponent);
     return LoginComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/logout/logout.component.scss":
-/*!*********************************************************!*\
-  !*** ./src/app/components/logout/logout.component.scss ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "#container {\n  padding: 20px;\n  color: #444444;\n  width: 100%; }\n  #container .login-form-group {\n    padding: 10px; }\n  #container input {\n    border: none;\n    border-bottom: 2px solid #CEDFF2;\n    height: 30px;\n    display: flex;\n    width: 20em; }\n  #container input:focus {\n    outline: none;\n    border-bottom: 2px solid #214F81; }\n  #container .invalid-feedback {\n    color: red;\n    font-size: 12px; }\n  #container button {\n    background-color: #214F81;\n    color: white;\n    font-size: 18px;\n    border: none;\n    height: 30px; }\n  #container button:hover {\n    cursor: pointer; }\n"
-
-/***/ }),
-
-/***/ "./src/app/components/logout/logout.component.tpl.ts":
-/*!***********************************************************!*\
-  !*** ./src/app/components/logout/logout.component.tpl.ts ***!
-  \***********************************************************/
-/*! exports provided: logouttemplate */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logouttemplate", function() { return logouttemplate; });
-var logouttemplate = "\n";
-
-
-/***/ }),
-
-/***/ "./src/app/components/logout/logout.component.ts":
-/*!*******************************************************!*\
-  !*** ./src/app/components/logout/logout.component.ts ***!
-  \*******************************************************/
-/*! exports provided: LogoutComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogoutComponent", function() { return LogoutComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _logout_component_tpl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./logout.component.tpl */ "./src/app/components/logout/logout.component.tpl.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var LogoutComponent = /** @class */ (function () {
-    function LogoutComponent(http) {
-        this.http = http;
-        this.model = {};
-    }
-    LogoutComponent.prototype.onSubmit = function () {
-        console.log(this.model);
-        // this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => console.log(status));
-    };
-    LogoutComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-logout',
-            template: _logout_component_tpl__WEBPACK_IMPORTED_MODULE_1__["logouttemplate"],
-            styles: [__webpack_require__(/*! ./logout.component.scss */ "./src/app/components/logout/logout.component.scss")]
-        }),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
-    ], LogoutComponent);
-    return LogoutComponent;
 }());
 
 

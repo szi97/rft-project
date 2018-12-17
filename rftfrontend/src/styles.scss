@@ -1,8 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./src/app/variables.scss";
 
 *{
     box-sizing: border-box;
     margin: 0px;
+}
+
+button {
+    background-color: $button_background-color;
+    color: $button_font_color;
+    font-size: 18px;
+    border: none;
+    height: 30px;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .cdk-overlay-container {

@@ -12,7 +12,6 @@ export const apptemplate = `
               <li><a routerLink="esemenyek" routerLinkActive="active-link">Események</a></li>
               <li><a routerLink="orarend" routerLinkActive="active-link">Órarend</a></li>
               <li><a routerLink="regisztracio" routerLinkActive="active-link">Regisztráció</a></li>
-              <li><a routerLink="logout" routerLinkActive="active-link">Kijelentkezés</a></li>
           </ul>
       </div>
   </nav>
@@ -26,12 +25,12 @@ export const apptemplate = `
         <p>Email: info@lathatatlaniskola.hu</p>
     </div>
     <div class="footerlogo">
-    
+
     <a href="http://www.lathatatlaniskola.hu"><img src="../assets/weblogo.png"></a>
     <a href="http://www.facebook.com/lathatatlaniskola"><img src="../assets/facebook.png"></a>
     <a href="http://www.instagram.com/lathatatlaniskola"><img src="../assets/insta.png"></a>
-    
-   
+
+
         <!--<img href="http://www.lathatatlaniskola.hu" src="../assets/weblogo.png">
         <img href="http://www.facebook.com/lathatatlaniskola" src="../assets/facebook.png">
         <img href="http://www.instagram.com/lathatatlaniskola" src="../assets/insta.png">-->
