@@ -1,0 +1,28 @@
+@import '../../variables.scss';
+
+table {
+    border-collapse: collapse ;
+    margin: 20px;
+    text-align: center;
+
+    #date {
+        border-color: $main_color;
+        border-style: solid;
+        border-width: 20px 2px 0px 2px;
+        font-size: 25px;
+        min-width: 80px;
+        vertical-align: bottom;
+    }
+    
+    #time {
+        border-color: $main_color;
+        border-style: solid;
+        border-width: 0px 2px 2px 2px;
+        font-size: 12px;
+        vertical-align: top;
+    }
+
+    .content {
+        min-width: 200px;
+    }
+}

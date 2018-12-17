@@ -1,14 +1,14 @@
 package rftbackend.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import rftbackend.Logic.DatabaseLogic;
 import rftbackend.Models.Schedule;
 import rftbackend.Models.ScheduleTableRow;
 import rftbackend.Repositories.ScheduleRepository;
 import rftbackend.Services.UserService;
 
+import java.io.IOException;
 import java.util.*;
 
 @RestController
@@ -26,10 +26,8 @@ public class ScheduleController{
     private List<ScheduleTableRow> tableContent = new ArrayList<>();
 
     @GetMapping("/menetrend")
-    public Map<String, List<ScheduleTableRow>> listSchedule() {
+    public List<ScheduleTableRow> listSchedule() {
         System.console().writer().println("------------------schedule-----------------");
-        Map<String, List<ScheduleTableRow>> response = new HashMap<>();
-
         tableContent.clear();
         dbLogic.readSchedulesFromDb();
         dbLogic.readTimetablesFromDb();
@@ -50,11 +48,30 @@ public class ScheduleController{
             if(dbLogic.getInstitutionById(actual.getInstitutionid()).isPresent()){
                 institutionName= dbLogic.getInstitutionById(actual.getInstitutionid()).get().getName();
             }
-            tableContent.add(new ScheduleTableRow(mentorName, actual.getMentorid(), menteeName, actual.getMenteeid(), institutionName, actual.getInstitutionid(), actual.getFolder()));
+            tableContent.add(new ScheduleTableRow(actual.getScheduleid(), mentorName, actual.getMentorid(), menteeName, actual.getMenteeid(), institutionName, actual.getInstitutionid(), actual.getFolder()));
         }
 
-        response.put(userService.returnHighestRole(), tableContent);
+        return tableContent;
+    }
 
-        return response;
+    @RequestMapping(value = "/newScheduleRow", method = RequestMethod.POST)
+    public String newScheduleRow(@RequestBody ScheduleTableRow newrow) throws IOException {
+        String result = "Unsuccessful!";
+
+        if(dbLogic.saveSchedule(newrow)){
+            result = "Successful!";
+        }
+
+        return result;
+
+    }
+
+    @RequestMapping(value = "/saveExistingScheduleRow", method = RequestMethod.POST)
+    public String saveExistingScheduleRow(@RequestBody ScheduleTableRow row) throws IOException {
+        String result = "Unsuccessful!";
+        if(dbLogic.saveExistingSchedule(row)){
+            result = "Successful!";
+        }
+        return result;
     }
 }

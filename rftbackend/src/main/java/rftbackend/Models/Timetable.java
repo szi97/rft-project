@@ -1,6 +1,8 @@
 package rftbackend.Models;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 @Entity
@@ -12,10 +14,10 @@ public class Timetable {
     private long lessonnumber;
 
     @Column(name = "Datum")
-    private Date date;
+    private LocalDate date;
 
     @Column(name = "Idopont")
-    private Date time;
+    private LocalTime time;
 
     @Column(name = "Helyszin")
     private String location;
@@ -39,7 +41,7 @@ public class Timetable {
     @Column(name = "Orarend_ID")
     Long timetableid;
 
-    public Timetable(long lessonnumber, Date date, Date time, String location, String topic, String comment, long mentorid, long menteeid, long timetableid)   {
+    public Timetable(long lessonnumber, LocalDate date, LocalTime time, String location, String topic, String comment, long mentorid, long menteeid, long timetableid)   {
         this.lessonnumber = lessonnumber;
         this.date = date;
         this.time = time;
@@ -55,7 +57,6 @@ public class Timetable {
     }
 
 
-
     public long getLessonnumber() {
         return lessonnumber;
     }
@@ -64,19 +65,19 @@ public class Timetable {
         this.lessonnumber = lessonnumber;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public Date getTime() {
+    public LocalTime getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(LocalTime time) {
         this.time = time;
     }
 

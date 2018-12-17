@@ -18,6 +18,11 @@ import { MenteesPopupComponent } from './components/schedule/mentees/menteespopu
 import { InstitutionsPopupComponent } from './components/schedule/institutions/insitutionspopup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewLessonPopupComponent } from './components/timetable/newlesson/newlessonpopup.component';
+import { EventComponent } from './components/events/event.component';
+import { NewEventPopupComponent } from './components/events/newEventPopup/newEventPopup.component';
+import { editEventPopupTemplate } from './components/events/editEventPopup/editEventPopup.component.tpl';
+import { EditEventPopupComponent } from './components/events/editEventPopup/editEventPopup.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,11 @@ import { NewLessonPopupComponent } from './components/timetable/newlesson/newles
     RegistrationComponent,
     TimetableComponent,
     NewLessonPopupComponent,
-    LoginComponent
+    LoginComponent,
+    EventComponent,
+    NewEventPopupComponent,
+    EditEventPopupComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

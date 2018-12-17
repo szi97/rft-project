@@ -1,24 +1,29 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { newLessonPopupTemplate } from './newlessonpopup.component.tpl';
+import { NgxSmartModalService } from 'ngx-smart-modal';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-newlesson-popup',
   template: newLessonPopupTemplate,
-  styleUrls: ['./newlessonpopup.component.scss']
+  styleUrls: ['./newlessonpopup.component.scss'],
+  providers: [DatePipe]
 })
 export class NewLessonPopupComponent {
   model: any;
 
-  constructor(private http: HttpClient) {
-      this.model = [];
+  constructor(public ngxSmartModalService: NgxSmartModalService, public datepipe: DatePipe, private http: HttpClient) {
+      this.model = {mentorid: 1, menteeid: 1};
   }
 
   onSubmit() {
-    console.log(this.model);
-    this.model.date = this.model.date.getMonth() + '/' + this.model.date.getDate() + '/' + this.model.date.getFullYear();
-    this.model.time = this.model.time.getHours() + ':' + this.model.time.getMinutes();
-    // this.http.post('/register', this.model, {responseType: 'text'}).subscribe(status => console.log(status); newLessonPopup.close());
-
+    this.model.mentorid = this.ngxSmartModalService.getModalData('newLessonPopup').mentorid;
+    this.model.date = this.datepipe.transform(this.model.date, 'yyyy-MM-dd');
+    this.model.time = this.datepipe.transform(this.model.time, 'HH:mm:00');
+    this.http.post('/newTimetableRow', this.model, {responseType: 'text'}).subscribe(status => {
+      console.log(status);
+      this.ngxSmartModalService.getModal('newLessonPopup').close();
+    });
   }
 }

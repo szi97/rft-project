@@ -2,6 +2,7 @@ package rftbackend.Models;
 
 public class ScheduleTableRow {
 
+    private long rowId;
     private String mentorName;
     private long mentorId;
     private String menteeName;
@@ -14,14 +15,23 @@ public class ScheduleTableRow {
 
     }
 
-    public ScheduleTableRow(String mentorName, long mentorId, String menteeName, long menteeId, String institutionName, long institutionId, String folderLink){
-    this.mentorName = mentorName;
-    this.mentorId = mentorId;
-    this.menteeName = menteeName;
-    this.menteeId = menteeId;
-    this.institutionName = institutionName;
-    this.institutionId = institutionId;
-    this.folderLink = folderLink;
+    public ScheduleTableRow(long rowId, String mentorName, long mentorId, String menteeName, long menteeId, String institutionName, long institutionId, String folderLink){
+        this.rowId = rowId;
+        this.mentorName = mentorName;
+        this.mentorId = mentorId;
+        this.menteeName = menteeName;
+        this.menteeId = menteeId;
+        this.institutionName = institutionName;
+        this.institutionId = institutionId;
+        this.folderLink = folderLink;
+    }
+
+    public long getRowId(){
+        return this.rowId;
+    }
+
+    public void setRowId(long rowId){
+        this.rowId = rowId;
     }
 
     public String getMentorName() {

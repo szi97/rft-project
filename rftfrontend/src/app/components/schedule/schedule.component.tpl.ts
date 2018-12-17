@@ -29,7 +29,7 @@ export const scheduletemplate = `
                 <input [(ngModel)]="contact.institutionName" value={{contact.institutionName}} [disabled]="i !== editableRow">
             </td>
             <td><input [(ngModel)]="contact.folderLink" value={{contact.folderLink}} [disabled]="i !== editableRow"></td>
-            <p *ngIf="i !== editableRow" (click)="editRow(contact, i)">Edit</p>
+            <p *ngIf="i !== editableRow" (click)="editRow(contact, i)">Szerkesztés</p>
             <p *ngIf="i === editableRow" (click)="saveModification(contact)">Mentés</p>
             <p *ngIf="i === editableRow" (click)="cancelModification(i)">Mégse</p>
         </tr>
@@ -46,7 +46,7 @@ export const scheduletemplate = `
                 <option *ngFor="let institution of allInstitutions">{{institution.name}}</option>
                 </select>
             </td>
-            <td><input [(ngModel)]="newContact.folder"></td>
+            <td><input [(ngModel)]="newContact.folderLink"></td>
             <p (click)="addContact()">Mentés</p>
         </tr>
     </tbody>

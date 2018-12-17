@@ -4,8 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import rftbackend.Models.*;
 import rftbackend.Repositories.*;
+import rftbackend.Services.GeneratorService;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,6 +36,9 @@ public class DatabaseLogic {
 
     @Autowired
     EventRepository eventRepo;
+
+    @Autowired
+    GeneratorService generatorService;
 
 
     private List<Mentor> mentors = new ArrayList<Mentor>();
@@ -86,6 +93,94 @@ public class DatabaseLogic {
         return true;
     }
 
+    public boolean saveSchedule(ScheduleTableRow newrow) {
+        try{
+            Schedule newSchedule = new Schedule(generatorService.generateId(), newrow.getMentorId(), newrow.getMenteeId(), newrow.getInstitutionId(), newrow.getFolderLink());
+            scheduleRepo.save(newSchedule);
+        }
+        catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+
+    public boolean saveExistingSchedule(ScheduleTableRow row) {
+        try{
+            Schedule schedule = scheduleRepo.getOne(row.getRowId());
+            schedule.setFolder(row.getFolderLink());
+            schedule.setInstitutionid(row.getInstitutionId());
+            schedule.setMenteeid(row.getMenteeId());
+            schedule.setMentorid(row.getMentorId());
+            //id
+            scheduleRepo.save(schedule);
+        }
+        catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+
+    public boolean saveTimetable(TimetableTableRow newrow) {
+        try{
+            Timetable timetable = new Timetable(newrow.getLessonnumber(), newrow.getDate(), newrow.getTime(), newrow.getLocation(), newrow.getTopic(), newrow.getComment(), newrow.getMentorid(), newrow.getMenteeid(), generatorService.generateId());
+            timetableRepo.save(timetable);
+        }
+        catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+
+    public boolean saveExistingTimetable(TimetableTableRow row) {
+        try{
+            Timetable timetable = timetableRepo.getOne(row.getTimetableid());
+            timetable.setComment(row.getComment());
+            timetable.setDate(row.getDate());
+            timetable.setLessonnumber(row.getLessonnumber());
+            timetable.setLocation(row.getLocation());
+            timetable.setMenteeid(row.getMenteeid());
+            timetable.setMentorid(row.getMentorid());
+            timetable.setSubject(row.getSubject());
+            timetable.setTime(row.getTime());
+            timetable.setTopic(row.getTopic());
+            timetableRepo.save(timetable);
+        }
+        catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+
+    public boolean saveEvent(Event newEvent) {
+        try{
+            Event event = new Event(generatorService.generateId(), newEvent.getName(), newEvent.getDate(), newEvent.getTime(), newEvent.getLocation(), newEvent.getDescription(), newEvent.getOrganizer());
+            event.convertOrgenizerListToDb();
+            eventRepo.save(event);
+        }
+        catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+
+    public boolean saveExistingEvent(Event event) {
+        try{
+            Event eventToBeSaved = eventRepo.getOne(event.getId());
+            eventToBeSaved.setDate(event.getDate());
+            eventToBeSaved.setDescription(event.getDescription());
+            eventToBeSaved.setLocation(event.getLocation());
+            eventToBeSaved.setName(event.getName());
+            eventToBeSaved.setOrganizers(event.getOrganizers());
+            eventToBeSaved.convertOrgenizerListToDb();
+            eventToBeSaved.setTime(event.getTime());
+            eventRepo.save(eventToBeSaved);
+        }
+        catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+
     public long getMentorIdByEmail(String email){
         long id = 0;
         int i = 0;
@@ -96,6 +191,18 @@ public class DatabaseLogic {
             i++;
         }
         return id;
+    }
+
+    public List<Long> getMentorIdsByInstitutionId(Integer id){
+        List<Schedule> schedules = scheduleRepo.findAll();
+        List<Long> resultList = new ArrayList<Long>();
+        for (Schedule sch : schedules) {
+            Integer i = sch.getInstitutionid() != null ? sch.getInstitutionid().intValue() : null;
+            if(i == id){
+                resultList.add(sch.getMentorid());
+            }
+        }
+        return resultList;
     }
 
     public List<Mentor> getMentors() {

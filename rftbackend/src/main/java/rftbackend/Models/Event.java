@@ -49,12 +49,30 @@ public class Event {
         convertOrganizerListFromDb();
     }
 
+    public Event(long id, String name, LocalDate date, LocalTime time, String location, String description, ArrayList<String> organizers){
+        this.id = id;
+        this.name = name;
+        this.date = date;
+        this.time = time;
+        this.location = location;
+        this.description = description;
+        this.organizers = organizers;
+        convertOrgenizerListToDb();
+    }
+
     public void convertOrganizerListFromDb() {
         this.organizers = new ArrayList<String>();
         String[] read = this.organizer.split(",");
-        for(int i = 0; i<read.length; i++){
-            this.organizers.add(read[i]);
+        if(read.length > 2)
+        {
+            for(int i = 0; i<read.length; i++){
+                this.organizers.add(read[i]);
+            }
         }
+        else{
+            this.organizers.add(this.organizer);
+        }
+
     }
 
     public void convertOrgenizerListToDb() {
@@ -119,6 +137,7 @@ public class Event {
 
     public void setOrganizer(String organizer) {
         this.organizer = organizer;
+        convertOrgenizerListToDb();
     }
 
     public ArrayList<String> getOrganizers() {
@@ -127,6 +146,7 @@ public class Event {
 
     public void setOrganizers(ArrayList<String> organizers) {
         this.organizers = organizers;
+        convertOrgenizerListToDb();
     }
 
 

@@ -2,6 +2,7 @@
 
 table {
     border-spacing: 0px;
+    text-align: center;
 
     th, td {
         text-align: center;
@@ -17,4 +18,31 @@ table {
     tr:nth-child(even) {
         background-color: $main_color_light;
     }
+
+    td > input:disabled {
+        border: none;
+        max-width: 100px;
+        background-color: transparent;
+        color: $default_font_color;
+    }
+
+    p {
+        background-color: $background-color;
+        display: inline;
+    }
+
+    #mentee {
+        background-color: transparent;
+        font-size: 15px;
+    }
+
+}
+
+.filtering-select {
+    padding: 10px;
+}
+
+select {
+    height: 30px;
+    border: none;
 }

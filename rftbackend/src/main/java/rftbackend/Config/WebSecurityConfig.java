@@ -3,12 +3,15 @@ package rftbackend.Config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import rftbackend.Logic.DatabaseLogic;
 import rftbackend.Models.Leader;
 import rftbackend.Models.Mentor;
@@ -32,10 +35,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     // There is a custom "/login" page specified by loginPage(), and everyone is allowed to view it.
     //A "/login" page-et tetszésünk szerint módosíthatjuk, szépíthetjük, vagy más URL-re köthetjük.
 
-    /*@Override
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
+        ((HttpSecurity)((HttpSecurity)((ExpressionUrlAuthorizationConfigurer.AuthorizedUrl)
+                http.authorizeRequests().antMatchers("/regisztracio").permitAll()
+                .anyRequest()).authenticated().and()).formLogin().and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .logoutSuccessUrl("/").deleteCookies("JSESSIONID")
+                .invalidateHttpSession(true).and()).httpBasic();
         http
-                .authorizeRequests()
+                /*.authorizeRequests()
                 .antMatchers("/", "/home").permitAll()
                 .anyRequest().authenticated()
                 .and()
@@ -45,8 +53,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
-                .permitAll();
-    }*/
+                .permitAll();*/
+                /*.authorizeRequests()
+                .antMatchers("/register*").permitAll()
+                .and()*/
+
+                /*.logoutSuccessUrl("/#/")*/
+                /*.and()*/
+                .csrf().disable();
+
+        /*.csrf().ignoringAntMatchers("/saveExistingScheduleRow", "/newScheduleRow");*/
+
+    }
 
     //As for the userDetailsService() method, it sets up an in-memory user store with a single user.
     // That user is given a username of "user", a password of "password", and a role of "USER".

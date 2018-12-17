@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {scheduletemplate} from './schedule.component.tpl';
 import {NgxSmartModalService} from 'ngx-smart-modal';
 import { HttpClient } from '@angular/common/http';

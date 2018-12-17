@@ -73,8 +73,6 @@ public class Mentor implements Serializable {
         this.facebook = facebook;
         this.agegroupList = agegroups;
         this.subjectList = subjects;
-        //ezt találjátok ki, hogy milyen módon és ki adja meg, több lesz egyszerre? akkor lista kell, vagy valahogy szétszedni .split() vagy valami
-        //pro tip: listbox-ból lehessen kiválasztani: nincs hibalehetőség
     }
 
 

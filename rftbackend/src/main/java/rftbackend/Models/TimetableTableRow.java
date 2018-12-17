@@ -1,11 +1,13 @@
 package rftbackend.Models;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 public class TimetableTableRow {
 
     private long lessonnumber;
-    private Date date;
-    private Date time;
+    private LocalDate date;
+    private LocalTime time;
     private String location;
     private String subject;
     private String topic;
@@ -18,7 +20,7 @@ public class TimetableTableRow {
 
 
 
-    public TimetableTableRow(long lessonnumber, Date date, Date time, String location, String subject, String topic, String comment, long mentorid, String mentorName, long menteeid, String menteeName, long timetableid)   {
+    public TimetableTableRow(long lessonnumber, LocalDate date, LocalTime time, String location, String subject, String topic, String comment, long mentorid, String mentorName, long menteeid, String menteeName, long timetableid)   {
         this.lessonnumber = lessonnumber;
         this.date = date;
         this.time = time;
@@ -45,19 +47,19 @@ public class TimetableTableRow {
         this.lessonnumber = lessonnumber;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public Date getTime() {
+    public LocalTime getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(LocalTime time) {
         this.time = time;
     }
 
